@@ -1,0 +1,1071 @@
+2025-05-08 04:18:48,990 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 04:18:52,694 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 04:18:57,592 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang%E2%80%99s+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 04:19:00,662 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 04:19:04,952 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang%E2%80%99s+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 04:19:25,307 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 04:19:25,329 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 04:19:28,347 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 04:19:29,380 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 04:19:29,398 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 04:19:32,407 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 04:19:34,420 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 04:19:34,980 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 04:19:35,538 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 04:19:36,091 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 04:19:36,639 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 04:19:37,202 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 04:19:37,203 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 04:19:39,340 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 04:19:39,341 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang%E2%80%99s+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-08 04:22:55,198 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 04:23:47,254 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang%E2%80%99s+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 04:23:49,129 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 04:23:53,472 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang%E2%80%99s+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 04:24:13,816 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 04:24:13,844 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 04:24:16,873 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 04:24:17,917 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 04:24:17,951 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 04:24:20,964 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 04:24:22,976 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 04:24:23,540 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 04:24:24,099 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 04:24:24,664 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 04:24:25,213 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 04:24:25,773 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 04:24:25,774 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 04:24:27,927 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 04:24:27,928 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang%E2%80%99s+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-08 07:26:35,047 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 07:26:38,665 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 07:26:43,447 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 07:26:45,401 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 07:26:49,317 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 07:27:09,667 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 07:27:09,688 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 07:27:12,708 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 07:27:13,741 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 07:27:13,757 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 07:27:16,766 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 07:27:18,778 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 07:27:19,338 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 07:27:19,901 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 07:27:20,466 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 07:27:21,011 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 07:27:21,581 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 07:27:21,581 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 07:27:23,738 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 07:27:23,739 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-08 07:29:18,502 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 07:36:41,032 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 07:36:44,689 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 07:36:47,112 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 07:36:49,032 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 07:36:52,786 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 07:37:13,152 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 07:37:13,176 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 07:37:16,193 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 07:37:17,225 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 07:37:17,241 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 07:37:20,252 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 07:37:22,265 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 07:37:22,828 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 07:37:23,401 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 07:37:23,969 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 07:37:24,514 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 07:37:25,079 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 07:37:25,079 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 07:37:27,241 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 07:37:27,242 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-08 07:44:02,109 - llm_server - ERROR - Ollama 추론 중 오류: Server disconnected without sending a response.
+2025-05-08 08:09:08,680 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 08:09:10,712 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 08:09:13,218 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 08:09:33,565 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 08:09:33,586 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 08:09:36,608 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 08:09:37,642 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 08:09:37,659 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 08:09:40,667 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 08:09:42,680 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 08:09:43,241 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 08:09:43,804 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 08:09:44,389 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 08:09:44,944 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 08:09:45,507 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 08:09:45,507 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 08:09:47,656 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 08:09:47,657 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-08 08:10:33,581 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 08:10:39,426 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 08:10:44,387 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 08:10:46,288 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 08:10:48,709 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 08:11:09,062 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 08:11:09,084 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 08:11:12,108 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 08:11:13,137 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 08:11:13,154 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 08:11:16,164 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 08:11:18,176 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 08:11:18,741 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 08:11:19,318 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 08:11:19,897 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 08:11:20,442 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 08:11:21,003 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 08:11:21,003 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 08:11:23,138 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 08:11:23,139 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-08 08:12:06,697 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-08 08:12:22,906 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-08 08:12:24,792 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-08 08:12:28,445 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-08 08:12:48,785 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-08 08:12:48,807 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-08 08:12:51,832 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-08 08:12:52,864 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-08 08:12:52,882 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-08 08:12:55,904 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-08 08:12:57,915 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-08 08:12:58,476 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 08:12:59,036 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 1개)
+2025-05-08 08:12:59,592 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 3 weeks ago (총 2개)
+2025-05-08 08:13:00,148 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0047FC53+61635]
+	GetHandleVerifier [0x0047FC94+61700]
+	(No symbol) [0x002A05D3]
+	(No symbol) [0x002E899E]
+	(No symbol) [0x002E8D3B]
+	(No symbol) [0x002DE111]
+	(No symbol) [0x0030D2E4]
+	(No symbol) [0x002DE034]
+	(No symbol) [0x0030D514]
+	(No symbol) [0x0032E61B]
+	(No symbol) [0x0030D096]
+	(No symbol) [0x002DC840]
+	(No symbol) [0x002DD6A4]
+	GetHandleVerifier [0x00704573+2701795]
+	GetHandleVerifier [0x006FFCF6+2683238]
+	GetHandleVerifier [0x0071AA3E+2793134]
+	GetHandleVerifier [0x00496915+155013]
+	GetHandleVerifier [0x0049CFFD+181357]
+	GetHandleVerifier [0x004874A8+92440]
+	GetHandleVerifier [0x00487650+92864]
+	GetHandleVerifier [0x00472040+5296]
+	BaseThreadInitThunk [0x76B7FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x772D82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x772D827E+238]
+
+2025-05-08 08:13:00,713 - llm_server - INFO - 리뷰 추가: 미미요, 평점: 4.0, 날짜: a month ago (총 3개)
+2025-05-08 08:13:00,714 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-08 08:13:02,849 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-08 08:13:02,850 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] I had course C~ I was satisfied with e
+2025-05-12 01:22:28,767 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:22:32,649 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:22:35,119 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 01:22:38,182 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 01:22:41,642 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D
+2025-05-12 01:23:01,995 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 01:23:02,015 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 01:23:05,035 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 01:23:06,071 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 01:23:06,091 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 01:23:09,109 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 01:23:11,121 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 01:23:11,696 - llm_server - INFO - 리뷰 추가: J E, 평점: 5.0, 날짜: 10 hours ago (총 1개)
+2025-05-12 01:23:12,241 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 01:23:12,804 - llm_server - INFO - 리뷰 추가: 이소연, 평점: 5.0, 날짜: 2 weeks ago (총 2개)
+2025-05-12 01:23:13,378 - llm_server - INFO - 리뷰 추가: HAN YU CIOU (Angela), 평점: 4.0, 날짜: 4 weeks ago (총 3개)
+2025-05-12 01:23:13,379 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 01:23:15,525 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 01:23:15,528 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Wolfgang's+Steakhouse/data=!3m1!4b1!4m6!3m5!1s0x357ca4778cdd1105:0x27d5ead252b66bfd!8m2!3d37.5244965!4d127.0414635!16s%2Fg%2F11c3pwpp26?hl=en&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] It was yummy very yummy i will come ag
+2025-05-12 01:24:54,485 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:25:21,736 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:26:17,130 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:26:23,233 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:26:32,416 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:28:14,672 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:28:18,688 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:28:21,441 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 01:28:23,376 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 01:28:27,443 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 01:28:47,797 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 01:28:47,819 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 01:28:50,839 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 01:28:51,873 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 01:28:51,890 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 01:28:54,913 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 01:28:56,924 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 01:28:57,499 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: an hour ago (총 1개)
+2025-05-12 01:28:58,060 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 3 hours ago (총 2개)
+2025-05-12 01:28:58,620 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 01:28:59,183 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 11 hours ago (총 3개)
+2025-05-12 01:28:59,184 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 01:29:01,329 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 01:29:01,330 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 01:29:42,405 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:30:26,885 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:30:38,035 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:30:53,254 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:30:59,804 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 01:31:01,728 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 01:31:05,629 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 01:31:25,986 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 01:31:26,011 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 01:31:29,041 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 01:31:30,077 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 01:31:30,097 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 01:31:33,119 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 01:31:35,129 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 01:31:35,703 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: an hour ago (총 1개)
+2025-05-12 01:31:36,264 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 3 hours ago (총 2개)
+2025-05-12 01:31:36,821 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 01:31:37,388 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 11 hours ago (총 3개)
+2025-05-12 01:31:37,389 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 01:31:39,535 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 01:31:39,536 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 01:32:22,008 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:33:03,429 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 01:33:05,312 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 01:33:09,570 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 01:33:29,915 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 01:33:29,936 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 01:33:32,955 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 01:33:33,989 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 01:33:34,005 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 01:33:37,014 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 01:33:39,024 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 01:33:39,597 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: an hour ago (총 1개)
+2025-05-12 01:33:40,156 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 3 hours ago (총 2개)
+2025-05-12 01:33:40,701 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 01:33:41,266 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 11 hours ago (총 3개)
+2025-05-12 01:33:41,267 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 01:33:43,417 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 01:33:43,418 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 01:36:13,779 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:40:45,883 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 01:40:59,249 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:07:11,613 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:07:15,478 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:07:24,709 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:07:30,668 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:07:32,564 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:07:35,581 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:07:55,930 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:07:55,952 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:07:58,967 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:08:00,002 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:08:00,021 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:08:03,041 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:08:05,052 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:08:05,628 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 2 hours ago (총 1개)
+2025-05-12 02:08:06,183 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 4 hours ago (총 2개)
+2025-05-12 02:08:06,730 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:08:07,292 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 11 hours ago (총 3개)
+2025-05-12 02:08:07,293 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:08:09,443 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:08:09,444 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:10:08,871 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:10:15,037 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:10:19,150 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:10:24,495 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:10:26,736 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:10:28,633 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:10:31,602 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:10:51,964 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:10:51,985 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:10:55,006 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:10:56,042 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:10:56,066 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:10:59,082 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:11:01,093 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:11:01,666 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 2 hours ago (총 1개)
+2025-05-12 02:11:02,223 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 4 hours ago (총 2개)
+2025-05-12 02:11:02,768 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:11:03,342 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 11 hours ago (총 3개)
+2025-05-12 02:11:03,342 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:11:05,488 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:11:05,489 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:19:06,487 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:29:32,437 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:29:36,374 - llm_server - INFO - Flask 서버 시작 중...
+2025-05-12 02:35:10,058 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:35:12,042 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:35:15,971 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:35:36,326 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:35:36,350 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:35:39,369 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:35:40,401 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:35:40,419 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:35:43,427 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:35:45,440 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:35:46,014 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 2 hours ago (총 1개)
+2025-05-12 02:35:46,575 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 4 hours ago (총 2개)
+2025-05-12 02:35:47,122 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:35:47,689 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 12 hours ago (총 3개)
+2025-05-12 02:35:47,689 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:35:49,839 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:35:49,840 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:39:35,582 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:39:37,446 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:39:40,314 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:40:00,665 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:40:00,689 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:40:03,715 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:40:04,738 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:40:04,755 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:40:07,768 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:40:09,784 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:40:10,361 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 2 hours ago (총 1개)
+2025-05-12 02:40:10,919 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 5 hours ago (총 2개)
+2025-05-12 02:40:11,467 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:40:12,032 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 12 hours ago (총 3개)
+2025-05-12 02:40:12,032 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:40:14,188 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:40:14,189 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:48:36,851 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:48:38,712 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:48:41,782 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:49:02,141 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:49:02,165 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:49:05,192 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:49:06,227 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:49:06,244 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:49:09,255 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:49:11,267 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:49:11,837 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 3 hours ago (총 1개)
+2025-05-12 02:49:12,397 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 5 hours ago (총 2개)
+2025-05-12 02:49:12,944 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:49:13,508 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 12 hours ago (총 3개)
+2025-05-12 02:49:13,509 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:49:15,658 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:49:15,659 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:54:44,385 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:54:46,251 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:54:49,256 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:55:09,599 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:55:09,620 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:55:12,642 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:55:13,674 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:55:13,691 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:55:16,702 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:55:18,715 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:55:19,285 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 3 hours ago (총 1개)
+2025-05-12 02:55:19,844 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 5 hours ago (총 2개)
+2025-05-12 02:55:20,390 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:55:20,956 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 12 hours ago (총 3개)
+2025-05-12 02:55:20,956 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:55:23,105 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:55:23,106 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:56:38,456 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:56:40,303 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:56:44,093 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:57:04,443 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:57:04,465 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:57:07,483 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:57:08,517 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:57:08,534 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:57:11,544 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:57:13,555 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:57:14,138 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 3 hours ago (총 1개)
+2025-05-12 02:57:14,702 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 5 hours ago (총 2개)
+2025-05-12 02:57:15,250 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:57:15,814 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 12 hours ago (총 3개)
+2025-05-12 02:57:15,814 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:57:17,949 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:57:17,950 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv
+2025-05-12 02:58:25,676 - llm_server - INFO - Google 리뷰 요청 수신: URL='https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D', Count=3
+2025-05-12 02:58:27,524 - llm_server - INFO - 웹 드라이버 설정 완료 (헤드리스 모드).
+2025-05-12 02:58:31,535 - llm_server - INFO - Google Maps 접속 시도: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D
+2025-05-12 02:58:51,882 - llm_server - INFO - 리뷰 탭 버튼 찾음 (방식: xpath, 값: //button[@role='tab'][@aria-label][contains(@aria-label, 'Reviews') or contains(@aria-label, '리뷰')])
+2025-05-12 02:58:51,903 - llm_server - INFO - 리뷰 탭 클릭 시도 완료.
+2025-05-12 02:58:54,924 - llm_server - INFO - 정렬 기준 버튼 찾음. 클릭 시도...
+2025-05-12 02:58:55,959 - llm_server - INFO - 최신순 옵션 찾음. 클릭 시도...
+2025-05-12 02:58:55,977 - llm_server - INFO - 최신순으로 정렬 적용됨. 잠시 대기...
+2025-05-12 02:58:58,999 - llm_server - INFO - 리뷰 스크롤 영역 찾음.
+2025-05-12 02:59:01,010 - llm_server - INFO - Loop 1: 총 10개의 리뷰 요소 발견. 현재 수집된 리뷰 수: 0
+2025-05-12 02:59:01,582 - llm_server - INFO - 리뷰 추가: LUIS BERNARDO CASTRO VILLEGAS, 평점: 5.0, 날짜: 3 hours ago (총 1개)
+2025-05-12 02:59:02,140 - llm_server - INFO - 리뷰 추가: Brooklyn USA, 평점: 5.0, 날짜: 5 hours ago (총 2개)
+2025-05-12 02:59:02,687 - llm_server - ERROR - 개별 리뷰 처리 중 오류: Message: no such element: Unable to locate element: {"method":"css selector","selector":"span.wiI7pd"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x003FFC53+61635]
+	GetHandleVerifier [0x003FFC94+61700]
+	(No symbol) [0x002205D3]
+	(No symbol) [0x0026899E]
+	(No symbol) [0x00268D3B]
+	(No symbol) [0x0025E111]
+	(No symbol) [0x0028D2E4]
+	(No symbol) [0x0025E034]
+	(No symbol) [0x0028D514]
+	(No symbol) [0x002AE61B]
+	(No symbol) [0x0028D096]
+	(No symbol) [0x0025C840]
+	(No symbol) [0x0025D6A4]
+	GetHandleVerifier [0x00684573+2701795]
+	GetHandleVerifier [0x0067FCF6+2683238]
+	GetHandleVerifier [0x0069AA3E+2793134]
+	GetHandleVerifier [0x00416915+155013]
+	GetHandleVerifier [0x0041CFFD+181357]
+	GetHandleVerifier [0x004074A8+92440]
+	GetHandleVerifier [0x00407650+92864]
+	GetHandleVerifier [0x003F2040+5296]
+	BaseThreadInitThunk [0x76C2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x776282AE+286]
+	RtlGetAppContainerNamedObjectPath [0x7762827E+238]
+
+2025-05-12 02:59:03,254 - llm_server - INFO - 리뷰 추가: Joshua Neff, 평점: 5.0, 날짜: 12 hours ago (총 3개)
+2025-05-12 02:59:03,255 - llm_server - INFO - 목표 리뷰 수 (3개) 도달. 크롤링 중단.
+2025-05-12 02:59:05,402 - llm_server - INFO - 웹 드라이버 종료됨.
+2025-05-12 02:59:05,403 - llm_server - INFO - 리뷰 성공적으로 가져옴: https://www.google.com/maps/place/Peter+Luger+Steak+House/@40.7098814,-73.9650801,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25bdedbcaf647:0x469a1d01423a03f2!8m2!3d40.7098774!4d-73.9625052!16zL20vMGI2MWt4?hl=en&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D, 첫 50자: [5.0 stars] Excellent food, plentiful and expensiv

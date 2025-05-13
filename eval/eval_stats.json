@@ -1,0 +1,12 @@
+{
+  "total_records": 105,
+  "successful_predictions": 105,
+  "failed_predictions": 0,
+  "mse": 40.28550095238096,
+  "rmse": 6.3470860205594315,
+  "mean_actual_tip": 13.372761904761905,
+  "mean_predicted_tip": 14.761904761904763,
+  "mean_abs_error": 3.9830476190476194,
+  "dataset_source": "Reddit posts (kfkas/service-tipping-reddit-data-filtered_v2)",
+  "timestamp": "2025-05-11 06:45:17"
+}

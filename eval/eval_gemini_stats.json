@@ -1,0 +1,12 @@
+{
+  "total_records": 112,
+  "used_records": 105,
+  "percentage_used": 93.75,
+  "mse": 28.623786666666668,
+  "rmse": 5.350120247869824,
+  "mean_actual_tip": 13.372761904761905,
+  "mean_predicted_tip": 13.333333333333334,
+  "mean_abs_error": 3.389333333333333,
+  "dataset_source": "Reddit posts (kfkas/service-tipping-reddit-data-final) - Filtered \u00b115%",
+  "timestamp": "2025-05-11 06:07:25"
+}

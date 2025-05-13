@@ -1,0 +1,3041 @@
+2025-05-11 06:10:43,478 - eval_gpt - INFO - OpenAI 클라이언트 초기화 성공 (모델: gpt-4.1-nano)
+2025-05-11 06:10:43,480 - eval_gpt - INFO - GPT 모델(gpt-4.1-nano)을 사용한 Reddit 게시물 기반 팁 예측 평가 시작
+2025-05-11 06:10:48,635 - eval_gpt - INFO - Reddit 게시물 기반 팁 데이터셋 로드 성공: 105 레코드
+2025-05-11 06:10:48,636 - eval_gpt - INFO - 처리 중... 레코드 #0 (샘플 1/10)
+2025-05-11 06:10:52,940 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:10:52,957 - eval_gpt - INFO - 레코드 #0 (Reddit 게시물) - 실제: 10.0%, 예측: 20.0%, 오차: 10.0%
+2025-05-11 06:10:53,471 - eval_gpt - INFO - 처리 중... 레코드 #1 (샘플 2/10)
+2025-05-11 06:10:57,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:10:57,617 - eval_gpt - INFO - 레코드 #1 (Reddit 게시물) - 실제: 0.0%, 예측: 20.0%, 오차: 20.0%
+2025-05-11 06:10:58,119 - eval_gpt - INFO - 처리 중... 레코드 #2 (샘플 3/10)
+2025-05-11 06:11:02,922 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:02,934 - eval_gpt - INFO - 레코드 #2 (Reddit 게시물) - 실제: 10.0%, 예측: 6.0%, 오차: -4.0%
+2025-05-11 06:11:03,436 - eval_gpt - INFO - 처리 중... 레코드 #3 (샘플 4/10)
+2025-05-11 06:11:07,932 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:07,943 - eval_gpt - INFO - 레코드 #3 (Reddit 게시물) - 실제: 0.0%, 예측: 0.0%, 오차: 0.0%
+2025-05-11 06:11:08,449 - eval_gpt - INFO - 처리 중... 레코드 #4 (샘플 5/10)
+2025-05-11 06:11:13,708 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:13,717 - eval_gpt - INFO - 레코드 #4 (Reddit 게시물) - 실제: 0.0%, 예측: 0.0%, 오차: 0.0%
+2025-05-11 06:11:14,228 - eval_gpt - INFO - 처리 중... 레코드 #5 (샘플 6/10)
+2025-05-11 06:11:19,123 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:19,134 - eval_gpt - INFO - 레코드 #5 (Reddit 게시물) - 실제: 7.5%, 예측: 0.0%, 오차: -7.5%
+2025-05-11 06:11:19,645 - eval_gpt - INFO - 처리 중... 레코드 #6 (샘플 7/10)
+2025-05-11 06:11:23,895 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:23,897 - eval_gpt - INFO - ### Video Caption Analysis
+
+The waitress demonstrated exceptional service qualities, including attentiveness, proactive communication, and a positive attitude. She went above and beyond by assisting with orders, providing extras, and adjusting the bill, which indicates a high level of professionalism and customer care.
+
+#### Evaluation Criteria:
+
+**a) Reliability:**  
+The description indicates the waitress handled orders accurately, considering special requests and making adjustments. No mistakes or errors are mentioned.  
+**Score: 5**  
+*Justification:* She maintained 100% accuracy, confirmed details, and considered customer preferences.
+
+**b) Responsiveness:**  
+She responded quickly and proactively, checking on the table frequently, explaining menu options, and assisting with special requests. Her attitude was enthusiastic and friendly, indicating immediate and proactive responses.  
+**Score: 5**  
+*Justification:* She responded promptly, with a friendly tone and proactive problem-solving.
+
+**c) Assurance:**  
+She demonstrated confidence in explaining menu options and handling bill adjustments, earning trust. She also facilitated special requests, which shows professionalism.  
+**Score: 5**  
+*Justification:* She earned customer trust and confidently handled inquiries and requests.
+
+**d) Empathy:**  
+The waitress showed high empathy by proactively engaging with the customer, understanding their needs, and providing personalized service, such as helping with takeout and extra condiments.  
+**Score: 5**  
+*Justification:* She demonstrated understanding of customer emotions and provided impressive personalized experiences.
+
+**e) Tangibles:**  
+The environment appears clean and well-maintained, with a tidy table and uniform. No issues are mentioned.  
+**Score: 4**  
+*Justification:* The setting seems tidy and professional, but no explicit mention of standards or certifications.
+
+---
+
+### Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (5 + 5 + 5 + 5 + 4) * 4  
+= (24) * 4  
+= **96**
+
+---
+
+### Total Score
+
+**Total Score = 96**
+
+---
+
+### Tip Calculation
+
+**Service Level:**  
+With a total score of 96, the service is excellent, clearly "Good."
+
+**Country & Restaurant Type:**  
+USA, Casual dining.
+
+**Tipping Range for USA Casual dining:**  
+- Poor: 0-5%  
+- Normal: 6-15%  
+- Good: 16-20%
+
+Since the review and video are highly positive, and the score is very high, we select the upper end of the "Good" range.
+
+**Final Tip Percentage:** 20% (upper end of the "Good" range)  
+**Subtotal:** $25.00
+
+**Tip Amount:**  
+$25.00 * 20% = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The waitress provided attentive service, frequently checking on the table and ensuring drinks were full. She proactively explained menu options and assisted with ordering decisions. Demonstrating exceptional effort, she facilitated taking endless appetizer items home against house rules, boxing the food, providing extra condiments, and adjusting the bill. She maintained a consistently positive and enthusiastic attitude throughout the interaction.",
+  "Final Reason": "The waitress demonstrated exceptional reliability, responsiveness, assurance, empathy, and maintained good tangibles, indicating top-tier service. Her proactive and personalized approach, along with flawless execution, justifies a high tip percentage.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:11:23,902 - eval_gpt - INFO - 레코드 #6 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:11:24,404 - eval_gpt - INFO - 처리 중... 레코드 #7 (샘플 8/10)
+2025-05-11 06:11:29,228 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:29,535 - eval_gpt - WARNING - JSON 파싱 오류: Expecting ',' delimiter: line 2 column 36 (char 37) - 텍스트 기반 추출로 대체합니다.
+2025-05-11 06:11:29,536 - eval_gpt - WARNING - 유효하지 않은 숫자 형식: ''
+2025-05-11 06:11:29,536 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption Summary:**  
+The server intentionally delayed taking the order, provided limited service (only one drink initially per person, splitting a pitcher, bringing extra sauces), delegated food delivery to a food runner, and left a to-go order under a heat lamp. Despite these issues, the server maintained a smile and kind tone.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server made deliberate delays and limited service, which indicates a lack of accuracy and attentiveness.  
+- No mention of billing errors, but the service quality is poor due to delays and limited offerings.  
+**Score: 2**  
+*Justification:* No major billing mistakes, but the intentional delays and limited service suggest minor omissions and poor reliability.
+
+**b) Responsiveness:**  
+- The server delayed taking orders and service steps intentionally, indicating slow response.  
+- Despite a kind tone, the delays are significant.  
+**Score: 2**  
+*Justification:* Responds but with significant delays, not prompt or proactive.
+
+**c) Assurance:**  
+- The server maintained a kind tone and a smile, which suggests confidence and professionalism.  
+- No explicit menu explanations or premium suggestions, but the tone was friendly.  
+**Score: 4**  
+*Justification:* Professional and friendly, but not necessarily offering detailed explanations or premium suggestions.
+
+**d) Empathy:**  
+- The server kept a kind tone despite poor service, indicating some friendliness.  
+- No evidence of personalized service or understanding of customer emotions beyond politeness.  
+**Score: 3**  
+*Justification:* Basic friendliness, but no personalized or proactive empathy.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness or uniform, but no issues reported.  
+- The environment seems acceptable, and no negative comments about cleanliness.  
+**Score: 4**  
+*Justification:* Assumed tidy and professional environment, meeting standard expectations.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (2 + 2 + 4 + 3 + 4) * 4  
+= (15) * 4  
+= **60**
+
+---
+
+### 5. Total Score
+
+**Total Score = 60**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The service was poor due to intentional delays, limited service, and minimal attentiveness, despite the friendly tone.  
+- The review content indicates dissatisfaction with service quality.
+
+**Service Category:**  
+- Poor service level, as the score is low and service was intentionally delayed and limited.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining.
+
+**Tip Percentage Range (USA, Casual dining):**  
+- Poor: 0-5%  
+- Normal: 6-15%  
+- Good: 16-20%
+
+**Decision:**  
+- Given the poor service and negative review tone, the tip should be at the lower end of the poor range, i.e., **0%**.
+
+**Final Tip Percentage:** 0%
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption i(th) ###": 1 "The server intentionally delayed taking the table's order, bringing drinks (providing only one initially per person), bringing refills (splitting a warm pitcher), and bringing extra sauces. Food delivery was delegated to a food runner, and a to-go order was left under a heat lamp from initial preparation. Despite these intentional delays and limitations, the server maintained a smile and kind tone.",
+  "Final Reason": "The service was intentionally delayed and limited, indicating poor reliability and responsiveness. Despite the friendly tone, the overall service quality was unsatisfactory, leading to a low service score. The positive attitude does not compensate for the poor service, warranting a minimal tip.",
+  "final_tip_percentage": 0,
+  "final_tip_amount": 0.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:11:29,542 - eval_gpt - WARNING - 레코드 #7: 유효한 팁 예측값을 얻지 못했습니다. 이 컬럼은 pass하고 계속 진행합니다.
+2025-05-11 06:11:29,542 - eval_gpt - INFO - 처리 중... 레코드 #8 (샘플 9/10)
+2025-05-11 06:11:33,218 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:33,220 - eval_gpt - WARNING - JSON 파싱 오류: Expecting ',' delimiter: line 2 column 36 (char 37) - 텍스트 기반 추출로 대체합니다.
+2025-05-11 06:11:33,220 - eval_gpt - WARNING - 유효하지 않은 숫자 형식: ''
+2025-05-11 06:11:33,228 - eval_gpt - WARNING - 레코드 #8: 유효한 팁 예측값을 얻지 못했습니다. 이 컬럼은 pass하고 계속 진행합니다.
+2025-05-11 06:11:33,228 - eval_gpt - INFO - 처리 중... 레코드 #9 (샘플 10/10)
+2025-05-11 06:11:38,335 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:11:38,346 - eval_gpt - INFO - 레코드 #9 (Reddit 게시물) - 실제: 0.0%, 예측: 20.0%, 오차: 20.0%
+2025-05-11 06:11:38,854 - eval_gpt - INFO - 최대 샘플 수(10)에 도달하여 평가 종료
+2025-05-11 06:11:38,855 - eval_gpt - INFO - 평가 완료. 총 8 Reddit 게시물 레코드 처리됨 (실패: 2개)
+2025-05-11 06:11:38,855 - eval_gpt - INFO - MSE: 121.5312, RMSE: 11.0241
+2025-05-11 06:11:38,857 - eval_gpt - INFO - 결과가 eval_results\eval_gpt_results.csv에 저장되었습니다. (총 10개 레코드)
+2025-05-11 06:11:38,861 - eval_gpt - INFO - 상세 결과가 eval_results\eval_gpt_results_full.json에 저장되었습니다.
+2025-05-11 06:11:38,862 - eval_gpt - INFO - 평가 통계가 eval_results\eval_gpt_stats.json에 저장되었습니다.
+2025-05-11 06:11:38,862 - eval_gpt - INFO - 평가 완료
+2025-05-11 06:11:59,766 - eval_gpt - INFO - OpenAI 클라이언트 초기화 성공 (모델: gpt-4.1-nano)
+2025-05-11 06:11:59,769 - eval_gpt - INFO - GPT 모델(gpt-4.1-nano)을 사용한 Reddit 게시물 기반 팁 예측 평가 시작
+2025-05-11 06:12:03,812 - eval_gpt - INFO - Reddit 게시물 기반 팁 데이터셋 로드 성공: 105 레코드
+2025-05-11 06:12:03,812 - eval_gpt - INFO - 처리 중... 레코드 #0 (샘플 1/105)
+2025-05-11 06:12:08,080 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:08,096 - eval_gpt - INFO - 레코드 #0 (Reddit 게시물) - 실제: 10.0%, 예측: 20.0%, 오차: 10.0%
+2025-05-11 06:12:08,596 - eval_gpt - INFO - 처리 중... 레코드 #1 (샘플 2/105)
+2025-05-11 06:12:12,656 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:12,664 - eval_gpt - INFO - 레코드 #1 (Reddit 게시물) - 실제: 0.0%, 예측: 20.0%, 오차: 20.0%
+2025-05-11 06:12:13,165 - eval_gpt - INFO - 처리 중... 레코드 #2 (샘플 3/105)
+2025-05-11 06:12:17,073 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:17,084 - eval_gpt - INFO - 레코드 #2 (Reddit 게시물) - 실제: 10.0%, 예측: 0.0%, 오차: -10.0%
+2025-05-11 06:12:17,593 - eval_gpt - INFO - 처리 중... 레코드 #3 (샘플 4/105)
+2025-05-11 06:12:21,774 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:21,785 - eval_gpt - INFO - 레코드 #3 (Reddit 게시물) - 실제: 0.0%, 예측: 0.0%, 오차: 0.0%
+2025-05-11 06:12:22,299 - eval_gpt - INFO - 처리 중... 레코드 #4 (샘플 5/105)
+2025-05-11 06:12:27,215 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:27,230 - eval_gpt - INFO - 레코드 #4 (Reddit 게시물) - 실제: 0.0%, 예측: 8.0%, 오차: 8.0%
+2025-05-11 06:12:27,746 - eval_gpt - INFO - 처리 중... 레코드 #5 (샘플 6/105)
+2025-05-11 06:12:31,937 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:31,939 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Summary:**  
+The server was overwhelmed managing a large party of 30 people, leading to delays in refills, order inaccuracies, and neglect of other tables. Despite manager assistance, the service was clearly strained, resulting in guest dissatisfaction.
+
+---
+
+**Reliability:**  
+- The server struggled with order accuracy and timely service, especially with a large party, indicating frequent mistakes and issues with order confirmation.  
+**Score: 2**  
+*Justification:* No mention of major billing errors, but evident minor omissions and delays due to workload.
+
+**Responsiveness:**  
+- The server was overwhelmed, responded slowly to requests, and failed to provide prompt service.  
+**Score: 2**  
+*Justification:* The service was slow and unresponsive under pressure, despite some effort.
+
+**Assurance:**  
+- The server appeared unable to confidently handle menu questions or offer premium suggestions, indicating a lack of professional assurance.  
+**Score: 3**  
+*Justification:* No explicit mention of menu explanations or confidence, but no rude behavior either.
+
+**Empathy:**  
+- The server's overwhelmed state suggests minimal personalized consideration or proactive empathy.  
+**Score: 2**  
+*Justification:* No indication of personalized service or understanding of guest emotions.
+
+**Tangibles:**  
+- No specific mention of cleanliness or physical appearance issues; focus is on service performance.  
+**Score: 3**  
+*Justification:* Assumed acceptable but not highlighted as exceptional.
+
+---
+
+### Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (2 + 2 + 3 + 2 + 3) * 4  
+= (12) * 4  
+= **48**
+
+---
+
+### Total Score
+
+**Total Score = 48**
+
+---
+
+### Final Reason
+
+The service was notably poor due to the server being overwhelmed, leading to delays, inaccuracies, and neglect. Despite the challenging situation, the service did not meet the standards of attentive, responsive, or confident service. The guest dissatisfaction reflected the service's shortcomings. Based on the overall performance, the service level is categorized as "Poor."
+
+---
+
+### Tip Calculation
+
+- **Country:** USA  
+- **Restaurant Type:** Casual dining  
+- **Service Level:** Poor (score 48 falls into Poor category)  
+
+**Tip Range for USA Casual dining (Poor):** 0% to 5%  
+- Since the service was very poor, and reviews highlight significant issues, we select the lower end of the range.
+
+**Final tip percentage:** **0%**
+
+**Final tip amount:**  
+$25.00 * 0% = **$0.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server was overwhelmed while managing a large party that unexpectedly grew to 30 people and several other tables. This resulted in the server struggling to provide timely refills and attend to guest requests for the large party. Food delivery for the large party was not consistently in the order sent, leading to apparent guest dissatisfaction and delays. Other tables in the server's section were neglected due to the demands of the large group, despite manager assistance being sought to run food.",
+  "Final Reason": "The service was significantly strained due to managing a large party, leading to delays, inaccuracies, and neglect of other tables. The server's overwhelmed state resulted in poor responsiveness, reliability, and overall service quality, justifying a poor service rating and a minimal tip.",
+  "final_tip_percentage": 0,
+  "final_tip_amount": 0.0,
+  "final_total_bill": 25.0
+}
+```
+2025-05-11 06:12:31,945 - eval_gpt - INFO - 레코드 #5 (Reddit 게시물) - 실제: 7.5%, 예측: 0.0%, 오차: -7.5%
+2025-05-11 06:12:32,452 - eval_gpt - INFO - 처리 중... 레코드 #6 (샘플 7/105)
+2025-05-11 06:12:36,736 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:36,738 - eval_gpt - INFO - ### Video Caption Analysis
+
+The waitress demonstrated attentive service by frequently checking on the table and ensuring drinks were full, which indicates high responsiveness and attentiveness. She proactively explained menu options and assisted with ordering decisions, showing confidence and assurance in her knowledge. She also went above and beyond by facilitating taking appetizer items home, boxing food, providing extra condiments, and adjusting the bill, reflecting exceptional effort and personalized service. Her positive and enthusiastic attitude further enhances the customer experience, demonstrating high empathy and tangible presentation.
+
+**Evaluation Criteria and Scores:**
+
+- **Reliability:**  
+  The waitress handled custom orders correctly, considered preferences, and made no mistakes. She demonstrated consistent accuracy and attention to detail.  
+  **Score: 4**  
+  *Justification:* She considered preferences and handled special requests well, but there's no mention of repeat confirmation procedures.
+
+- **Responsiveness:**  
+  She responded quickly, checked frequently, and was proactive in assisting with additional requests.  
+  **Score: 5**  
+  *Justification:* The description indicates immediate, friendly responses and proactive service.
+
+- **Assurance:**  
+  She explained menu options confidently, handled bill adjustments, and maintained professionalism, earning trust.  
+  **Score: 5**  
+  *Justification:* She demonstrated confidence and professionalism, earning customer trust.
+
+- **Empathy:**  
+  She showed genuine interest, personalized service (e.g., helping with takeout, extra condiments), and maintained a positive attitude.  
+  **Score: 5**  
+  *Justification:* Her proactive and enthusiastic attitude indicates high empathy and understanding of customer needs.
+
+- **Tangibles:**  
+  The environment was well-maintained, and her uniform was tidy, reflecting good hygiene and presentation.  
+  **Score: 4**  
+  *Justification:* The description suggests a clean and professional appearance, but no explicit mention of FDA standards or certification.
+
+**Video Score Calculation:**
+
+\[
+\text{Video Score} = (4 + 5 + 5 + 5 + 4) \times 4 = 23 \times 4 = 92
+\]
+
+---
+
+### Total Score
+
+**Total Score = 92**
+
+---
+
+### Tip Calculation
+
+- **Service Level:**  
+  The score of 92 indicates excellent service, which falls into the "Good" category.
+
+- **Country and Restaurant Type:**  
+  USA, Casual dining.
+
+- **Tip Range for USA Casual dining (Good):**  
+  16% to 20%.
+
+- **Decision on tip percentage:**  
+  Given the exceptional service described, I will select the upper end of the "Good" range, **20%**.
+
+- **Calculation of tip amount:**  
+  Subtotal = $25.00  
+  Tip = 20% of $25.00 = $5.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The waitress provided attentive service, frequently checking on the table and ensuring drinks were full. She proactively explained menu options and assisted with ordering decisions. Demonstrating exceptional effort, she facilitated taking endless appetizer items home against house rules, boxing the food, providing extra condiments, and adjusting the bill. She maintained a consistently positive and enthusiastic attitude throughout the interaction.",
+  "Final Reason": "The waitress demonstrated exceptional attentiveness, professionalism, personalized service, and a positive attitude, resulting in a high service score of 92. The service quality aligns with the 'Good' category, warranting the highest tip percentage within the USA casual dining range.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:12:36,745 - eval_gpt - INFO - 레코드 #6 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:12:37,258 - eval_gpt - INFO - 처리 중... 레코드 #7 (샘플 8/105)
+2025-05-11 06:12:42,530 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:42,532 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server intentionally delayed taking the table's order, bringing drinks (providing only one initially per person), bringing refills (splitting a warm pitcher), and bringing extra sauces. Food delivery was delegated to a food runner, and a to-go order was left under a heat lamp from initial preparation. Despite these intentional delays and limitations, the server maintained a smile and kind tone."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server delayed taking orders intentionally, which indicates a lack of accuracy and attentiveness.  
+- Multiple issues with order timing and handling suggest frequent mistakes or omissions.  
+**Score:** 2 (No major mistakes but minor omissions occur)  
+*Justification:* The delays and limited initial service show some unreliability, but no major billing errors or incorrect orders are explicitly mentioned.
+
+**b) Responsiveness:**  
+- The server responded with delays, especially in taking orders and delivering refills.  
+- Despite maintaining a kind tone, the delays indicate slow response times.  
+**Score:** 2 (Responds but with significant delays)  
+*Justification:* The intentional delays point to sluggish responsiveness, though the tone was friendly.
+
+**c) Assurance:**  
+- The server maintained a smile and kind tone, suggesting a friendly attitude.  
+- No mention of menu explanations or confidence levels, but the tone indicates professionalism.  
+**Score:** 4 (Professional explanations, confident handling)  
+*Justification:* The server's demeanor was friendly and professional, even if service was delayed.
+
+**d) Empathy:**  
+- The server kept a smile and kind tone despite delays, showing some level of friendliness.  
+- No specific personalization or proactive emotional understanding is mentioned.  
+**Score:** 3 (Basic friendliness but lacks personalization)  
+*Justification:* Maintaining a friendly tone indicates some empathy, but no personalized service details are provided.
+
+**e) Tangibles:**  
+- No explicit mention of cleanliness or uniform issues.  
+- The environment seems acceptable, but no specific details are given.  
+**Score:** 3 (Acceptable but lacks attention to detail)  
+*Justification:* No negative comments about cleanliness or appearance, so assuming standard tidiness.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (2 + 2 + 4 + 3 + 3) * 4  
+= (14) * 4  
+= **56**
+
+---
+
+### 5. Total Score
+
+**Total Score = 56**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 56 indicates a "Normal" service level, as it falls within the typical range for average service.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining:**  
+- Normal: 6% to 15%
+
+**Decision:**  
+- Given the delays and minor issues but friendly demeanor, the service is "Normal."  
+- To reflect the somewhat negative aspects (delays, limited initial service), choose the lower end of the normal range.
+
+**Final Tip Percentage:** 8% (within the normal range, leaning towards the lower side due to delays)
+
+**Final Tip Amount:**  
+$25.00 * 8% = **$2.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server intentionally delayed taking the table's order, bringing drinks (providing only one initially per person), bringing refills (splitting a warm pitcher), and bringing extra sauces. Food delivery was delegated to a food runner, and a to-go order was left under a heat lamp from initial preparation. Despite these intentional delays and limitations, the server maintained a smile and kind tone.",
+  "Final Reason": "The service was delayed and somewhat limited, indicating average reliability and responsiveness. The server maintained a friendly and professional demeanor, showing empathy and acceptable tangibles. Overall, the service level is considered normal, but delays impacted the experience.",
+  "final_tip_percentage": 8,
+  "final_tip_amount": 2.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:12:42,540 - eval_gpt - INFO - 레코드 #7 (Reddit 게시물) - 실제: 0.0%, 예측: 8.0%, 오차: 8.0%
+2025-05-11 06:12:43,048 - eval_gpt - INFO - 처리 중... 레코드 #8 (샘플 9/105)
+2025-05-11 06:12:47,701 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:47,705 - eval_gpt - INFO - ### Video Caption Analysis
+
+The video caption describes a server who handled the customer's request professionally by recommending an alternative beer, explaining the stock issue, and complying with the customer's request to remove the alternative. The server's behavior indicates good communication, attentiveness, and professionalism.
+
+**Reliability:**  
+The server correctly handled the stock issue and fulfilled the customer's request without errors. There is no mention of order mistakes or billing errors.  
+**Score: 4**  
+*Justification:* The server managed custom orders and provided relevant information, but there's no explicit mention of repeat confirmation procedures or perfect accuracy.
+
+**Responsiveness:**  
+The server responded promptly and politely, explaining the situation and accommodating the customer's request. The tone appears friendly and proactive.  
+**Score: 5**  
+*Justification:* The server's explanations and actions suggest immediate, friendly, and proactive responses.
+
+**Assurance:**  
+The server explained the stock issue and timeline confidently, demonstrating knowledge and professionalism. No indication of uncertainty or rudeness.  
+**Score: 4**  
+*Justification:* The explanation was clear and professional, earning customer trust, but there's no mention of offering premium suggestions.
+
+**Empathy:**  
+The server showed understanding of the customer's preferences and responded appropriately to their request, indicating consideration.  
+**Score: 4**  
+*Justification:* The server accommodated the customer's request and explained the situation, showing good attentiveness.
+
+**Tangibles:**  
+There is no specific mention of cleanliness, uniform, or physical environment. Given the positive tone, assume standard cleanliness and tidiness.  
+**Score: 4**  
+*Justification:* The environment appears acceptable and tidy, but no explicit details are provided.
+
+---
+
+### Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (4 + 5 + 4 + 4 + 4) * 4  
+= (21) * 4  
+= **84**
+
+---
+
+### Total Score
+
+**Total Score = 84**
+
+---
+
+### Tip Calculation
+
+- The review content is positive, with no negative comments or ethical issues.
+- The total score of 84 indicates a "Good" service level.
+- For USA casual dining, "Good" corresponds to a tip percentage of **16-20%**.
+- Given the positive review and high score, we select the upper end of the range.
+
+**Final tip percentage: 20%**
+
+### Final Tip Amount
+
+Subtotal: $25.00  
+Tip: 20% of $25.00 = **$5.00**
+
+### Final Total Bill
+
+Subtotal + Tip = $25.00 + $5.00 = **$30.00**
+
+---
+
+### Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server recommended a similar alternative beer when the customer's preferred option was unavailable and explained the reason for the stock issue. The server also explained the timeline for restocking and that beer inventory was the bar manager's responsibility. The server complied with the customer's request to remove the alternative beer.",
+  "Final Reason": "The server demonstrated excellent responsiveness, professionalism, and empathy, handling the stock issue transparently and accommodating the customer's request. No negative or unethical reviews were present, and the service was rated as 'Good' based on the high scores. Therefore, a high tip percentage is justified.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:12:47,711 - eval_gpt - INFO - 레코드 #8 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:12:48,223 - eval_gpt - INFO - 처리 중... 레코드 #9 (샘플 10/105)
+2025-05-11 06:12:53,370 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:53,384 - eval_gpt - INFO - 레코드 #9 (Reddit 게시물) - 실제: 0.0%, 예측: 20.0%, 오차: 20.0%
+2025-05-11 06:12:53,898 - eval_gpt - INFO - 처리 중... 레코드 #10 (샘플 11/105)
+2025-05-11 06:12:58,485 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:12:58,496 - eval_gpt - INFO - 레코드 #10 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:12:58,998 - eval_gpt - INFO - 처리 중... 레코드 #11 (샘플 12/105)
+2025-05-11 06:13:03,110 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:03,242 - eval_gpt - INFO - 레코드 #11 (Reddit 게시물) - 실제: 18.0%, 예측: 20.0%, 오차: 2.0%
+2025-05-11 06:13:03,756 - eval_gpt - INFO - 처리 중... 레코드 #12 (샘플 13/105)
+2025-05-11 06:13:08,162 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:08,172 - eval_gpt - INFO - 레코드 #12 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:13:08,675 - eval_gpt - INFO - 처리 중... 레코드 #13 (샘플 14/105)
+2025-05-11 06:13:13,022 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:13,032 - eval_gpt - INFO - 레코드 #13 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:13:13,542 - eval_gpt - INFO - 처리 중... 레코드 #14 (샘플 15/105)
+2025-05-11 06:13:19,048 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:19,050 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Full Video Scene Caption:**  
+"The server took drink and food orders, making an initial mistake on one drink order (lemonade instead of water). The server immediately realized the error, apologized, offered correction, and confirmed no charge. Upon check-back, the server responded promptly to overcooked burger complaints by apologizing, inspecting the food, offering replacements, involving management, and securing complimentary meals and a free dessert."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server made a mistake on the drink order but corrected it immediately and confirmed no charge.  
+- Response to food complaints was prompt, with apologies, inspection, replacements, and management involvement.  
+- Overall, the service was mostly accurate with minor initial errors but handled well.  
+**Score: 4**  
+*Justification:* Custom orders were correctly handled after initial mistake, and allergy/preference considerations were evident through prompt correction and no charges.
+
+**b) Responsiveness:**  
+- The server responded immediately to the mistake and complaints, apologized, and took action swiftly.  
+- The responses were quick, polite, and proactive.  
+**Score: 5**  
+*Justification:* Immediate responses, friendly tone, and proactive problem-solving are evident.
+
+**c) Assurance:**  
+- The server explained the mistake, apologized, and involved management when needed.  
+- The handling of complaints and offering replacements and complimentary items shows confidence and professionalism.  
+**Score: 4**  
+*Justification:* Professional explanations and confident handling, with some room for more premium suggestions.
+
+**d) Empathy:**  
+- The server showed understanding by apologizing and offering replacements and free desserts.  
+- The quick resolution and offering of complimentary items indicate consideration of customer satisfaction.  
+**Score: 4**  
+*Justification:* Demonstrates good empathy, remembering customer needs and providing personalized service.
+
+**e) Tangibles:**  
+- The scene description does not mention any issues with cleanliness or uniform.  
+- Presumed to be acceptable but not explicitly detailed.  
+**Score: 3**  
+*Justification:* No explicit mention of cleanliness or tidiness, so assuming acceptable but not exceptional.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 5 + 4 + 4 + 3) * 4  
+= (20) * 4  
+= **80**
+
+---
+
+### 5. Total Score
+
+**Total Score = 80**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 80 indicates a **Good** service level.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining:**  
+- Good: 16% to 20%
+
+**Selected tip percentage:**  
+- Since the review is positive and the service was proactive and professional, we choose the upper end of the range.  
+- **Tip percentage: 20%**
+
+**Calculation:**  
+- Subtotal: $25.00  
+- Tip amount: 20% of $25.00 = $5.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server took drink and food orders, making an initial mistake on one drink order (lemonade instead of water). The server immediately realized the error, apologized, offered correction, and confirmed no charge. Upon check-back, the server responded promptly to overcooked burger complaints by apologizing, inspecting the food, offering replacements, involving management, and securing complimentary meals and a free dessert.",
+  "Final Reason": "The server demonstrated excellent responsiveness and empathy, promptly correcting mistakes and handling complaints professionally. Minor initial errors were quickly rectified, and the service was attentive and considerate, warranting a high tip. No ethical issues were present, and the overall experience was positive.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:13:19,055 - eval_gpt - INFO - 레코드 #14 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:13:19,557 - eval_gpt - INFO - 처리 중... 레코드 #15 (샘플 16/105)
+2025-05-11 06:13:24,509 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:24,518 - eval_gpt - INFO - 레코드 #15 (Reddit 게시물) - 실제: 15.0%, 예측: 20.0%, 오차: 5.0%
+2025-05-11 06:13:25,028 - eval_gpt - INFO - 처리 중... 레코드 #16 (샘플 17/105)
+2025-05-11 06:13:29,726 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:29,736 - eval_gpt - INFO - 레코드 #16 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:13:30,247 - eval_gpt - INFO - 처리 중... 레코드 #17 (샘플 18/105)
+2025-05-11 06:13:34,506 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:34,516 - eval_gpt - INFO - 레코드 #17 (Reddit 게시물) - 실제: 0.0%, 예측: 0.0%, 오차: 0.0%
+2025-05-11 06:13:35,030 - eval_gpt - INFO - 처리 중... 레코드 #18 (샘플 19/105)
+2025-05-11 06:13:39,728 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:39,732 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Analysis of the video caption:**
+
+The server demonstrated proactive behavior by anticipating customer needs, confirming non-standard procedures with management, and providing attentive service through refills and engagement. The server also responded promptly to requests for tickets. There is no mention of any mistakes, rudeness, or ethical issues. The behavior suggests a high level of professionalism, attentiveness, and customer focus.
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server correctly handled the non-standard drink service, confirmed with management, and provided refills without errors.  
+- No mistakes or billing errors are mentioned.  
+**Score: 5**  
+*Justification:* The server's actions indicate 100% accuracy and proper handling of special requests, with confirmation procedures.
+
+**b) Responsiveness:**  
+- The server responded promptly to requests for refills and tickets, and proactively engaged with customers.  
+- No delays or ignoring requests are noted.  
+**Score: 5**  
+*Justification:* Immediate, attentive responses with proactive engagement.
+
+**c) Assurance:**  
+- The server confirmed procedures with management, indicating confidence and professionalism.  
+- Provided refills and responded to requests efficiently.  
+**Score: 5**  
+*Justification:* Demonstrates confidence, professionalism, and ability to explain and handle service smoothly.
+
+**d) Empathy:**  
+- The server engaged in motivational conversation, showing understanding of customer needs and preferences.  
+- Proactively anticipated needs and maintained a friendly tone.  
+**Score: 5**  
+*Justification:* Shows high empathy by engaging personally and understanding customer goals.
+
+**e) Tangibles:**  
+- The caption does not mention any issues with cleanliness or uniform.  
+- The environment appears tidy, and service seems professional.  
+**Score: 4**  
+*Justification:* Implied cleanliness and tidiness, but no explicit mention of standards or certifications.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (5 + 5 + 5 + 5 + 4) * 4  
+= (24) * 4  
+= **96**
+
+---
+
+### 5. Total Score
+
+**Total Score = 96**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The service was proactive, attentive, professional, and personalized.  
+- The high score indicates a "Good" service level.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining.
+
+**Tip Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected tip percentage:**  
+- Given the high score and positive review tone, select the upper end of the "Good" range.  
+- **Tip percentage: 20%**
+
+**Calculation:**  
+- Subtotal: $25.00  
+- Tip amount: 20% of $25.00 = $5.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server proactively anticipated the customers' high drink consumption based on overheard conversation and brought three pitchers of Dr. Pepper before taking their food order. They confirmed this non-standard approach with management. The server was attentive, checking on the table's drink progress, providing refills by bringing three more pitchers, and engaging in specific, motivational conversation about their drinking goal. The server provided tickets promptly when requested.",
+  "Final Reason": "The server demonstrated exceptional reliability, responsiveness, assurance, empathy, and maintained good tangibles, with no ethical issues or negative reviews. The service was proactive, attentive, and professional, warranting a high tip percentage.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:13:39,737 - eval_gpt - INFO - 레코드 #18 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:13:40,238 - eval_gpt - INFO - 처리 중... 레코드 #19 (샘플 20/105)
+2025-05-11 06:13:44,358 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:44,369 - eval_gpt - INFO - 레코드 #19 (Reddit 게시물) - 실제: 18.0%, 예측: 20.0%, 오차: 2.0%
+2025-05-11 06:13:44,873 - eval_gpt - INFO - 처리 중... 레코드 #20 (샘플 21/105)
+2025-05-11 06:13:49,282 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:49,283 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server checked on the table then delayed returning, later asking about another round instead of providing the check. The server initially disputed the customer's claim of asking for the check, but quickly retrieved it while maintaining a visibly strained demeanor. After processing payment, the server later confronted the customer outside, throwing the receipt and shouting insults in response to a note left on the [REMOVED] line."
+
+---
+
+#### Reliability:
+- The server delayed returning and disputed the customer's request for the check, indicating a lack of attentiveness and possible order or service mistakes.
+- The strained demeanor and confrontation outside suggest unprofessional behavior.
+- **Score: 2**  
+*Justification:* No major billing errors are explicitly mentioned, but the delay, dispute, and confrontational behavior point to minor service issues and unprofessional conduct.
+
+#### Responsiveness:
+- The server delayed returning to the table and responded with a strained demeanor, indicating slow or unresponsive service.
+- The server's response to the customer's request was delayed and strained.
+- **Score: 2**  
+*Justification:* Response was slow and not friendly, with signs of unresponsiveness.
+
+#### Assurance:
+- The server disputed the customer's request and displayed strained behavior, indicating a lack of confidence and professionalism.
+- No evidence of menu explanations or confident handling.
+- **Score: 2**  
+*Justification:* The server's behavior shows insufficient assurance and professionalism.
+
+#### Empathy:
+- The server's strained demeanor, confrontation, and shouting insults demonstrate a lack of empathy.
+- No signs of personalized service or understanding customer emotions.
+- **Score: 1**  
+*Justification:* Shows no interest in customer experience, acts unprofessionally.
+
+#### Tangibles:
+- No specific mention of cleanliness or physical environment issues.
+- The focus is on the server's behavior.
+- **Score: 3**  
+*Justification:* No explicit mention of cleanliness issues; assume acceptable but not exceptional.
+
+---
+
+### Video Score Calculation
+\[
+\text{Video Score} = (2 + 2 + 2 + 1 + 3) \times 4 = 10 \times 4 = 40
+\]
+
+---
+
+### Total Score
+**Total Score = 40**
+
+---
+
+### Final Reason
+The service was notably poor, with delays, disputes, and unprofessional conduct, indicating a poor service level. Despite the restaurant being casual dining in the USA, the behavior warrants a lower tip percentage within the normal range.
+
+---
+
+### Tip Calculation
+- **Service Level:** Poor (due to behavior and delays)
+- **Country & Restaurant Type:** USA, Casual dining
+- **Appropriate tipping range:** 0% to 15%
+- **Selected percentage:** Since the review is very negative, we choose the lower end of the normal range, which is 6%.
+
+---
+
+### Final Output
+```json
+{
+  "### Video Caption 1 ###": "The server checked on the table then delayed returning, later asking about another round instead of providing the check. The server initially disputed the customer's claim of asking for the check, but quickly retrieved it while maintaining a visibly strained demeanor. After processing payment, the server later confronted the customer outside, throwing the receipt and shouting insults in response to a note left on the [REMOVED] line.",
+  "Final Reason": "The service was poor due to delays, unprofessional behavior, and lack of attentiveness, leading to a low tip recommendation within the USA casual dining context.",
+  "final_tip_percentage": 6,
+  "final_tip_amount": 1.50,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:13:49,288 - eval_gpt - INFO - 레코드 #20 (Reddit 게시물) - 실제: 0.0%, 예측: 6.0%, 오차: 6.0%
+2025-05-11 06:13:49,793 - eval_gpt - INFO - 처리 중... 레코드 #21 (샘플 22/105)
+2025-05-11 06:13:54,226 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:54,236 - eval_gpt - INFO - 레코드 #21 (Reddit 게시물) - 실제: 5.0%, 예측: 0.0%, 오차: -5.0%
+2025-05-11 06:13:54,747 - eval_gpt - INFO - 처리 중... 레코드 #22 (샘플 23/105)
+2025-05-11 06:13:59,118 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:13:59,127 - eval_gpt - INFO - 레코드 #22 (Reddit 게시물) - 실제: 3.09%, 예측: 10.0%, 오차: 6.91%
+2025-05-11 06:13:59,635 - eval_gpt - INFO - 처리 중... 레코드 #23 (샘플 24/105)
+2025-05-11 06:14:04,644 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:04,921 - eval_gpt - INFO - 레코드 #23 (Reddit 게시물) - 실제: 0.0%, 예측: 12.0%, 오차: 12.0%
+2025-05-11 06:14:05,437 - eval_gpt - INFO - 처리 중... 레코드 #24 (샘플 25/105)
+2025-05-11 06:14:09,811 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:09,821 - eval_gpt - INFO - 레코드 #24 (Reddit 게시물) - 실제: 10.0%, 예측: 20.0%, 오차: 10.0%
+2025-05-11 06:14:10,326 - eval_gpt - INFO - 처리 중... 레코드 #25 (샘플 26/105)
+2025-05-11 06:14:14,071 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:14,081 - eval_gpt - INFO - 레코드 #25 (Reddit 게시물) - 실제: 15.0%, 예측: 20.0%, 오차: 5.0%
+2025-05-11 06:14:14,588 - eval_gpt - INFO - 처리 중... 레코드 #26 (샘플 27/105)
+2025-05-11 06:14:18,530 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:18,539 - eval_gpt - INFO - 레코드 #26 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:14:19,040 - eval_gpt - INFO - 처리 중... 레코드 #27 (샘플 28/105)
+2025-05-11 06:14:23,308 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:23,320 - eval_gpt - INFO - 레코드 #27 (Reddit 게시물) - 실제: 18.0%, 예측: 20.0%, 오차: 2.0%
+2025-05-11 06:14:23,824 - eval_gpt - INFO - 처리 중... 레코드 #28 (샘플 29/105)
+2025-05-11 06:14:28,690 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:28,701 - eval_gpt - INFO - 레코드 #28 (Reddit 게시물) - 실제: 10.0%, 예측: 6.0%, 오차: -4.0%
+2025-05-11 06:14:29,202 - eval_gpt - INFO - 처리 중... 레코드 #29 (샘플 30/105)
+2025-05-11 06:14:33,623 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:33,625 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server was walking past a new table when flagged down and immediately identified self, offering to take their order. The server patiently explained menu options and clarified details regarding vegan cheese and toppings. Before submitting the order, the server read it back and corrected the customer's misstatement of the crust type. The server successfully submitted the order."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server correctly identified the customer, explained menu options, clarified details, and confirmed the order before submission.  
+- No mistakes or omissions are mentioned.  
+- **Score: 4**  
+*Justification:* The server handled custom orders correctly and confirmed details, but there's no mention of repeat confirmation procedures or 100% accuracy, so not a perfect score.
+
+**b) Responsiveness:**  
+- The server responded promptly, patiently explained options, and corrected the order before submission.  
+- No delays or ignoring requests are noted.  
+- **Score: 5**  
+*Justification:* The server's responses appear immediate, friendly, and proactive.
+
+**c) Assurance:**  
+- The server explained menu options confidently, clarified details, and read back the order, demonstrating professionalism.  
+- No indication of uncertainty or lack of confidence.  
+- **Score: 5**  
+*Justification:* The server earned trust and handled menu questions confidently.
+
+**d) Empathy:**  
+- The server patiently explained and clarified details, indicating attentiveness.  
+- No specific personalization or emotional understanding is mentioned, but patience and clarity suggest good empathy.  
+- **Score: 4**  
+*Justification:* The server showed consideration but no explicit personalized service.
+
+**e) Tangibles:**  
+- The caption does not mention cleanliness, uniform, or physical appearance.  
+- Assume standard cleanliness and tidiness.  
+- **Score: 4**  
+*Justification:* No issues noted; standard tidiness presumed.
+
+---
+
+#### 1-2. Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (4 + 5 + 5 + 4 + 4) * 4  
+= (22) * 4  
+= **88**
+
+---
+
+### 5. Total Score
+
+**Total Score = 88**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 88 indicates excellent service, likely "Good" level.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining.
+
+**Tipping Range for USA Casual dining:**  
+- Good: 16% to 20%
+
+**Selected tip percentage:**  
+- Given the high score and positive review tone, choose the upper end of the "Good" range: **20%**
+
+**Subtotal:**  
+- $25.00
+
+**Tip Amount:**  
+- 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server was walking past a new table when flagged down and immediately identified self, offering to take their order. The server patiently explained menu options and clarified details regarding vegan cheese and toppings. Before submitting the order, the server read it back and corrected the customer's misstatement of the crust type. The server successfully submitted the order.",
+  "Final Reason": "The server demonstrated excellent reliability, responsiveness, assurance, and empathy, with proper handling of the order and customer interaction. No issues or negative reviews were noted, indicating top-tier service. The high video score and positive review content justify a generous tip.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:14:33,630 - eval_gpt - INFO - 레코드 #29 (Reddit 게시물) - 실제: 15.0%, 예측: 20.0%, 오차: 5.0%
+2025-05-11 06:14:34,138 - eval_gpt - INFO - 처리 중... 레코드 #30 (샘플 31/105)
+2025-05-11 06:14:38,719 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:38,728 - eval_gpt - INFO - 레코드 #30 (Reddit 게시물) - 실제: 0.0%, 예측: 0.0%, 오차: 0.0%
+2025-05-11 06:14:39,233 - eval_gpt - INFO - 처리 중... 레코드 #31 (샘플 32/105)
+2025-05-11 06:14:43,830 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:43,840 - eval_gpt - INFO - 레코드 #31 (Reddit 게시물) - 실제: 5.0%, 예측: 20.0%, 오차: 15.0%
+2025-05-11 06:14:44,349 - eval_gpt - INFO - 처리 중... 레코드 #32 (샘플 33/105)
+2025-05-11 06:14:48,703 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:48,714 - eval_gpt - INFO - 레코드 #32 (Reddit 게시물) - 실제: 0.0%, 예측: 8.0%, 오차: 8.0%
+2025-05-11 06:14:49,221 - eval_gpt - INFO - 처리 중... 레코드 #33 (샘플 34/105)
+2025-05-11 06:14:53,746 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:53,762 - eval_gpt - INFO - 레코드 #33 (Reddit 게시물) - 실제: 18.0%, 예측: 19.0%, 오차: 1.0%
+2025-05-11 06:14:54,273 - eval_gpt - INFO - 처리 중... 레코드 #34 (샘플 35/105)
+2025-05-11 06:14:58,602 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:14:58,604 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The solo server struggled significantly with attentiveness and responsiveness due to being overwhelmed, resulting in unfilled drinks and delays in food delivery and bussing. They made errors in both food delivery to a specific table and payment processing for the same table. The server apologized and offered to correct the payment error, attempting to explain the difficult circumstances."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server made errors in food delivery and payment processing, indicating frequent mistakes and billing errors.  
+**Score: 1**  
+*Justification:* Multiple errors and billing mistakes are explicitly mentioned, showing a lack of reliability.
+
+**b) Responsiveness:**  
+- The server was overwhelmed, leading to delays in drinks, food, and bussing, indicating slow responses and poor responsiveness.  
+**Score: 1**  
+*Justification:* The caption states "struggled significantly" with responsiveness, implying very slow and unresponsive service.
+
+**c) Assurance:**  
+- The server apologized and attempted to explain the circumstances, which shows some level of confidence and professionalism.  
+**Score: 4**  
+*Justification:* The server's apology and explanation demonstrate professional handling, though not perfect.
+
+**d) Empathy:**  
+- The server acknowledged the issues and explained the difficult circumstances, showing some empathy.  
+**Score: 3**  
+*Justification:* While they apologized, there's no indication of proactive personalized service or emotional understanding beyond basic acknowledgment.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness, uniform, or physical environment issues.  
+**Score: 4**  
+*Justification:* Assuming standard cleanliness and tidiness, as no negatives are mentioned.
+
+---
+
+#### 1-2. Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (1 + 1 + 4 + 3 + 4) * 4  
+= (13) * 4  
+= **52**
+
+---
+
+### 5. Total Score
+
+**Total Score = 52**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 52 indicates a **Poor to Fair** service level, but considering the server's apology and effort to explain, it leans slightly towards "Poor" rather than "Very Poor."
+
+**Country and Restaurant Type:**  
+- USA, Casual dining  
+- Tipping range for Poor service: 0% (ethical considerations), but since no ethical issues are present, we proceed with the standard guidelines.
+
+**Tipping percentage range for USA casual dining (Poor):**  
+- 0% (since the service was very poor, and reviews reflect significant issues)
+
+**Final Tip Percentage:**  
+- Given the very poor service, the tip should be **0%**.
+
+**Final Tip Amount:**  
+- $25.00 * 0% = **$0.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The solo server struggled significantly with attentiveness and responsiveness due to being overwhelmed, resulting in unfilled drinks and delays in food delivery and bussing. They made errors in both food delivery to a specific table and payment processing for the same table. The server apologized and offered to correct the payment error, attempting to explain the difficult circumstances.",
+  "Final Reason": "The server exhibited very poor reliability and responsiveness, with multiple errors and delays. Although they apologized and explained, the overall service quality was significantly lacking, warranting a minimal tip. No ethical issues were present, and the service was rated as very poor based on the video analysis.",
+  "final_tip_percentage": 0,
+  "final_tip_amount": 0.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:14:58,610 - eval_gpt - INFO - 레코드 #34 (Reddit 게시물) - 실제: 3.33%, 예측: 0.0%, 오차: -3.33%
+2025-05-11 06:14:59,123 - eval_gpt - INFO - 처리 중... 레코드 #35 (샘플 36/105)
+2025-05-11 06:15:03,948 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:04,198 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Summary:**  
+The server took over a large table after an initial seating error, introduced themselves, acknowledged the mistake, and provided service starting with drink orders. Throughout the night, the server used a sarcastic and joking communication style. Service was completed without major problems or complaints.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server handled the initial seating error and completed service without major complaints, indicating mostly accurate orders.  
+- No mention of billing errors or order mistakes beyond the initial seating issue.  
+- **Score: 4**  
+*Justification:* Custom orders were correctly handled, and the initial mistake was acknowledged, but there's no evidence of repeat confirmation procedures or perfect accuracy.
+
+**b) Responsiveness:**  
+- The server responded to the customers' needs and completed service smoothly.  
+- No delays or ignoring requests are mentioned.  
+- **Score: 4**  
+*Justification:* Quick and polite responses are implied, though the sarcastic tone suggests a casual, possibly less proactive attitude.
+
+**c) Assurance:**  
+- The server introduced themselves, acknowledged the mistake, and provided service confidently.  
+- No explicit mention of menu explanations or premium suggestions, but the professionalism in handling the mistake indicates confidence.  
+- **Score: 4**  
+*Justification:* Professional and confident handling, but no indication of offering premium suggestions or extensive menu explanations.
+
+**d) Empathy:**  
+- The server acknowledged the seating error, which shows some consideration.  
+- The sarcastic communication style suggests a casual, possibly less empathetic tone, but no evidence of ignoring customer emotions or providing personalized experiences.  
+- **Score: 3**  
+*Justification:* Basic friendliness and acknowledgment are present, but sarcasm may reduce perceived empathy.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness, uniform, or table setting issues.  
+- Service was completed without complaints, implying acceptable standards.  
+- **Score: 4**  
+*Justification:* Assumed tidy and professional environment, but no explicit details.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 4 + 4 + 3 + 4) * 4  
+= (19) * 4  
+= **76**
+
+---
+
+### 5. Total Score
+
+**Total Score = 76**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 76 indicates a **"Good"** service level, as it falls within the higher range.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining  
+- Tipping ranges for casual dining in the USA:  
+  - Poor: 0-5%  
+  - Normal: 6-15%  
+  - Good: 16-20%
+
+**Final Tip Percentage:**  
+- Since the service is rated as "Good," and reviews are generally positive despite the sarcastic tone, we select the upper end of the "Good" range.  
+- **Tip Percentage: 20%**
+
+**Calculation:**  
+- Tip amount = $25.00 * 20% = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server volunteered to take over a large table after an initial seating error involving another staff member. The server introduced themselves, acknowledged the prior mixup, and proceeded with service, starting with drink orders. The server used a sarcastic and joking communication style with the customers throughout the night. Service was completed for the large group without the table having any major problems or complaints.",
+  "Final Reason": "The server handled the initial mistake professionally, responded promptly, and completed service without major issues, indicating a high level of reliability and responsiveness. The confident handling of the situation and overall smooth service suggest a good service level. Despite the sarcastic tone, there is no evidence of rudeness or unethical behavior, and the environment appears tidy. Therefore, a 'Good' service rating is justified, leading to a 20% tip in line with USA casual dining standards.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:15:04,204 - eval_gpt - INFO - 레코드 #35 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:04,716 - eval_gpt - INFO - 처리 중... 레코드 #36 (샘플 37/105)
+2025-05-11 06:15:08,384 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:08,385 - eval_gpt - WARNING - JSON 파싱 오류: Expecting ',' delimiter: line 2 column 36 (char 37) - 텍스트 기반 추출로 대체합니다.
+2025-05-11 06:15:08,386 - eval_gpt - WARNING - 유효하지 않은 숫자 형식: ''
+2025-05-11 06:15:08,393 - eval_gpt - WARNING - 레코드 #36: 유효한 팁 예측값을 얻지 못했습니다. 이 컬럼은 pass하고 계속 진행합니다.
+2025-05-11 06:15:08,394 - eval_gpt - INFO - 처리 중... 레코드 #37 (샘플 38/105)
+2025-05-11 06:15:12,620 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:12,630 - eval_gpt - INFO - 레코드 #37 (Reddit 게시물) - 실제: 17.5%, 예측: 20.0%, 오차: 2.5%
+2025-05-11 06:15:13,134 - eval_gpt - INFO - 처리 중... 레코드 #38 (샘플 39/105)
+2025-05-11 06:15:17,355 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:17,357 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Analysis of the video caption:**
+
+The servers handled a sudden rush efficiently, responded well to challenging conditions, and managed complex logistics effectively. The description emphasizes quick, adaptable, and positive service, indicating a high level of service quality. There are no mentions of mistakes, rudeness, or neglect, and the staff's performance appears professional and attentive.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The servers managed orders accurately during a rush and adapted to challenging conditions. No errors or omissions are mentioned.  
+**Score: 5**  
+*Justification:* The caption suggests perfect accuracy and handling of special requests, aligning with the highest reliability score.
+
+**b) Responsiveness:**  
+- The staff responded quickly and efficiently to customer needs, even under stress.  
+**Score: 5**  
+*Justification:* The description highlights quick responses and proactive handling during a busy, challenging situation.
+
+**c) Assurance:**  
+- The staff demonstrated professionalism and confidence, contributing to a positive experience.  
+**Score: 5**  
+*Justification:* The positive tone and mention of effective service imply they earned customer trust and handled inquiries confidently.
+
+**d) Empathy:**  
+- The staff adapted to difficult circumstances, which shows understanding and consideration for customer experience.  
+**Score: 4**  
+*Justification:* While proactive and effective, there's no explicit mention of personalized service or emotional connection, so slightly below the maximum.
+
+**e) Tangibles:**  
+- The environment was challenging (improvised patio, broken HVAC), but the staff maintained service quality.  
+**Score: 4**  
+*Justification:* Despite adverse conditions, the staff kept the environment tidy and maintained service standards, indicating good attention to cleanliness and presentation.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (5 + 5 + 5 + 4 + 4) * 4  
+= (23) * 4  
+= **92**
+
+---
+
+### 5. Total Score
+
+**Total Score = 92**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 92 indicates excellent service, which aligns with a "Good" service level.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining:**  
+- Poor: 0-5%  
+- Normal: 6-15%  
+- Good: 16-20%
+
+**Selected tip percentage:**  
+- Since the service is excellent, and reviews are positive, we choose the upper end of the "Good" range: **20%**
+
+**Final tip percentage:**  
+- 20%
+
+**Calculation of tip amount:**  
+- Subtotal: $25.00  
+- Tip: 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "Servers efficiently handled a sudden rush of customers, managing orders quickly and minimizing wait times despite being overwhelmed. They successfully adapted service during challenging conditions due to a broken HVAC system, managing complex serving logistics on an improvised patio setup. The staff's effective service management contributed to a positive customer experience.",
+  "Final Reason": "The staff demonstrated exceptional reliability, responsiveness, assurance, and maintained good tangibles despite challenging conditions. Their proactive and professional service resulted in a high service score, warranting a generous tip.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:15:17,364 - eval_gpt - INFO - 레코드 #38 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:17,867 - eval_gpt - INFO - 처리 중... 레코드 #39 (샘플 40/105)
+2025-05-11 06:15:22,010 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:22,018 - eval_gpt - INFO - 레코드 #39 (Reddit 게시물) - 실제: 7.71%, 예측: 10.0%, 오차: 2.29%
+2025-05-11 06:15:22,531 - eval_gpt - INFO - 처리 중... 레코드 #40 (샘플 41/105)
+2025-05-11 06:15:26,359 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:26,373 - eval_gpt - INFO - 레코드 #40 (Reddit 게시물) - 실제: 5.88%, 예측: 10.0%, 오차: 4.12%
+2025-05-11 06:15:26,874 - eval_gpt - INFO - 처리 중... 레코드 #41 (샘플 42/105)
+2025-05-11 06:15:31,183 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:31,267 - eval_gpt - INFO - 레코드 #41 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:31,772 - eval_gpt - INFO - 처리 중... 레코드 #42 (샘플 43/105)
+2025-05-11 06:15:36,033 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:36,042 - eval_gpt - INFO - 레코드 #42 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:36,555 - eval_gpt - INFO - 처리 중... 레코드 #43 (샘플 44/105)
+2025-05-11 06:15:41,262 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:41,264 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server handled an unexpected surge in orders due to the customer's action, taking numerous drink requests under extreme volume. They worked intensely, constantly moving to fulfill orders for about an hour despite being short-staffed. The server maintained professionalism, did not complain, and processed a large bill, receiving thanks from the customer."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server managed a high volume of orders accurately despite the stressful situation. No mention of mistakes or omissions.  
+- **Score: 4**  
+*Justification:* The server handled custom orders correctly and maintained professionalism, indicating reliability, but there's no explicit mention of repeat confirmation procedures.
+
+**b) Responsiveness:**  
+- The server responded quickly and efficiently under pressure, with the customer expressing thanks.  
+- **Score: 5**  
+*Justification:* The description highlights intense work but also professionalism and customer gratitude, implying immediate and friendly responses.
+
+**c) Assurance:**  
+- The server maintained professionalism and handled the situation confidently. No menu or special request issues are mentioned.  
+- **Score: 4**  
+*Justification:* The server's professionalism and the customer's positive response suggest confidence, but there's no mention of offering premium suggestions.
+
+**d) Empathy:**  
+- The server worked under stress but maintained a professional attitude, and the customer expressed thanks. No specific personalization or emotional support is described.  
+- **Score: 3**  
+*Justification:* Basic friendliness is implied, but no personalized service or emotional understanding is evident.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness, uniform, or physical environment.  
+- **Score: 3**  
+*Justification:* Acceptable but no detailed attention to cleanliness or tidiness is described.
+
+---
+
+#### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 5 + 4 + 3 + 3) * 4  
+= (19) * 4  
+= **76**
+
+---
+
+### 5. Total Score
+
+**Total Score = 76**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 76 indicates a **"Good"** service level, as it exceeds typical thresholds for "Normal" but is not at the highest.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining.
+
+**Tip Range for Casual dining in USA (Good):**  
+- 16% to 20%
+
+**Chosen tip percentage:**  
+- Based on positive review content and high responsiveness, I will select the upper end of the "Good" range for a generous tip.  
+- **Tip percentage: 20%**
+
+**Calculation:**  
+- Subtotal: $25.00  
+- Tip amount: 20% of $25.00 = **$5.00**
+
+---
+
+### Final Reason
+
+The server demonstrated exceptional responsiveness and reliability under stressful conditions, maintaining professionalism and earning customer gratitude. The high responsiveness and professionalism justify a generous tip at the upper end of the "Good" range, which is 20%. No ethical issues or negative reviews are present, supporting this decision.
+
+---
+
+### Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server handled an unexpected surge in orders due to the customer's action, taking numerous drink requests under extreme volume. They worked intensely, constantly moving to fulfill orders for about an hour despite being short-staffed. The server maintained professionalism, did not complain, and processed a large bill, receiving thanks from the customer.",
+  "Final Reason": "The server demonstrated exceptional responsiveness and reliability under stressful conditions, maintaining professionalism and earning customer gratitude. The positive review and high responsiveness justify a tip at the upper end of the 'Good' range, which is 20%. No ethical issues or negative reviews are present.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:15:41,271 - eval_gpt - INFO - 레코드 #43 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:41,777 - eval_gpt - INFO - 처리 중... 레코드 #44 (샘플 45/105)
+2025-05-11 06:15:46,404 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:46,416 - eval_gpt - INFO - 레코드 #44 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:46,918 - eval_gpt - INFO - 처리 중... 레코드 #45 (샘플 46/105)
+2025-05-11 06:15:51,612 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:51,622 - eval_gpt - INFO - 레코드 #45 (Reddit 게시물) - 실제: 0.0%, 예측: 20.0%, 오차: 20.0%
+2025-05-11 06:15:52,134 - eval_gpt - INFO - 처리 중... 레코드 #46 (샘플 47/105)
+2025-05-11 06:15:56,423 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:15:56,425 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption Summary:**  
+The server demonstrated proactive engagement by offering a free drink, maintained a friendly attitude, managed a busy shift efficiently, and received positive feedback from customers. There are no indications of mistakes, rudeness, or ethical issues. The service appears attentive, friendly, and professional, with a focus on customer satisfaction.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server handled the service smoothly, with no mention of order mistakes or billing errors.  
+- The proactive attitude and positive feedback suggest accurate order handling and consideration of customer preferences.  
+**Score: 4**  
+*Justification:* Custom orders and preferences seem well managed, but there's no explicit confirmation process mentioned.
+
+**b) Responsiveness:**  
+- The server responded proactively and efficiently, even during a busy period.  
+- The positive tone and engagement imply quick and friendly responses.  
+**Score: 5**  
+*Justification:* Immediate, friendly, and proactive responses are evident.
+
+**c) Assurance:**  
+- The server provided a positive experience, with no indication of uncertainty or lack of confidence.  
+- The positive feedback from customers suggests trust and confidence.  
+**Score: 5**  
+*Justification:* The server's professionalism and positive attitude earn customer trust.
+
+**d) Empathy:**  
+- The server engaged in friendly conversation and offered extra items, indicating attentiveness to customer needs.  
+- The positive feedback and proactive service suggest a high level of personalization and understanding.  
+**Score: 5**  
+*Justification:* Demonstrates proactive understanding of customer satisfaction and personalized service.
+
+**e) Tangibles:**  
+- The description implies a well-maintained service environment, with no mention of cleanliness issues.  
+- The server's positive attitude and efficient service suggest a tidy and professional setting.  
+**Score: 4**  
+*Justification:* While not explicitly detailed, the overall positive service environment suggests good tidiness and professionalism.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 5 + 5 + 5 + 4) * 4  
+= (23) * 4  
+= **92**
+
+---
+
+### 5. Total Score
+
+**Total Score = 92**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 92 indicates excellent service, which falls into the "Good" category.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected Tip Percentage:**  
+- Given the high positive review and proactive service, we select the upper end of the "Good" range: **20%**
+
+**Final Tip Calculation:**  
+- Tip = 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server proactively offered a free drink and engaged in friendly conversation with customers, maintaining a positive attitude throughout the shift, even when not initially tipped. They managed a busy service period efficiently, multitasking drink preparation and customer interaction. The server provided extra items like limes and received direct positive feedback from a customer stating their experience was among the best, attributing it to the server's performance.",
+  "Final Reason": "The server demonstrated proactive, friendly, and efficient service, with no negative indicators or ethical issues. The high scores across all criteria reflect excellent service quality, justifying a top-tier tip percentage.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:15:56,429 - eval_gpt - INFO - 레코드 #46 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:15:56,936 - eval_gpt - INFO - 처리 중... 레코드 #47 (샘플 48/105)
+2025-05-11 06:16:01,629 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:01,864 - eval_gpt - INFO - 레코드 #47 (Reddit 게시물) - 실제: 18.0%, 예측: 10.0%, 오차: -8.0%
+2025-05-11 06:16:02,368 - eval_gpt - INFO - 처리 중... 레코드 #48 (샘플 49/105)
+2025-05-11 06:16:06,785 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:06,794 - eval_gpt - INFO - 레코드 #48 (Reddit 게시물) - 실제: 15.0%, 예측: 20.0%, 오차: 5.0%
+2025-05-11 06:16:07,304 - eval_gpt - INFO - 처리 중... 레코드 #49 (샘플 50/105)
+2025-05-11 06:16:12,206 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:12,216 - eval_gpt - INFO - 레코드 #49 (Reddit 게시물) - 실제: 18.0%, 예측: 14.0%, 오차: -4.0%
+2025-05-11 06:16:12,731 - eval_gpt - INFO - 처리 중... 레코드 #50 (샘플 51/105)
+2025-05-11 06:16:17,176 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:17,188 - eval_gpt - INFO - 레코드 #50 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:16:17,696 - eval_gpt - INFO - 처리 중... 레코드 #51 (샘플 52/105)
+2025-05-11 06:16:22,452 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:22,462 - eval_gpt - INFO - 레코드 #51 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:16:22,976 - eval_gpt - INFO - 처리 중... 레코드 #52 (샘플 53/105)
+2025-05-11 06:16:27,656 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:27,665 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Full Video Scene Caption:**  
+"The server promptly provided specific drink details, prices, and requested water accompaniments. They checked multiple times regarding food satisfaction and received positive confirmations initially. The server attempted to accommodate an off-policy request to split checks, which resulted in a delay, and participated in adjusting the bill as a service recovery action. They maintained composure during a dispute over the automatic [REMOVED] policy."
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server handled orders accurately, confirmed satisfaction, and managed a billing adjustment. There is no mention of order mistakes or billing errors.  
+**Score: 4**  
+*Justification:* Custom orders were correctly handled, and the server considered the billing issue as a recovery, indicating reliability.
+
+**b) Responsiveness:**  
+- The server responded promptly to drink and water requests, checked multiple times, and maintained composure during disputes. The delay was due to accommodating a split check, which is acceptable.  
+**Score: 4**  
+*Justification:* Responses were quick and polite, with proactive bill adjustment.
+
+**c) Assurance:**  
+- The server provided detailed information, confirmed satisfaction, and handled a dispute professionally. No doubts about menu knowledge or professionalism.  
+**Score: 4**  
+*Justification:* Demonstrated confidence and professionalism, earning trust.
+
+**d) Empathy:**  
+- The server showed attentiveness by checking multiple times and managing billing issues calmly. They maintained composure during a dispute, indicating understanding of customer emotions.  
+**Score: 4**  
+*Justification:* Demonstrated good awareness of customer needs and emotions.
+
+**e) Tangibles:**  
+- The caption does not mention cleanliness or uniform issues. Given standard expectations, assume tidy and professional appearance.  
+**Score: 4**  
+*Justification:* Maintains acceptable cleanliness and appearance standards.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 4 + 4 + 4 + 4) * 4  
+= 20 * 4  
+= **80**
+
+---
+
+### 5. Total Score
+
+**Total Score = 80**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 80 indicates a "Good" service level.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining:**  
+- Good: 16% to 20%
+
+**Selected tip percentage:**  
+- Since the review is positive and the score is high, select the upper end of the "Good" range: **20%**
+
+**Final Tip Calculation:**  
+- Subtotal: $25.00  
+- Tip percentage: 20%  
+- Tip amount: $25.00 * 0.20 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server promptly provided specific drink details, prices, and requested water accompaniments. They checked multiple times regarding food satisfaction and received positive confirmations initially. The server attempted to accommodate an off-policy request to split checks, which resulted in a delay, and participated in adjusting the bill as a service recovery action. They maintained composure during a dispute over the automatic [REMOVED] policy.",
+  "Final Reason": "The server demonstrated high reliability, quick responsiveness, professional assurance, empathetic handling of customer concerns, and maintained good hygiene standards. Despite a slight delay due to splitting checks, overall service was attentive and professional, warranting a high service score. The positive review and high score justify a generous tip.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:16:27,670 - eval_gpt - INFO - 레코드 #52 (Reddit 게시물) - 실제: 18.0%, 예측: 20.0%, 오차: 2.0%
+2025-05-11 06:16:28,172 - eval_gpt - INFO - 처리 중... 레코드 #53 (샘플 54/105)
+2025-05-11 06:16:33,403 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:33,414 - eval_gpt - INFO - 레코드 #53 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:16:33,921 - eval_gpt - INFO - 처리 중... 레코드 #54 (샘플 55/105)
+2025-05-11 06:16:38,574 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:38,575 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption Summary:**  
+The server greeted the customer, promptly delivered drinks, handled a conditional request professionally by returning money and clarifying policies, and continued serving the table efficiently, meeting standard requests. The interaction appears professional, attentive, and courteous.
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server correctly handled a conditional request and returned money when needed, indicating accurate order handling and consideration of customer preferences.  
+- No mention of order mistakes or billing errors.  
+**Score: 4**  
+*Justification:* The server correctly managed special requests and confirmed actions, demonstrating reliability with attention to customer needs.
+
+**b) Responsiveness:**  
+- The server responded promptly to the customer's requests and inquiries, including clarifying policies and serving throughout the meal.  
+- No delays or ignored requests are mentioned.  
+**Score: 5**  
+*Justification:* The server's actions suggest immediate, friendly responses and proactive service.
+
+**c) Assurance:**  
+- The server explained policies professionally and confidently, especially regarding the conditional request, and reassured the customer about service quality.  
+- No indication of uncertainty or lack of confidence.  
+**Score: 4**  
+*Justification:* The server demonstrated professionalism and confidence, earning trust.
+
+**d) Empathy:**  
+- The server maintained a courteous tone, addressed the customer's needs, and handled the conditional request respectfully.  
+- No explicit personalization or special consideration beyond standard service, but the professional handling indicates good empathy.  
+**Score: 4**  
+*Justification:* The server showed understanding and respect, providing a positive experience.
+
+**e) Tangibles:**  
+- The caption mentions prompt service but does not specify cleanliness or uniform standards.  
+- Given the professional interaction, we can assume standard cleanliness and tidiness.  
+**Score: 4**  
+*Justification:* The environment appears maintained and professional, meeting standard expectations.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 5 + 4 + 4 + 4) * 4  
+= (21) * 4  
+= **84**
+
+---
+
+### 5. Total Score
+
+**Total Score = 84**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The interaction was professional, attentive, and courteous, with no issues noted.  
+- The score indicates a high level of service, so classified as **"Good"**.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining.
+
+**Tip Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected Tip Percentage:**  
+- Based on the high score and positive review tone, choose the upper end of the "Good" range: **20%**.
+
+**Calculation:**  
+- Subtotal: $25.00  
+- Tip: 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server initiated the interaction with a greeting and promptly delivered the initial drinks. When a customer attempted to impose a conditional pre-[REMOVED] system, the server professionally returned the money, stated their commitment to providing excellent service, and clarified that the [REMOVED] should be decided at the end of the meal. The server then solicited an appetizer order and continued serving the table throughout the meal, meeting standard requests.",
+  "Final Reason": "The server demonstrated high reliability, quick responsiveness, professional assurance, good empathy, and maintained tidy surroundings. The service was attentive, respectful, and handled special requests professionally, indicating excellent service quality. No ethical issues were present, and reviews were positive.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:16:38,581 - eval_gpt - INFO - 레코드 #54 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:16:39,093 - eval_gpt - INFO - 처리 중... 레코드 #55 (샘플 56/105)
+2025-05-11 06:16:43,643 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:43,720 - eval_gpt - INFO - 레코드 #55 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:16:44,222 - eval_gpt - INFO - 처리 중... 레코드 #56 (샘플 57/105)
+2025-05-11 06:16:48,264 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:48,275 - eval_gpt - INFO - 레코드 #56 (Reddit 게시물) - 실제: 12.5%, 예측: 20.0%, 오차: 7.5%
+2025-05-11 06:16:48,782 - eval_gpt - INFO - 처리 중... 레코드 #57 (샘플 58/105)
+2025-05-11 06:16:53,011 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:53,021 - eval_gpt - INFO - 레코드 #57 (Reddit 게시물) - 실제: 10.0%, 예측: 20.0%, 오차: 10.0%
+2025-05-11 06:16:53,522 - eval_gpt - INFO - 처리 중... 레코드 #58 (샘플 59/105)
+2025-05-11 06:16:58,750 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:16:58,752 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The servers introduced themselves and explained the limited staffing situation to the party leader. They managed drink orders 'pretty fair'. The lead server pre-set items like dressings and napkins to assist service. The overall service process for the large party was described as 'rough' and one server was 'completely overwhelmed'."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The caption indicates some issues with service quality, describing the process as "rough" and one server as "completely overwhelmed." This suggests possible mistakes or at least inconsistent service.  
+- Justification: The mention of being "completely overwhelmed" implies potential errors or delays, but no explicit billing mistakes or order inaccuracies are noted.  
+- **Score: 2** (No major mistakes but some signs of stress affecting accuracy)
+
+**b) Responsiveness:**  
+- The servers managed drink orders "pretty fair," which suggests average responsiveness. The description of being overwhelmed indicates responses might not be prompt or smooth.  
+- Justification: The service was "rough," implying responses were not quick or proactive.  
+- **Score: 3** (Average response speed, acceptable but not exceptional)
+
+**c) Assurance:**  
+- The servers introduced themselves and explained staffing issues, which shows some transparency. However, there's no mention of menu explanations or confidence levels.  
+- Justification: The explanation of staffing issues shows some professionalism but lacks evidence of confident menu explanations or premium suggestions.  
+- **Score: 3** (Can explain but lacks confidence)
+
+**d) Empathy:**  
+- The servers explained staffing issues, which shows some consideration. The description of being overwhelmed suggests limited personalized attention.  
+- Justification: No evidence of personalized service or proactive emotional understanding.  
+- **Score: 2** (Minimal consideration, limited personalization)
+
+**e) Tangibles:**  
+- No specific mention of cleanliness, uniform, or table settings. The focus is on service process and staffing.  
+- Justification: Since no issues are mentioned, assume standard cleanliness and tidiness.  
+- **Score: 4** (Assumed tidy and professional environment)
+
+---
+
+#### 1-2. Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (2 + 3 + 3 + 2 + 4) * 4  
+= (14) * 4  
+= **56**
+
+---
+
+### 5. Total Score
+
+**Total Score = 56**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The description indicates a "rough" service process with a server overwhelmed, but no major mistakes or rudeness.  
+- The overall impression is somewhat below average but not entirely poor.  
+- **Categorize as "Normal" service level.**
+
+**Country and Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining:**  
+- Normal: 6% to 15%
+
+**Determine tip percentage:**  
+- The total score (56) is slightly above the midpoint of the total possible (which is 100).  
+- Given the "rough" service and some signs of overwhelm, lean towards the lower end of the normal range.  
+- **Chosen tip percentage: 8%**
+
+**Calculate tip amount:**  
+- Subtotal: $25.00  
+- Tip: 8% of $25.00 = $2.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The servers introduced themselves and explained the limited staffing situation to the party leader. They managed drink orders 'pretty fair'. The lead server pre-set items like dressings and napkins to assist service. The overall service process for the large party was described as 'rough' and one server was 'completely overwhelmed'.",
+  "Final Reason": "The service was described as 'rough' with signs of being overwhelmed, indicating average to below-average responsiveness and reliability. The staff showed some transparency but lacked confidence and personalized care. Given the overall impression and the country context, a moderate tip of 8% is appropriate.",
+  "final_tip_percentage": 8,
+  "final_tip_amount": 2.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:16:58,758 - eval_gpt - INFO - 레코드 #58 (Reddit 게시물) - 실제: 1.2%, 예측: 8.0%, 오차: 6.8%
+2025-05-11 06:16:59,273 - eval_gpt - INFO - 처리 중... 레코드 #59 (샘플 60/105)
+2025-05-11 06:17:03,676 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:03,678 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The bartender provided service described by the customer as good. The bartender was responsive to a customer request to process a [REMOVED] on a separate credit card after some consideration. The bartender tracked down the customer shortly after they left to return a forgotten item."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The service was responsive and attentive, handling a request for a credit card process and returning a forgotten item. No mistakes or errors are mentioned.  
+- **Score: 4**  
+*Justification:* The bartender correctly handled custom requests and showed attentiveness, but there's no mention of repeat confirmation procedures or 100% accuracy.
+
+**b) Responsiveness:**  
+- The bartender responded promptly to customer requests, including processing a credit card and returning a forgotten item shortly after.  
+- **Score: 5**  
+*Justification:* Immediate responses, proactive actions, and friendly tone implied by the positive description.
+
+**c) Assurance:**  
+- The bartender demonstrated confidence in handling requests and explained or managed the situation professionally.  
+- **Score: 4**  
+*Justification:* The service was described as good, and the bartender handled requests professionally, earning customer trust.
+
+**d) Empathy:**  
+- The bartender tracked down the customer after they left to return a forgotten item, showing proactive care and consideration.  
+- **Score: 5**  
+*Justification:* Going out of the way to return a forgotten item indicates high empathy and personalized service.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness, uniform, or environment.  
+- **Score: 3**  
+*Justification:* No negative comments, but no explicit praise either; assumed acceptable but not exceptional.
+
+---
+
+#### 1-2. Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (4 + 5 + 4 + 5 + 3) * 4  
+= (21) * 4  
+= **84**
+
+---
+
+### 5. Total Score
+
+**Total Score = 84**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The service was described as good, with proactive and attentive behavior, quick responses, and high empathy.  
+- **Category:** Good
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Tip Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected Tip Percentage:**  
+- Since the review is positive and the video shows excellent service, select the upper end of the range.  
+- **Tip Percentage: 20%**
+
+**Calculate Tip:**  
+Subtotal = $25.00  
+Tip = 20% of $25.00 = $5.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The bartender provided service described by the customer as good. The bartender was responsive to a customer request to process a [REMOVED] on a separate credit card after some consideration. The bartender tracked down the customer shortly after they left to return a forgotten item.",
+  "Final Reason": "The service was highly responsive, attentive, confident, and empathetic, with proactive actions like returning a forgotten item. No negative reviews or ethical issues were present. The overall positive service quality justifies a high tip within the 'Good' range.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:17:03,683 - eval_gpt - INFO - 레코드 #59 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:04,190 - eval_gpt - INFO - 처리 중... 레코드 #60 (샘플 61/105)
+2025-05-11 06:17:09,488 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:09,490 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The bartender had the takeout order ready upon arrival. He presented the check but then delayed processing the payment for approximately ten minutes, during which time he interacted with another customer and assisted a server with a different order. After being prompted and realizing the delay, he processed the payment and offered a brief apology."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The bartender delayed processing the payment for about ten minutes, indicating some inefficiency. However, he eventually processed the payment correctly after being prompted.  
+- No mention of order mistakes or billing errors.  
+**Score:** 3 (Mostly accurate orders, occasional lack of confirmation)  
+*Justification:* The delay suggests some lack of confirmation or promptness, but the order was ultimately correct.
+
+**b) Responsiveness:**  
+- The delay in payment processing and interaction with other customers suggest slow response.  
+- He responded after being prompted, not proactively.  
+**Score:** 2 (Responds but with significant delays)  
+*Justification:* The ten-minute delay and lack of proactive response indicate below-average responsiveness.
+
+**c) Assurance:**  
+- The staff explained the situation briefly (offered a brief apology), but no detailed menu explanations or confidence shown.  
+- No evidence of offering premium suggestions or detailed explanations.  
+**Score:** 3 (Can explain menu but lacks confidence)  
+*Justification:* The apology shows some professionalism, but overall assurance is moderate.
+
+**d) Empathy:**  
+- The brief apology indicates some acknowledgment of the inconvenience, but no personalized service or emotional understanding is evident.  
+**Score:** 3 (Basic friendliness but lacks personalization)  
+*Justification:* The apology is minimal; no further personalized gestures are noted.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness or uniform, but no negative comments either.  
+- Assume standard cleanliness and tidiness.  
+**Score:** 4 (Uniform and table settings are tidy, cleanliness maintained)  
+*Justification:* No issues noted, and standard tidiness is presumed.
+
+---
+
+#### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (3 + 2 + 3 + 3 + 4) * 4  
+= (15) * 4  
+= **60**
+
+---
+
+### 5. Total Score
+
+**Total Score = 60**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 60 indicates a "Normal" service level, but slightly on the lower side due to responsiveness and reliability issues.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining
+
+**Tip Range for USA Casual dining:**  
+- Poor: 0-5%  
+- Normal: 6-15%  
+- Good: 16-20%
+
+**Selected tipping percentage:**  
+- Since the review content indicates some delays and minimal proactive service, the service is closer to "Normal" rather than "Good."  
+- The score is at the lower end of "Normal," so we choose the lower end of the range.
+
+**Final tip percentage:** 6%
+
+**Subtotal:** $25.00
+
+**Tip amount:**  
+$25.00 * 6% = **$1.50**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The bartender had the takeout order ready upon arrival. He presented the check but then delayed processing the payment for approximately ten minutes, during which time he interacted with another customer and assisted a server with a different order. After being prompted and realizing the delay, he processed the payment and offered a brief apology.",
+  "Final Reason": "The service was generally accurate but hampered by a significant delay in payment processing and lack of proactive response, indicating moderate reliability and responsiveness. The staff showed basic professionalism with a brief apology, but overall service was average. The cleanliness and presentation were acceptable. Based on the overall performance and review content, the service level is considered 'Normal,' leading to a conservative tip percentage.",
+  "final_tip_percentage": 6,
+  "final_tip_amount": 1.50,
+  "final_total_bill": 26.50
+}
+```
+2025-05-11 06:17:09,496 - eval_gpt - INFO - 레코드 #60 (Reddit 게시물) - 실제: 0.0%, 예측: 6.0%, 오차: 6.0%
+2025-05-11 06:17:09,999 - eval_gpt - INFO - 처리 중... 레코드 #61 (샘플 62/105)
+2025-05-11 06:17:14,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:14,457 - eval_gpt - INFO - 레코드 #61 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:14,959 - eval_gpt - INFO - 처리 중... 레코드 #62 (샘플 63/105)
+2025-05-11 06:17:19,522 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:19,531 - eval_gpt - INFO - 레코드 #62 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:20,037 - eval_gpt - INFO - 처리 중... 레코드 #63 (샘플 64/105)
+2025-05-11 06:17:23,997 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:24,006 - eval_gpt - INFO - 레코드 #63 (Reddit 게시물) - 실제: 0.0%, 예측: 2.0%, 오차: 2.0%
+2025-05-11 06:17:24,513 - eval_gpt - INFO - 처리 중... 레코드 #64 (샘플 65/105)
+2025-05-11 06:17:29,129 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:29,140 - eval_gpt - INFO - 레코드 #64 (Reddit 게시물) - 실제: 0.0%, 예측: 0.0%, 오차: 0.0%
+2025-05-11 06:17:29,642 - eval_gpt - INFO - 처리 중... 레코드 #65 (샘플 66/105)
+2025-05-11 06:17:33,449 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:33,458 - eval_gpt - INFO - 레코드 #65 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:33,967 - eval_gpt - INFO - 처리 중... 레코드 #66 (샘플 67/105)
+2025-05-11 06:17:38,762 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:38,764 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Summary of the video scene:**  
+The waiter initially delays in service but quickly recognizes and apologizes for the wait, explaining the reason. During the meal, the waiter demonstrates high attentiveness, friendliness, professionalism, and personalized service, including making helpful suggestions, bonding over shared interests, and offering a complimentary dessert as a celebratory gesture.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The waiter handled the order correctly, with no mention of mistakes or errors.  
+- The quick recognition and apology for the initial delay show good awareness.  
+- Overall, the service appears accurate and reliable.  
+**Score: 4**  
+*Justification:* Custom orders were correctly handled, and the waiter responded appropriately to the delay, considering the context.
+
+**b) Responsiveness:**  
+- The waiter responded promptly to the delay, apologized, and then provided attentive service throughout.  
+- The gestures like suggesting food, bonding, and offering a surprise dessert indicate proactive and friendly responses.  
+**Score: 5**  
+*Justification:* Immediate, friendly, and proactive responses with positive facial expressions and tone.
+
+**c) Assurance:**  
+- The waiter explained the delay, made helpful suggestions, and handled the service confidently.  
+- The personalized gestures and bonding suggest a high level of assurance and professionalism.  
+**Score: 5**  
+*Justification:* The waiter earned trust, explained menu confidently, and offered premium suggestions.
+
+**d) Empathy:**  
+- The waiter showed genuine interest by bonding over shared history and congratulating the customer, providing a personalized experience.  
+- The surprise dessert and celebratory gesture demonstrate proactive understanding of customer emotions.  
+**Score: 5**  
+*Justification:* Demonstrated high empathy by personalizing service and recognizing customer milestones.
+
+**e) Tangibles:**  
+- The scene suggests a clean, professional environment with tidy uniforms and table settings.  
+- No mention of cleanliness issues.  
+**Score: 4**  
+*Justification:* The environment appears tidy and professional, meeting standards but not explicitly described as exceptional.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 5 + 5 + 5 + 4) * 4  
+= (23) * 4  
+= **92**
+
+---
+
+### 5. Total Score
+
+**Total Score = 92**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 92 indicates an excellent service, clearly "Good" level.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining.
+
+**Tipping Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Decision:**  
+- Given the high positivity and excellent service, we select the upper end of the "Good" range.
+
+**Final Tip Percentage:** 20%
+
+**Total Bill:** $25.00
+
+**Tip Amount:**  
+$25.00 * 20% = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "Initially, the table experienced a 10-minute wait after being seated and ready, with other staff passing without attention. The designated server immediately recognized the delay upon arrival, apologized, and explained the reason (returning from break), and quickly began service. Throughout the meal, the server was highly attentive, friendly, professional, made helpful suggestions regarding food portions, and handled all aspects of service wonderfully. He personally congratulated the customer on running the marathon, bonded over shared history, and provided a surprise complimentary dessert with a celebratory gesture after overhearing a comment.",
+  "Final Reason": "The waiter demonstrated exceptional reliability, responsiveness, assurance, empathy, and maintained good tangibles. Despite the initial delay, the proactive, friendly, and personalized service earned a high service score. The service was professional, attentive, and emotionally engaging, warranting a top-tier tip.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:17:38,769 - eval_gpt - INFO - 레코드 #66 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:39,271 - eval_gpt - INFO - 처리 중... 레코드 #67 (샘플 68/105)
+2025-05-11 06:17:44,362 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:44,372 - eval_gpt - INFO - 레코드 #67 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:44,877 - eval_gpt - INFO - 처리 중... 레코드 #68 (샘플 69/105)
+2025-05-11 06:17:49,091 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:49,100 - eval_gpt - INFO - 레코드 #68 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:49,610 - eval_gpt - INFO - 처리 중... 레코드 #69 (샘플 70/105)
+2025-05-11 06:17:54,137 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:54,146 - eval_gpt - INFO - 레코드 #69 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:17:54,648 - eval_gpt - INFO - 처리 중... 레코드 #70 (샘플 71/105)
+2025-05-11 06:17:59,838 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:17:59,849 - eval_gpt - INFO - 레코드 #70 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:18:00,349 - eval_gpt - INFO - 처리 중... 레코드 #71 (샘플 72/105)
+2025-05-11 06:18:04,925 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:04,935 - eval_gpt - INFO - 레코드 #71 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:18:05,445 - eval_gpt - INFO - 처리 중... 레코드 #72 (샘플 73/105)
+2025-05-11 06:18:09,739 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:09,749 - eval_gpt - INFO - 레코드 #72 (Reddit 게시물) - 실제: 7.14%, 예측: 20.0%, 오차: 12.86%
+2025-05-11 06:18:10,256 - eval_gpt - INFO - 처리 중... 레코드 #73 (샘플 74/105)
+2025-05-11 06:18:15,538 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:15,540 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server took the order and delivered drinks and food. While placing the food, the server accidentally spilled an entire meal onto a customer. The server immediately apologized extensively, attempted cleanup, and reordered the spilled meal, showing visible emotional distress."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server made a significant mistake by spilling the meal, which is a major error affecting reliability.  
+- However, the server responded quickly with an apology and attempted to rectify the situation, indicating some level of responsibility.  
+- Given the severity of the mistake but the prompt response, I assign a score of **2**: No major mistakes but minor omissions occur.  
+**Justification:** The spill is a major mistake, but the server's quick apology and effort to fix mitigate reliability issues somewhat.
+
+**b) Responsiveness:**  
+- The server responded immediately to the spill with an apology and attempted cleanup, showing quick action.  
+- The emotional distress indicates genuine concern and promptness.  
+- Score: **5**: Immediate response, friendly tone, and proactive problem-solving.  
+**Justification:** The server's quick and empathetic response warrants the highest score.
+
+**c) Assurance:**  
+- The server apologized extensively and attempted to rectify the mistake, demonstrating confidence and professionalism.  
+- The visible distress suggests genuine effort to reassure the customer.  
+- Score: **4**: Professional explanations and confident handling, though not perfect.  
+**Justification:** The server handled the situation well but may lack complete confidence or premium suggestions.
+
+**d) Empathy:**  
+- The server showed visible emotional distress, indicating genuine concern for the customer.  
+- The immediate apology and effort to fix the issue demonstrate high empathy.  
+- Score: **5**: Proactively understands customer emotions and provides impressive experience.  
+**Justification:** The emotional distress and quick response show high empathy.
+
+**e) Tangibles:**  
+- The caption does not mention the cleanliness or tidiness of the table, utensils, or uniform.  
+- Assuming standard cleanliness, but no specific positive or negative details are provided.  
+- Score: **3**: Acceptable but lacks attention to detail.  
+**Justification:** No explicit mention of cleanliness issues, so a neutral score.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (2 + 5 + 4 + 5 + 3) * 4  
+= (19) * 4  
+= **76**
+
+---
+
+### 5. Total Score
+
+**Total Score = 76**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The incident was significant, but the server responded promptly, apologized sincerely, and showed genuine concern.  
+- Overall, the service can be considered **"Good"** due to the quick response and empathy, despite the mistake.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Cultural Tipping Range:**  
+- For casual dining in the USA:  
+  - Poor: 0-5%  
+  - Normal: 6-15%  
+  - Good: 16-20%
+
+**Service Level & Review Positivity:**  
+- The review is somewhat negative due to the spill but also acknowledges the server's sincere apology and distress, indicating a generally positive attitude toward the service.  
+- Given the high video score and positive response, I will lean toward the **"Good"** category.
+
+**Final Tip Percentage:**  
+- Based on the "Good" service level and positive review content, I select the upper end of the "Good" range: **20%**.
+
+**Tip Amount:**  
+- 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption i(th) ###": "The server took the order and delivered drinks and food. While placing the food, the server accidentally spilled an entire meal onto a customer. The server immediately apologized extensively, attempted cleanup, and reordered the spilled meal, showing visible emotional distress.",
+  "Final Reason": "The server responded immediately and empathetically to a major mistake, showing high responsiveness and empathy. Despite the error, their quick and sincere response mitigated the negative impact, leading to a high service score. The positive review content and high video score justify a generous tip.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:18:15,546 - eval_gpt - INFO - 레코드 #73 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:18:16,048 - eval_gpt - INFO - 처리 중... 레코드 #74 (샘플 75/105)
+2025-05-11 06:18:20,739 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:20,741 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption Summary:**  
+The server demonstrates professionalism by accurately pouring wine with a measured carafe, explaining standard procedures, and maintaining a factual stance when the customer requests a larger pour. The server also communicates about the situation politely and provides the to-go order without any apparent issues.
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server correctly handled the wine pour, adhering to standard procedures and confirming the amount. No mistakes or billing errors are mentioned.  
+**Score: 5**  
+*Justification:* The server's actions show 100% accuracy and confirmation procedures, indicating high reliability.
+
+**b) Responsiveness:**  
+- The server responded to the customer's request for a larger pour by explaining the standard procedure and addressing the situation calmly. The response appears prompt and polite.  
+**Score: 4**  
+*Justification:* The responses are quick, polite, and professional, though not explicitly described as immediate or proactive.
+
+**c) Assurance:**  
+- The server explained the standard procedure confidently and clarified the situation, which builds trust. No doubts or lack of confidence are evident.  
+**Score: 4**  
+*Justification:* The explanation was professional and confident, earning customer trust.
+
+**d) Empathy:**  
+- The server acknowledged the customer's request but explained the procedure without showing personal consideration or personalized service. No indication of emotional understanding or proactive care.  
+**Score: 3**  
+*Justification:* Basic professionalism is present, but no personalized or empathetic gestures are noted.
+
+**e) Tangibles:**  
+- The description implies a clean and professional setting, with proper pouring tools and service standards. No mention of cleanliness issues.  
+**Score: 4**  
+*Justification:* The setting appears tidy and professional, meeting standard cleanliness expectations.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (5 + 4 + 4 + 3 + 4) * 4  
+= (20) * 4  
+= **80**
+
+---
+
+### 5. Total Score
+
+**Total Score = 80**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The video shows a professional, reliable, and confident server who handled the situation well, despite the customer's request for a larger pour creating some awkwardness. The overall impression is positive, indicating a "Good" service level.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected Tip Percentage:**  
+- Given the positive professionalism and no negative reviews, select the upper end of the "Good" range for a generous tip.  
+**Tip Percentage: 20%**
+
+**Calculation:**  
+- Tip amount = $25.00 * 20% = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server poured the customer's wine using a measured carafe to ensure the correct 6-ounce portion. When the customer requested a larger pour, the server factually stated it was the correct measured amount and explained they were adhering to standard procedure for the amount paid. The server later reiterated their position, explaining the customer's request created an awkward situation, and then provided the to-go food order.",
+  "Final Reason": "The server demonstrated high reliability, responded promptly and politely, explained confidently, and maintained a professional appearance. Despite some awkwardness over the pour size, the service was overall professional and trustworthy. No ethical issues or negative reviews were present, supporting a high service level.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:18:20,747 - eval_gpt - INFO - 레코드 #74 (Reddit 게시물) - 실제: 11.54%, 예측: 20.0%, 오차: 8.46%
+2025-05-11 06:18:21,253 - eval_gpt - INFO - 처리 중... 레코드 #75 (샘플 76/105)
+2025-05-11 06:18:25,423 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:25,435 - eval_gpt - INFO - 레코드 #75 (Reddit 게시물) - 실제: 7.14%, 예측: 20.0%, 오차: 12.86%
+2025-05-11 06:18:25,942 - eval_gpt - INFO - 처리 중... 레코드 #76 (샘플 77/105)
+2025-05-11 06:18:30,884 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:30,885 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+A trainee server successfully managed two smaller tables and later handled a 9-top party, taking drink and food orders. The server communicated they were a trainee and thanked the large party for their patience, with a potential minor error forgetting cheese on one dish.
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server managed multiple tables effectively, including a large party, and communicated openly about being a trainee.  
+- Minor error (forgetting cheese) was noted but seems to be a small mistake.  
+- **Score: 4**  
+*Justification:* Orders were mostly accurate, and the server considered special requests (communication about being a trainee). The minor error indicates good handling but not perfect accuracy.
+
+**b) Responsiveness:**  
+- The server responded politely and thanked the customers, indicating friendly and timely communication.  
+- No delays or ignoring requests are mentioned.  
+- **Score: 4**  
+*Justification:* The server responded quickly and politely, with proactive communication about their trainee status.
+
+**c) Assurance:**  
+- The server explained their trainee status, which builds trust, and handled the order confidently despite minor mistakes.  
+- No indication of lack of confidence or poor explanations.  
+- **Score: 4**  
+*Justification:* The server demonstrated professionalism and confidence, earning trust.
+
+**d) Empathy:**  
+- The server thanked the large party for their patience, indicating consideration of customer experience.  
+- No specific personalization or emotional cues, but proactive acknowledgment of the trainee status shows some empathy.  
+- **Score: 3**  
+*Justification:* Basic friendliness and acknowledgment are present, but no advanced personalization or emotional engagement.
+
+**e) Tangibles:**  
+- No explicit mention of cleanliness or uniform, but the environment appears standard and well-managed.  
+- Given the positive review and no negative comments, assume acceptable standards.  
+- **Score: 4**  
+*Justification:* The environment and service setting seem tidy and professional.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 4 + 4 + 3 + 4) * 4  
+= (19) * 4  
+= **76**
+
+---
+
+### 5. Total Score
+
+**Total Score = 76**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 76 indicates a **Good** service level, as it is well above the midpoint and reflects attentive, friendly, and professional service with minor errors.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Tipping Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected tip percentage:**  
+- Since the review is positive and the service was good with minor issues, we choose the upper end of the "Good" range.  
+- **Tip percentage: 20%**
+
+**Calculation:**  
+- Tip amount = $25.00 * 20% = **$5.00**
+
+---
+
+### Final Reason
+
+The service was generally very good, with proactive communication, professionalism, and minimal errors. The minor mistake does not significantly detract from the overall positive experience. The server's handling of a large party and trainee status was transparent and courteous, earning a high service score. Based on the country and service level, a 20% tip is appropriate.
+
+---
+
+```json
+{
+  "### Video Caption i(th) ###": "A trainee server successfully managed two smaller tables and later handled a 9-top party, taking drink and food orders. The server communicated they were a trainee and thanked the large party for their patience, with a potential minor error forgetting cheese on one dish.",
+  "Final Reason": "The server demonstrated professionalism, responsiveness, and empathy, with minor errors that did not significantly impact the service quality. The positive handling of a large party and transparent communication about being a trainee contributed to a high service score. Based on the USA casual dining standards, a 20% tip is appropriate.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:18:30,890 - eval_gpt - INFO - 레코드 #76 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:18:31,398 - eval_gpt - INFO - 처리 중... 레코드 #77 (샘플 78/105)
+2025-05-11 06:18:36,285 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:36,287 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption Summary:**  
+The server managed a large party of 14 people with complex, individual orders, split checks, and scattered requests. They handled multiple drink rounds and accurately took 13 food orders with modifiers, without personal errors. The server maintained professionalism, responded promptly to frequent demands under pressure, and stayed late to accommodate the group while attending to other tables concurrently.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server handled a large, complex order with multiple modifications and split checks accurately, with no personal errors or mistakes mentioned.  
+- Justification: The caption states "without personal error voids" and "accurately taking 13 food orders with modifiers."  
+- **Score: 5** (Always 100% accurate, uses repeat confirmation procedures)
+
+**b) Responsiveness:**  
+- The server responded efficiently to frequent demands, managed multiple requests under pressure, and maintained professionalism.  
+- Justification: "Responded to frequent demands under pressure" and "maintained a professional attitude" indicate quick, polite responses.  
+- **Score: 5** (Immediate response, friendly tone, proactive)
+
+**c) Assurance:**  
+- The server demonstrated professionalism, handled complex orders confidently, and maintained a positive attitude.  
+- Justification: "Maintained a professional attitude," and "accurately taking orders" suggest confidence and competence.  
+- **Score: 4** (Professional explanations, confident handling)
+
+**d) Empathy:**  
+- The server accommodated a large group, stayed late, and managed scattered requests, indicating consideration for customer needs.  
+- Justification: "Stayed significantly late to accommodate the group" shows proactive service and understanding.  
+- **Score: 4** (Remembers customer needs, offers personalized service)
+
+**e) Tangibles:**  
+- The caption does not mention any issues with cleanliness or appearance, but also no explicit praise.  
+- Justification: No mention of cleanliness or tidiness, but no negative comments either.  
+- **Score: 3** (Acceptable but lacks attention to detail)
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (5 + 5 + 4 + 4 + 3) * 4  
+= (21) * 4  
+= **84**
+
+---
+
+### 5. Total Score
+
+**Total Score = 84**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The score of 84 indicates a very high level of service, which we categorize as **"Good"**.
+
+**Review Content Positivity:**  
+- The review is highly positive, emphasizing efficiency, professionalism, and accommodating behavior.
+
+**Country & Restaurant Type:**  
+- Country: USA  
+- Restaurant Type: Casual dining
+
+**Tip Range for USA Casual Dining (Good):**  
+- 16% to 20%
+
+**Selected Tip Percentage:**  
+- Given the excellent service and positive review, we choose the upper end of the "Good" range: **20%**.
+
+**Final Tip Calculation:**  
+- Tip = 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server efficiently managed a large party (14 people) with complex, individual orders, split checks, and scattered requests, handling multiple drink rounds and accurately taking 13 food orders with modifiers without personal error voids. They maintained a professional attitude, responded to frequent demands under pressure, and stayed significantly late to accommodate the group, while also attending to other tables concurrently.",
+  "Final Reason": "The server demonstrated exceptional reliability, responsiveness, confidence, and proactive service, effectively managing a large, complex order with professionalism and care. The positive review and high scores justify a top-tier tip percentage.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:18:36,292 - eval_gpt - INFO - 레코드 #77 (Reddit 게시물) - 실제: 15.0%, 예측: 20.0%, 오차: 5.0%
+2025-05-11 06:18:36,806 - eval_gpt - INFO - 처리 중... 레코드 #78 (샘플 79/105)
+2025-05-11 06:18:41,002 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:41,003 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server offered a drink to the waiting guest upon seating. The server later greeted the arriving guest by name, recalling a previous interaction. During a slow period, the server engaged the guests in conversation, building rapport and discussing personal topics."
+
+---
+
+#### Evaluation Criteria Analysis
+
+**a) Reliability:**  
+- The server's actions indicate accurate and attentive service, with no mention of order mistakes or billing errors.  
+- The server's ability to recall previous interactions and offer drinks suggests proper handling of orders and attention to detail.  
+**Score: 4**  
+*Justification:* The server correctly handled interactions and showed good attention, but there's no explicit mention of handling custom orders or allergies, so not a perfect 5.
+
+**b) Responsiveness:**  
+- The server responded promptly by offering drinks and greeting guests by name, indicating quick and attentive service.  
+- Engaging in conversation during slow periods shows proactive and friendly responses.  
+**Score: 5**  
+*Justification:* Immediate, friendly, and proactive responses are evident.
+
+**c) Assurance:**  
+- The server demonstrated confidence by recalling previous interactions and engaging in conversation, which builds trust.  
+- No indication of uncertainty or lack of menu knowledge.  
+**Score: 4**  
+*Justification:* The server appears professional and confident, but there's no explicit mention of explaining menu items or premium suggestions.
+
+**d) Empathy:**  
+- The server built rapport and discussed personal topics, showing genuine interest and personalized service.  
+- Greeting by name and engaging in conversation indicates high empathy.  
+**Score: 5**  
+*Justification:* Shows proactive understanding of customer emotions and personalized care.
+
+**e) Tangibles:**  
+- No explicit mention of cleanliness, uniform, or table setting.  
+- Given the positive tone and no negative comments, assume standard cleanliness and tidiness.  
+**Score: 4**  
+*Justification:* No issues noted; standard cleanliness maintained.
+
+---
+
+### Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (4 + 5 + 4 + 5 + 4) * 4  
+= (22) * 4  
+= **88**
+
+---
+
+### Total Score
+
+**Total Score = 88**
+
+---
+
+### Tip Calculation
+
+**Service Level:**  
+- The score of 88 indicates excellent service, likely "Good" level.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining.
+
+**Tipping Range for USA Casual dining:**  
+- Good: 16% to 20%
+
+**Selected Tip Percentage:**  
+- Since the review and video are very positive, and the score is high, choose the upper end of the "Good" range: **20%**
+
+**Final Tip Calculation:**  
+- Subtotal: $25.00  
+- Tip: 20% of $25.00 = $5.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server offered a drink to the waiting guest upon seating. The server later greeted the arriving guest by name, recalling a previous interaction. During a slow period, the server engaged the guests in conversation, building rapport and discussing personal topics.",
+  "Final Reason": "The server demonstrated high responsiveness, empathy, and reliability, engaging proactively with guests and building rapport, which indicates excellent service. The positive interactions and attentive behavior justify a high tip percentage.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:18:41,009 - eval_gpt - INFO - 레코드 #78 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:18:41,512 - eval_gpt - INFO - 처리 중... 레코드 #79 (샘플 80/105)
+2025-05-11 06:18:45,275 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:45,290 - eval_gpt - INFO - 레코드 #79 (Reddit 게시물) - 실제: 15.0%, 예측: 10.0%, 오차: -5.0%
+2025-05-11 06:18:45,794 - eval_gpt - INFO - 처리 중... 레코드 #80 (샘플 81/105)
+2025-05-11 06:18:49,990 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:50,276 - eval_gpt - INFO - 레코드 #80 (Reddit 게시물) - 실제: 10.0%, 예측: 20.0%, 오차: 10.0%
+2025-05-11 06:18:50,782 - eval_gpt - INFO - 처리 중... 레코드 #81 (샘플 82/105)
+2025-05-11 06:18:55,563 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:18:55,573 - eval_gpt - INFO - 레코드 #81 (Reddit 게시물) - 실제: 11.76%, 예측: 10.0%, 오차: -1.7599999999999998%
+2025-05-11 06:18:56,076 - eval_gpt - INFO - 처리 중... 레코드 #82 (샘플 83/105)
+2025-05-11 06:19:00,351 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:00,353 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"Service went very well. The server processed the payment, delivered the check, and said goodbye. After the guests departed, the server checked the table within three minutes and made an immediate attempt to locate them outside the restaurant when the receipt was missing."
+
+---
+
+#### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server handled the payment and check delivery correctly, and responded promptly after guests left. No errors or omissions are mentioned.  
+**Score: 4**  
+*Justification:* The server correctly handled custom orders and considered guest needs, such as locating missing receipts, indicating good reliability but not perfect accuracy or repeat confirmation.
+
+**b) Responsiveness:**  
+- The server responded quickly to the guests' departure and attempted to locate the receipt immediately.  
+**Score: 5**  
+*Justification:* Immediate and proactive response, friendly tone implied by the positive service description.
+
+**c) Assurance:**  
+- The server confidently processed payment, delivered check, and took initiative to find missing receipt. No menu questions or doubts are mentioned.  
+**Score: 4**  
+*Justification:* Demonstrates professionalism and confidence, earning trust.
+
+**d) Empathy:**  
+- The service was described as very good, with prompt actions and friendly gestures like saying goodbye. No explicit personalization, but proactive behavior suggests good empathy.  
+**Score: 4**  
+*Justification:* Shows understanding of guest needs and proactive service.
+
+**e) Tangibles:**  
+- No mention of cleanliness or physical environment issues. The description implies a standard good service environment.  
+**Score: 4**  
+*Justification:* Assumed tidy and professional setting, meeting standards.
+
+---
+
+#### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 5 + 4 + 4 + 4) * 4  
+= (21) * 4  
+= **84**
+
+---
+
+### 5. Total Score
+
+**Total Score = 84**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The description indicates excellent service, prompt, attentive, and professional.  
+- **Categorized as "Good" service.**
+
+**Country & Restaurant Type:**  
+- USA, Casual dining.
+
+**Tip Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected tip percentage:**  
+- Since the review is very positive, and the video shows proactive, attentive service, we choose the upper end of the "Good" range: **20%**.
+
+**Final Tip Calculation:**  
+- Subtotal: $25.00  
+- Tip percentage: 20%  
+- Tip amount: $25.00 * 0.20 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "Service went very well. The server processed the payment, delivered the check, and said goodbye. After the guests departed, the server checked the table within three minutes and made an immediate attempt to locate them outside the restaurant when the receipt was missing.",
+  "Final Reason": "The server demonstrated excellent reliability, responsiveness, assurance, empathy, and maintained good tangibles, indicating a high level of service quality. The proactive and attentive behavior, along with prompt responses, justify a high tip percentage. No ethical issues were present, and reviews were positive.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:19:00,360 - eval_gpt - INFO - 레코드 #82 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:19:00,875 - eval_gpt - INFO - 처리 중... 레코드 #83 (샘플 84/105)
+2025-05-11 06:19:06,180 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:06,190 - eval_gpt - INFO - 레코드 #83 (Reddit 게시물) - 실제: 20.0%, 예측: 10.0%, 오차: -10.0%
+2025-05-11 06:19:06,703 - eval_gpt - INFO - 처리 중... 레코드 #84 (샘플 85/105)
+2025-05-11 06:19:11,427 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:11,440 - eval_gpt - INFO - 레코드 #84 (Reddit 게시물) - 실제: 5.0%, 예측: 20.0%, 오차: 15.0%
+2025-05-11 06:19:11,943 - eval_gpt - INFO - 처리 중... 레코드 #85 (샘플 86/105)
+2025-05-11 06:19:16,384 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:16,398 - eval_gpt - INFO - 레코드 #85 (Reddit 게시물) - 실제: 15.0%, 예측: 8.0%, 오차: -7.0%
+2025-05-11 06:19:16,909 - eval_gpt - INFO - 처리 중... 레코드 #86 (샘플 87/105)
+2025-05-11 06:19:21,077 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:21,085 - eval_gpt - INFO - 레코드 #86 (Reddit 게시물) - 실제: 12.0%, 예측: 10.0%, 오차: -2.0%
+2025-05-11 06:19:21,598 - eval_gpt - INFO - 처리 중... 레코드 #87 (샘플 88/105)
+2025-05-11 06:19:26,131 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:26,141 - eval_gpt - INFO - 레코드 #87 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:19:26,652 - eval_gpt - INFO - 처리 중... 레코드 #88 (샘플 89/105)
+2025-05-11 06:19:30,800 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:30,813 - eval_gpt - INFO - 레코드 #88 (Reddit 게시물) - 실제: 2.0%, 예측: 0.0%, 오차: -2.0%
+2025-05-11 06:19:31,324 - eval_gpt - INFO - 처리 중... 레코드 #89 (샘플 90/105)
+2025-05-11 06:19:35,719 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:35,729 - eval_gpt - INFO - 레코드 #89 (Reddit 게시물) - 실제: 14.0%, 예측: 20.0%, 오차: 6.0%
+2025-05-11 06:19:36,240 - eval_gpt - INFO - 처리 중... 레코드 #90 (샘플 91/105)
+2025-05-11 06:19:42,212 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:42,223 - eval_gpt - INFO - 레코드 #90 (Reddit 게시물) - 실제: 15.0%, 예측: 12.0%, 오차: -3.0%
+2025-05-11 06:19:42,728 - eval_gpt - INFO - 처리 중... 레코드 #91 (샘플 92/105)
+2025-05-11 06:19:47,360 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:47,373 - eval_gpt - INFO - 레코드 #91 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:19:47,886 - eval_gpt - INFO - 처리 중... 레코드 #92 (샘플 93/105)
+2025-05-11 06:19:52,115 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:52,125 - eval_gpt - INFO - 레코드 #92 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:19:52,631 - eval_gpt - INFO - 처리 중... 레코드 #93 (샘플 94/105)
+2025-05-11 06:19:57,800 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:19:57,812 - eval_gpt - INFO - 레코드 #93 (Reddit 게시물) - 실제: 5.0%, 예측: 20.0%, 오차: 15.0%
+2025-05-11 06:19:58,319 - eval_gpt - INFO - 처리 중... 레코드 #94 (샘플 95/105)
+2025-05-11 06:20:02,816 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:02,826 - eval_gpt - INFO - 레코드 #94 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:20:03,337 - eval_gpt - INFO - 처리 중... 레코드 #95 (샘플 96/105)
+2025-05-11 06:20:07,640 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:07,642 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"The server checked on tables and responded to customer complaints about food quality, promising to relay feedback to the kitchen. The server maintained composure and professionalism when a customer made a fake complaint and joke."
+
+---
+
+#### Evaluation Criteria Analysis:
+
+**a) Reliability:**  
+- The server responded appropriately to customer complaints, relayed feedback, and handled a fake complaint with professionalism.  
+- No errors or omissions are mentioned.  
+**Score: 4**  
+*Justification:* The server correctly handled custom orders and considered customer interactions, but there's no explicit mention of confirming allergies or preferences, so full 5 is not justified.
+
+**b) Responsiveness:**  
+- The server responded promptly and professionally to customer interactions, including fake complaints and jokes.  
+- The tone appears friendly and proactive.  
+**Score: 5**  
+*Justification:* Immediate, friendly, and proactive responses are indicated.
+
+**c) Assurance:**  
+- The server maintained professionalism and confidence, promising to relay feedback, which builds trust.  
+- No indication of uncertainty or lack of menu knowledge.  
+**Score: 4**  
+*Justification:* The server demonstrated confidence and professionalism but did not explicitly offer premium suggestions.
+
+**d) Empathy:**  
+- The server maintained composure during a fake complaint and joke, indicating good emotional control.  
+- No explicit mention of personalized service or remembering preferences.  
+**Score: 4**  
+*Justification:* Shows good emotional understanding and professionalism, but no evidence of personalized service.
+
+**e) Tangibles:**  
+- No specific mention of cleanliness, uniforms, or physical environment.  
+- Assume standard cleanliness and tidiness based on professionalism.  
+**Score: 3**  
+*Justification:* No explicit info, so accepting an acceptable but not exceptional score.
+
+---
+
+### Video Score Calculation:
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (4 + 5 + 4 + 4 + 3) * 4  
+= (20) * 4  
+= **80**
+
+---
+
+### Total Score:
+
+**Total Score = 80**
+
+---
+
+### Tip Calculation:
+
+**Service Level:**  
+- The score of 80 indicates a "Good" service level (since it's above 75).  
+- The review content is positive, highlighting professionalism and responsiveness.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining.
+
+**Tip Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Chosen tip percentage:**  
+- Since the review is positive and the score is high, select the upper end of the "Good" range.  
+- **Tip percentage: 20%**
+
+**Calculation:**  
+- Subtotal: $25.00  
+- Tip amount: 25.00 * 20% = $5.00
+
+---
+
+### Final Output:
+
+```json
+{
+  "### Video Caption 1 ###": "The server checked on tables and responded to customer complaints about food quality, promising to relay feedback to the kitchen. The server maintained composure and professionalism when a customer made a fake complaint and joke.",
+  "Final Reason": "The server demonstrated excellent responsiveness, professionalism, and emotional control, leading to a high service score. The positive review and high score justify tipping at the upper end of the 'Good' range for casual dining in the USA.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:20:07,648 - eval_gpt - INFO - 레코드 #95 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:20:08,163 - eval_gpt - INFO - 처리 중... 레코드 #96 (샘플 97/105)
+2025-05-11 06:20:12,927 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:12,929 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Summary:**  
+The server handled a large party with high effort, acknowledged the automatic 18% gratuity policy, apologized for any communication gaps, and assisted with bill splitting. When a misunderstanding arose, the server involved a manager to resolve it.
+
+---
+
+### 1-1. Video Evaluation Criteria
+
+**a) Reliability:**  
+- The server managed a large party efficiently, indicating good handling of complex orders.  
+- No billing errors or order mistakes are mentioned.  
+- The explanation of the gratuity policy and involving a manager suggests proper communication.  
+**Score: 4**  
+*Justification:* Custom orders and policies were handled correctly, but there's no mention of repeat confirmation procedures or 100% accuracy.
+
+**b) Responsiveness:**  
+- The server responded to customer questions about the gratuity and bill splitting, and involved a manager when needed.  
+- The tone appears polite and proactive.  
+**Score: 4**  
+*Justification:* Quick responses and proactive problem-solving are implied, but no explicit mention of immediate responses or facial expressions.
+
+**c) Assurance:**  
+- The server explained the automatic gratuity policy and apologized, demonstrating confidence and professionalism.  
+- Involving a manager shows confidence in handling misunderstandings.  
+**Score: 4**  
+*Justification:* The explanation was professional, and the server earned trust, but there's no indication of offering premium suggestions.
+
+**d) Empathy:**  
+- The server acknowledged the customer's concern about the gratuity policy and apologized, showing consideration.  
+- No specific personalized services or emotional understanding are mentioned.  
+**Score: 3**  
+*Justification:* Basic friendliness and acknowledgment are present, but no evidence of personalized care or emotional engagement.
+
+**e) Tangibles:**  
+- No explicit mention of cleanliness, uniforms, or table settings.  
+- Assuming standard cleanliness and tidiness based on context.  
+**Score: 3**  
+*Justification:* No issues reported, but no specific details provided.
+
+---
+
+### 1-2. Video Score Calculation
+
+**Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4**  
+= (4 + 4 + 4 + 3 + 3) * 4  
+= (18) * 4  
+= **72**
+
+---
+
+### 5. Total Score
+
+**Total Score = 72**
+
+---
+
+### 6. Tip Calculation
+
+**Service Level:**  
+- The server handled a large party efficiently, explained policies, and involved management when needed.  
+- The overall tone and actions suggest a good level of service.  
+- The score of 72 indicates a "Good" service level.
+
+**Country & Restaurant Type:**  
+- USA, Casual dining
+
+**Tip Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected tip percentage:**  
+- Given the positive review and high effort, select the upper end of the "Good" range: **20%**
+
+**Calculation:**  
+- Subtotal: $25.00  
+- Tip: 20% of $25.00 = $5.00
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption 1 ###": "The server managed a large party of 25, reporting high effort as they were \"running around non stop.\" They delivered the check and then explained the automatic 18% [REMOVED] policy when questioned, apologizing if it hadn't been communicated during the reservation. The server facilitated splitting the bill and involved a manager when unable to fully resolve a customer's misunderstanding about the percentage calculation.",
+  "Final Reason": "The server demonstrated high effort, professionalism, and proactive communication, handling a complex situation effectively. The explanation of policies and involving management when needed reflect a good service level. The scores reflect reliable, responsive, and confident service with basic empathy and tidy presentation, leading to a high service quality score.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 30.00
+}
+```
+2025-05-11 06:20:12,935 - eval_gpt - INFO - 레코드 #96 (Reddit 게시물) - 실제: 18.0%, 예측: 20.0%, 오차: 2.0%
+2025-05-11 06:20:13,442 - eval_gpt - INFO - 처리 중... 레코드 #97 (샘플 98/105)
+2025-05-11 06:20:18,156 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:18,159 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Caption:**  
+"Service quality was described as fine, providing a generally acceptable experience. The server did not make any attempts to rush the customers after they had finished their meal."
+
+---
+
+#### Evaluation Criteria Analysis:
+
+**a) Reliability:**  
+- The caption indicates the service was "fine" and generally acceptable, with no mention of order mistakes or billing errors.  
+- Since the service was described as fine and no issues are noted, it suggests mostly accurate orders with no major mistakes.  
+- **Score: 4**  
+*Justification:* The server handled the service well, considering the description as "fine," implying correct handling of orders and no significant errors.
+
+**b) Responsiveness:**  
+- The server did not rush customers, indicating a relaxed and attentive service style.  
+- No delays or ignoring requests are mentioned; the service appears timely and polite.  
+- **Score: 4**  
+*Justification:* The absence of rushing and the overall acceptable experience suggest quick and polite responses.
+
+**c) Assurance:**  
+- The description does not mention menu explanations or confidence levels, but the service was acceptable and trustworthy.  
+- No explicit mention of menu explanations or premium suggestions.  
+- **Score: 3**  
+*Justification:* The service seems competent but not notably confident or offering premium suggestions.
+
+**d) Empathy:**  
+- The server did not rush customers and maintained a relaxed atmosphere, indicating some level of attentiveness.  
+- No specific personalization or emotional understanding is mentioned.  
+- **Score: 3**  
+*Justification:* Basic friendliness is implied, but no personalized service or emotional engagement is evident.
+
+**e) Tangibles:**  
+- No details about cleanliness, uniform, or table setting are provided.  
+- Given the overall acceptable experience, assume standard cleanliness and tidiness.  
+- **Score: 4**  
+*Justification:* The environment likely met basic standards of cleanliness and tidiness, consistent with a fine but not exceptional service.
+
+---
+
+### Video Score Calculation:
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (4 + 4 + 3 + 3 + 4) * 4  
+= (18) * 4  
+= **72**
+
+---
+
+### Total Score:
+
+**Total Score = 72**
+
+---
+
+### Final Reason:
+
+The service was generally acceptable and fine, with no major issues or negative behaviors. The server responded politely and promptly, and the environment was tidy. Based on the scores, the service level is "Normal" to "Good." The review content suggests a positive experience, so a tip within the "Good" range is appropriate.
+
+---
+
+### Tip Calculation:
+
+- **Country:** USA  
+- **Restaurant Type:** Casual dining  
+- **Service Level:** "Good" (Total score 72 falls into the "Good" category)  
+- **Tip Range for USA Casual dining (Good):** 16% to 20%  
+- **Selected tip percentage:** 20% (upper end of the "Good" range, reflecting positive review and high score)
+
+### Final Tip Amount:
+
+$25.00 * 20% = **$5.00**
+
+---
+
+### Final Output:
+
+```json
+{
+  "### Video Caption 1 ###": "Service quality was described as fine, providing a generally acceptable experience. The server did not make any attempts to rush the customers after they had finished their meal.",
+  "Final Reason": "The service was generally acceptable, attentive, and polite, with no major mistakes or issues. The environment was tidy, and the server responded promptly. The overall experience was positive, warranting a high tip within the 'Good' range.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:20:18,167 - eval_gpt - INFO - 레코드 #97 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:20:18,672 - eval_gpt - INFO - 처리 중... 레코드 #98 (샘플 99/105)
+2025-05-11 06:20:23,042 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:23,044 - eval_gpt - INFO - ### Video Caption Analysis
+
+**Video Summary:**  
+The server demonstrated good communication skills by initiating conversation, explaining policies clearly, and providing detailed information about charges and policies. The server also checked on other tables, indicating attentiveness, and handled questions about charges professionally.
+
+---
+
+### Evaluation Criteria Analysis
+
+**a) Reliability:**  
+- The server explained policies clearly, handled billing questions professionally, and did not show any mistakes or omissions.  
+- No errors or omissions were noted, and allergy or special requests were considered.  
+**Score: 5**  
+*Justification:* The server's handling of billing and policy explanations was accurate and thorough, demonstrating 100% accuracy and confirmation procedures.
+
+**b) Responsiveness:**  
+- The server responded promptly to questions about charges and policies, providing clear explanations.  
+- No delays or ignoring requests were observed.  
+**Score: 5**  
+*Justification:* The responses were immediate, friendly, and proactive, indicating excellent responsiveness.
+
+**c) Assurance:**  
+- The server explained policies confidently, answered questions clearly, and maintained professionalism.  
+- No signs of uncertainty or rudeness.  
+**Score: 5**  
+*Justification:* The server earned trust through confident explanations and professionalism, including handling policy questions effectively.
+
+**d) Empathy:**  
+- The server showed consideration by explaining policies clearly and addressing questions politely.  
+- No evidence of personalized service or emotional understanding beyond basic friendliness.  
+**Score: 4**  
+*Justification:* The server was friendly and considerate but did not demonstrate proactive personalization or emotional engagement.
+
+**e) Tangibles:**  
+- The video did not mention any issues with cleanliness or uniform.  
+- The environment appeared tidy, and the server's appearance was professional.  
+**Score: 4**  
+*Justification:* The setting and server presentation appeared clean and professional, meeting standards but not explicitly described as exceptional.
+
+---
+
+### Video Score Calculation
+
+Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles) * 4  
+= (5 + 5 + 5 + 4 + 4) * 4  
+= (23) * 4  
+= **92**
+
+---
+
+### Total Score
+
+**Total Score = 92**
+
+---
+
+### Tip Calculation
+
+**Service Level:**  
+- The score of 92 indicates excellent service, categorized as **"Good"**.
+
+**Country and Restaurant Type:**  
+- USA, Casual dining.
+
+**Tipping Range for USA Casual dining (Good):**  
+- 16% to 20%
+
+**Selected Tip Percentage:**  
+- Given the high score and positive review tone, select the upper end of the "Good" range: **20%**.
+
+**Final Tip Calculation:**  
+- Tip = 20% of $25.00 = **$5.00**
+
+---
+
+### Final Output
+
+```json
+{
+  "### Video Caption i(1) ###": "The server initiated conversation by asking what the customers needed. The server explained the fresh lemonade policy including the price and free refills. The server delivered the check and checked on other tables. When stopped and questioned about a drink charge, the server clearly explained the kids meal drink policy regarding age limits and takeout verification.",
+  "Final Reason": "The server demonstrated excellent reliability, responsiveness, assurance, and good tangible presentation, with only minor room for improvement in personalization. The service was professional, attentive, and clear, warranting a high tip percentage.",
+  "final_tip_percentage": 20,
+  "final_tip_amount": 5.00,
+  "final_total_bill": 25.00
+}
+```
+2025-05-11 06:20:23,050 - eval_gpt - INFO - 레코드 #98 (Reddit 게시물) - 실제: 10.0%, 예측: 20.0%, 오차: 10.0%
+2025-05-11 06:20:23,554 - eval_gpt - INFO - 처리 중... 레코드 #99 (샘플 100/105)
+2025-05-11 06:20:28,040 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:28,050 - eval_gpt - INFO - 레코드 #99 (Reddit 게시물) - 실제: 0.0%, 예측: 12.0%, 오차: 12.0%
+2025-05-11 06:20:28,562 - eval_gpt - INFO - 처리 중... 레코드 #100 (샘플 101/105)
+2025-05-11 06:20:32,641 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:32,656 - eval_gpt - INFO - 레코드 #100 (Reddit 게시물) - 실제: 20.0%, 예측: 20.0%, 오차: 0.0%
+2025-05-11 06:20:33,166 - eval_gpt - INFO - 처리 중... 레코드 #101 (샘플 102/105)
+2025-05-11 06:20:37,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:37,543 - eval_gpt - INFO - 레코드 #101 (Reddit 게시물) - 실제: 7.14%, 예측: 20.0%, 오차: 12.86%
+2025-05-11 06:20:38,052 - eval_gpt - INFO - 처리 중... 레코드 #102 (샘플 103/105)
+2025-05-11 06:20:42,127 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:42,136 - eval_gpt - INFO - 레코드 #102 (Reddit 게시물) - 실제: 18.0%, 예측: 20.0%, 오차: 2.0%
+2025-05-11 06:20:42,646 - eval_gpt - INFO - 처리 중... 레코드 #103 (샘플 104/105)
+2025-05-11 06:20:47,637 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:47,650 - eval_gpt - INFO - 레코드 #103 (Reddit 게시물) - 실제: 15.0%, 예측: 20.0%, 오차: 5.0%
+2025-05-11 06:20:48,153 - eval_gpt - INFO - 처리 중... 레코드 #104 (샘플 105/105)
+2025-05-11 06:20:52,701 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-11 06:20:52,714 - eval_gpt - INFO - 레코드 #104 (Reddit 게시물) - 실제: 5.71%, 예측: 20.0%, 오차: 14.29%
+2025-05-11 06:20:53,215 - eval_gpt - INFO - 평가 완료. 총 104 Reddit 게시물 레코드 처리됨 (실패: 1개)
+2025-05-11 06:20:53,215 - eval_gpt - INFO - MSE: 43.9909, RMSE: 6.6326
+2025-05-11 06:20:53,224 - eval_gpt - INFO - 결과가 eval_results\eval_gpt_results.csv에 저장되었습니다. (총 105개 레코드)
+2025-05-11 06:20:53,243 - eval_gpt - INFO - 상세 결과가 eval_results\eval_gpt_results_full.json에 저장되었습니다.
+2025-05-11 06:20:53,246 - eval_gpt - INFO - 평가 통계가 eval_results\eval_gpt_stats.json에 저장되었습니다.
+2025-05-11 06:20:53,247 - eval_gpt - INFO - 평가 완료
