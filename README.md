@@ -3,6 +3,7 @@
 
 
 ---
+
 <h3> 👪 Team Members </h3>
 <table>
   <tr>
@@ -26,4 +27,5 @@
     <td> <div align=center> <a href="https://github.com/SeoBuAs"> <img alt="Github" src ="https://img.shields.io/badge/Github-181717.svg?&style=plastic&logo=Github&logoColor=white"/> </div> </td>
   </tr>
 </table>
+
 ---
