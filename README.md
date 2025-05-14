@@ -43,7 +43,7 @@ This project is an automated system that uses Visual Language Model (VLM) techno
 <h3> 🎥 Gradio Interface </h3>
 <table>
   <tr>
-    <td><img src="./image/Gradio_.png" alt="Image 2"/></td>
+    <td><img src="./image/Gradio.jpeg" alt="Image 2"/></td>
   </tr>
 </table>
 
