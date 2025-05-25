@@ -537,7 +537,12 @@ Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하
 
 ## 💿 데이터 제작 출처 및 평가 정보
 
+
+
 이 프로젝트의 일부(팁 토론 또는 미세 조정/평가를 위한 리뷰와 관련될 가능성이 높음)에 사용된 데이터 세트는 다음에서 찾을 수 있습니다:
+
+[Hugging Face의 Reddit 팁 데이터 세트 컬렉션](https://huggingface.co/collections/kfkas/reddit-tip-dataset-681f42af40cff65d89153c88)
+
 
 ### 데이터 수집 및 필터링 과정
 
@@ -569,6 +574,4 @@ Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하
     <td><img src="./image/appendix.png" alt="서비스 아키텍처 다이어그램"/></td>
   </tr>
 </table>
-
-[Hugging Face의 Reddit 팁 데이터 세트 컬렉션](https://huggingface.co/collections/kfkas/reddit-tip-dataset-681f42af40cff65d89153c88)
 
