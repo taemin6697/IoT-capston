@@ -432,36 +432,36 @@ Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하
 
 ```mermaid
 graph TD
-    A[사용자 입력: 음식 주문, 별점, 리뷰 텍스트] --> C{데이터 취합 및 전처리};
-    B[사용자 입력: 이미지/비디오 업로드] --> D[이미지/비디오 분석 VLM];
-    E[사용자 입력: 식당 정보/URL] --> F[Google 리뷰 수집/요약];
+    A[사용자 입력: 음식 주문, 별점, 리뷰 텍스트] --> C{데이터 취합 및 전처리}
+    B[사용자 입력: 이미지/비디오 업로드] --> D[이미지/비디오 분석 VLM]
+    E[사용자 입력: 식당 정보/URL] --> F[Google 리뷰 수집/요약]
     
-    D -- 이미지/비디오 분석 결과 --> C;
-    F -- Google 리뷰 요약 --> C;
+    D -->|이미지/비디오 분석 결과| C
+    F -->|Google 리뷰 요약| C
     
-    C --> G[팁 계산 LLM 선택 (UI)];
+    C --> G[팁 계산 LLM 선택 UI]
     
-    G -->|선택된 LLM 정보| H{최종 팁 계산 프롬프트 생성 (`tip_calculator.py`)};
-    C -->|모든 취합 정보| H;
+    G -->|선택된 LLM 정보| H{최종 팁 계산 프롬프트 생성<br/>tip_calculator.py}
+    C -->|모든 취합 정보| H
     
-    H --> I[선택된 LLM (Gemini/Ollama/Qwen/GPT)];
-    I -->|LLM 응답 (JSON 등)| J[응답 파싱 및 정보 추출 (`tip_calculator.py`)];
-    J --> K[UI에 결과 표시: 추천 팁, 분석 근거];
+    H --> I[선택된 LLM<br/>Gemini/Ollama/Qwen/GPT]
+    I -->|LLM 응답 JSON 등| J[응답 파싱 및 정보 추출<br/>tip_calculator.py]
+    J --> K[UI에 결과 표시:<br/>추천 팁, 분석 근거]
 
-    subgraph 로컬 VLM 분석 (llm_server.py API)
-        L[이미지 입력] --> M{SmolVLM API /api/smolvlm_detect};
-        M -->|"예/아니오, 설명"| D;
-        L --> N{SIGLIP API /api/siglip_detect};
-        N -->|"레이블, 점수"| D;
+    subgraph VLM["로컬 VLM 분석 (llm_server.py API)"]
+        L[이미지 입력] --> M{SmolVLM API<br/>/api/smolvlm_detect}
+        M -->|예/아니오, 설명| D
+        L --> N{SIGLIP API<br/>/api/siglip_detect}
+        N -->|레이블, 점수| D
     end
 
-    subgraph 외부 VLM/LLM (models/model_clients.py)
-        O[Gemini API Client] --> D;
-        O --> I;
-        P[Qwen API Client] --> D;
-        P --> I;
-        Q[OpenAI GPT API Client] --> I;
-        R[Ollama Client] --> I;
+    subgraph APIs["외부 VLM/LLM (models/model_clients.py)"]
+        O[Gemini API Client] --> D
+        O --> I
+        P[Qwen API Client] --> D
+        P --> I
+        Q[OpenAI GPT API Client] --> I
+        R[Ollama Client] --> I
     end
 ```
 *Mermaid 다이어그램은 마크다운 뷰어에 따라 렌더링될 수도 있고, 텍스트로 표시될 수도 있습니다.*
