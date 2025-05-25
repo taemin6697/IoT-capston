@@ -450,9 +450,9 @@ graph TD
 
     subgraph 로컬 VLM 분석 (llm_server.py API)
         L[이미지 입력] --> M{SmolVLM API /api/smolvlm_detect};
-        M -- 예/아니오, 설명 --> D;
+        M -- "예/아니오, 설명" --> D;
         L --> N{SIGLIP API /api/siglip_detect};
-        N -- 레이블, 점수 --> D;
+        N -- "레이블, 점수" --> D;
     end
 
     subgraph 외부 VLM/LLM (models/model_clients.py)
@@ -586,5 +586,3 @@ graph TD
 
 [Hugging Face의 Reddit 팁 데이터 세트 컬렉션](https://huggingface.co/collections/kfkas/reddit-tip-dataset-681f42af40cff65d89153c88)
 
----
-*참고: 이 문서는 제공된 파일 구조 및 코드 일부를 기반으로 작성되었습니다. `kiosk.py`, `tt.py` 등 일부 파일의 구체적인 기능과 `utils/config.py`의 전체 설정 항목, 각 API 클라이언트의 상세 설정은 해당 코드를 직접 확인해야 합니다. Mermaid 다이어그램은 환경에 따라 렌더링되지 않을 수 있습니다.*
