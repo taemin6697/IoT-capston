@@ -1,5 +1,15 @@
 # VLM 기반 팁 계산기
 
+## ⌘ 서비스 아키텍처
+
+<table>
+  <tr>
+    <td><img src="./image/Pipeline.png" alt="서비스 아키텍처 다이어그램"/></td>
+  </tr>
+</table>
+
+<br>
+
 ## 🚩 프로젝트 개요
 
 본 프로젝트는 VLM(Visual Language Model) 기반의 자동 팁 계산 서비스입니다. 카메라 영상과 사용자 리뷰 데이터를 분석하여 서비스 품질을 객관적으로 평가하고, 이를 바탕으로 적절한 팁 금액을 제공합니다.
@@ -16,6 +26,19 @@
 ### ✨ 주요 차별점
 
 기존의 팁 계산기는 사용자가 직접 팁 비율을 입력해야 하는 방식이지만, 본 시스템은 AI 모델을 활용하여 서비스 품질에 따라 적절한 팁 비율을 자동으로 제안함으로써 사용자가 직접 팁 비율을 설정할 필요가 없다는 점에서 차별화됩니다.
+
+## 🧑🏻‍💻 팀 소개: "두잔해"
+
+**"한성대학교 지능시스템 트랙에서 모인 캡스톤 디자인 팀 `두잔해`"**
+
+### 👨🏼‍💻 팀원
+
+김태민|고혜정|서준혁
+:-:|:-:|:-:|
+<img src='https://avatars.githubusercontent.com/u/96530685?v=4' height=130 width=130></img>|<img src='https://avatars.githubusercontent.com/u/190566247?v=4' height=130 width=130></img>|<img src='https://avatars.githubusercontent.com/u/105350096?v=4' height=130 width=130></img>|
+<a href="https://github.com/taemin6697" target="_blank"><img src="https://img.shields.io/badge/Github-black.svg?&style=round&logo=github"/></a>|<a href="https://github.com/Kohyejung" target="_blank"><img src="https://img.shields.io/badge/Github-black.svg?&style=round&logo=github"/></a>|<a href="https://github.com/SeoBuAs" target="_blank"><img src="https://img.shields.io/badge/Github-black.svg?&style=round&logo=github"/></a>
+<a href="mailto:taemin6697@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style&logo=Gmail&logoColor=white"/></a>|<a href="mailto:helenko7738@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style&logo=Gmail&logoColor=white"/></a>|<a href="mailto:withop9974@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style&logo=Gmail&logoColor=white"/></a>|
+
 
 ## 🌟 주요 기능
 
@@ -504,9 +527,22 @@ graph TD
     ```
     없다면, 주요 의존성은 다음과 같습니다:
     ```bash
-    pip install flask opencv-python torch torchvision torchaudio transformers selenium webdriver-manager gradio ollama pandas Pillow google-generativeai openai qianfan # 각 API 클라이언트 라이브러리 포함
+    flask
+    opencv-python
+    torch
+    torchvision
+    torchaudio
+    transformers
+    selenium
+    webdriver-manager
+    gradio
+    ollama-python
+    pandas
+    pillow
+    google-generativeai
+    openai
+    qianfan
     ```
-    *정확한 패키지 목록은 코드의 import 문을 참조하고, `requirements.txt`를 생성하여 관리하는 것이 좋습니다.*
 
 4.  **모델 및 웹 드라이버 자동 다운로드:**
     *   **Hugging Face Models (SmolVLM, SIGLIP)**: `transformers` 라이브러리에 의해 처음 실행 시 자동 다운로드 및 캐시.
@@ -537,30 +573,6 @@ graph TD
 *   `eval/eval_results/`: 모델별 상세 평가 결과 (CSV, JSON), 통계(JSON), 로그 파일 저장.
 *   `eval/README.md`: 평가 방법론, 사용된 데이터셋, 평가 지표 등에 대한 더 구체적인 정보 포함 가능.
 
-## 🧑🏻‍💻 팀 소개: "두잔해"
-
-**"한성대학교 지능시스템 트랙에서 모인 캡스톤 디자인 팀 `두잔해`를 소개합니다!"**
-
-"우리는 정해진 역할보다 문제 해결에 집중합니다. 일이 보이면 먼저 손을 들고, 팀이 흔들릴 때는 중심을 잡습니다. 각자의 자리에서 주도적으로 움직이고, 끝까지 책임지는 자세가 우리 팀의 기본입니다."
-
-### 👨🏼‍💻 팀원
-
-김태민|고혜정|서준혁
-:-:|:-:|:-:|
-<img src='https://avatars.githubusercontent.com/u/96530685?v=4' height=130 width=130></img>|<img src='https://avatars.githubusercontent.com/u/190566247?v=4' height=130 width=130></img>|<img src='https://avatars.githubusercontent.com/u/105350096?v=4' height=130 width=130></img>|
-<a href="https://github.com/taemin6697" target="_blank"><img src="https://img.shields.io/badge/Github-black.svg?&style=round&logo=github"/></a>|<a href="https://github.com/Kohyejung" target="_blank"><img src="https://img.shields.io/badge/Github-black.svg?&style=round&logo=github"/></a>|<a href="https://github.com/SeoBuAs" target="_blank"><img src="https://img.shields.io/badge/Github-black.svg?&style=round&logo=github"/></a>
-<a href="mailto:taemin6697@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style&logo=Gmail&logoColor=white"/></a>|<a href="mailto:helenko7738@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style&logo=Gmail&logoColor=white"/></a>|<a href="mailto:withop9974@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style&logo=Gmail&logoColor=white"/></a>|
-
-## ⌘ 서비스 아키텍처
-
-<table>
-  <tr>
-    <td><img src="./image/Pipeline.png" alt="서비스 아키텍처 다이어그램"/></td>
-  </tr>
-</table>
-
-<br>
-
 ## 💿 데이터 제작 출처 및 평가 정보
 
 이 프로젝트의 일부(팁 토론 또는 미세 조정/평가를 위한 리뷰와 관련될 가능성이 높음)에 사용된 데이터 세트는 다음에서 찾을 수 있습니다:
@@ -568,7 +580,7 @@ graph TD
 
 <table>
   <tr>
-    <td><img src="./appendix.png" alt="서비스 아키텍처 다이어그램"/></td>
+    <td><img src="./image/appendix.png" alt="서비스 아키텍처 다이어그램"/></td>
   </tr>
 </table>
 
