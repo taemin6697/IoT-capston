@@ -441,11 +441,11 @@ graph TD
     
     C --> G[팁 계산 LLM 선택 (UI)];
     
-    G -- 선택된 LLM 정보 --> H{최종 팁 계산 프롬프트 생성 (`tip_calculator.py`)};
-    C -- 모든 취합 정보 --> H;
+    G -- 선택된 LLM 정보 --- H{최종 팁 계산 프롬프트 생성 (`tip_calculator.py`)};
+    C -- 모든 취합 정보 --- H;
     
     H --> I[선택된 LLM (Gemini/Ollama/Qwen/GPT)];
-    I -- LLM 응답 (JSON 등) --> J[응답 파싱 및 정보 추출 (`tip_calculator.py`)];
+    I -- LLM 응답 (JSON 등) --- J[응답 파싱 및 정보 추출 (`tip_calculator.py`)];
     J --> K[UI에 결과 표시: 추천 팁, 분석 근거];
 
     subgraph 로컬 VLM 분석 (llm_server.py API)
