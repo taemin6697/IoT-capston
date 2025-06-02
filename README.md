@@ -18,6 +18,37 @@
 
 사용자는 직관적인 인터페이스를 통해 분석 결과와 추천 팁 금액을 쉽게 확인할 수 있습니다. 이는 과도하거나 불공정한 팁 요구로 인한 부담을 줄이고 공정한 보상을 가능하게 합니다.
 
+## 📝 목차
+
+- [⌘ 서비스 아키텍처](#-서비스-아키텍처)
+- [🚩 프로젝트 개요](#-프로젝트-개요)
+  - [🎯 목표 및 동기](#-목표-및-동기)
+  - [✨ 주요 차별점](#-주요-차별점)
+- [🧑🏻‍💻 팀 소개: "두잔해"](#-팀-소개-두잔해)
+  - [👨🏼‍💻 팀원](#-팀원)
+- [🌟 주요 기능](#-주요-기능)
+- [🛠️ 기술 스택](#️-기술-스택)
+- [🏗️ 프로젝트 상세 구조 및 파일 설명](#️-프로젝트-상세-구조-및-파일-설명)
+  - [주요 파일 상세 설명 (`server/` 내부)](#주요-파일-상세-설명-server-내부)
+    - [`ui/ui_handler.py`](#uiui_handlerpy)
+    - [`models/tip_calculator.py`](#modelstip_calculatorpy)
+    - [`models/model_clients.py`](#modelsmodel_clientspy)
+    - [`utils/config.py`](#utilsconfigpy)
+    - [`llm_server.py`](#llm_serverpy)
+- [프롬프트 구조 및 흐름](#-프롬프트-구조-및-흐름)
+  - [1. 로컬 이미지 분석 API (`llm_server.py` 제공)](#1-로컬-이미지-분석-api-llm_serverpy-제공)
+  - [2. VLM 기반 이미지/비디오 캡션 생성 (`tip_calculator.py` 주도)](#2-vlm-기반-이미지비디오-캡션-생성-tip_calculatorpy-주도)
+  - [3. 최종 팁 계산 및 서비스 분석 (주요 LLM, `tip_calculator.py` 주도)](#3-최종-팁-계산-및-서비스-분석-주요-llm-tip_calculatorpy-주도)
+- [⚙️ Use Case (UI 기반 시나리오)](#️-use-case-ui-기반-시나리오)
+- [🚀 시작하기](#-시작하기)
+  - [사전 요구 사항](#사전-요구-사항)
+  - [설치 방법](#설치-방법)
+  - [애플리케이션 실행](#애플리케이션-실행)
+- [📊 평가](#-평가)
+- [💿 데이터 제작 출처 및 평가 정보](#-데이터-제작-출처-및-평가-정보)
+  - [데이터 수집 및 필터링 과정](#데이터-수집-및-필터링-과정)
+  - [모델 평가 점수](#모델-평가-점수)
+
 ### 🎯 목표 및 동기
 
 *   **배경**: 최근 미국 등 팁 문화가 있는 국가에서 팁 문화가 사회적 갈등의 원인이 되고 있습니다. 고객들은 기대에 미치지 못하는 서비스를 받았음에도 팁을 지불해야 하는 불만을 느끼고, 직원들은 최상의 서비스를 제공했음에도 충분한 보상을 받지 못하는 좌절감을 겪고 있습니다.
@@ -134,35 +165,45 @@ final_iot_capstone_test/
 
 ### 주요 파일 상세 설명 (`server/` 내부)
 
-#### `ui/ui_handler.py`
-메인 Gradio UI 애플리케이션의 인터페이스와 로직을 담당합니다. 사용자는 이 UI를 통해 데이터를 입력하고, 분석에 사용할 LLM 모델(Gemini, Ollama, Qwen, GPT 등)을 선택하며, 최종 팁 계산 결과와 분석 근거를 확인합니다.
+#### `kiosk.py` (메인 애플리케이션 실행 스크립트)
+애플리케이션의 주 진입점입니다. `App` 클래스를 통해 모든 주요 컴포넌트(설정, 모델 클라이언트, 비디오 프로세서, 팁 계산기, UI 핸들러 등)를 초기화하고 Gradio UI를 실행합니다.
+*   `App.__init__`: `get_recorded_videos` 함수(kiosk.py 내 정의)를 호출하여 초기 녹화 비디오 목록을 가져오고, 이를 `UIHandler`에 전달합니다.
+*   `run_gradio`: Gradio 인터페이스를 실행하며, `allowed_paths`를 설정하여 `server/record_videos/` (사용자 녹화 비디오) 및 프로젝트 루트의 `video/` (샘플 비디오) 디렉토리에 대한 접근을 허용합니다. (기존의 사용자 특정 절대 경로는 제거됨)
+*   불필요한 임포트 (`pathlib.Path`, `GoogleReviewManager`, `ModelClients`)가 정리되었습니다.
+*   `detection.py` 스크립트가 검토되었고, 주석 및 문서 문자열이 개선되었습니다 (직접적인 기능 변경은 없음).
 
-*   **실행 방법**: 보통 직접 실행하기보다는 다른 메인 실행 스크립트(예: `kiosk.py` 또는 별도의 `app.py`)에서 이 클래스를 호출하여 UI를 구성할 것으로 예상됩니다. 단독 실행이 가능하다면 `python server/ui/ui_handler.py`.
-*   **주요 기능**:
-    *   사용자 입력 인터페이스: 음식 주문, 별점, 텍스트 리뷰, 이미지/비디오 업로드, Google Maps URL 입력.
-    *   **모델 선택**: 팁 계산 및 분석에 사용할 LLM (Gemini, Ollama, Qwen, GPT) 선택 드롭다운 또는 버튼 제공.
-    *   이벤트 처리: 입력값 변경, 버튼 클릭 시 적절한 백엔드 로직 호출 (`TipCalculator`의 메소드 등).
-    *   결과 표시: 추천 팁, 분석 근거, 계산된 금액 등을 UI에 명확하게 표시.
-    *   SmolVLM/SIGLIP을 이용한 실시간 웨이터 감지 및 비디오 녹화 기능 (별도 탭).
+#### `ui/ui_handler.py` (Gradio UI 정의 및 이벤트 처리)
+메인 Gradio UI 애플리케이션의 인터페이스와 로직을 담당합니다.
+*   **구조 변경**:
+    *   `UIHandler.__init__` 메소드가 `recorded_videos: List[str]` 인자를 추가로 받아, `kiosk.py`로부터 전달된 녹화 비디오 목록을 내부적으로 사용합니다.
+    *   파일 내 로컬 `get_recorded_videos` 함수가 제거되어 `kiosk.py`의 함수로 기능이 중앙화되었습니다.
+    *   핵심 UI 구성 로직인 `create_gradio_blocks` 메소드가 여러 내부 헬퍼 메소드(예: `_build_food_menu_ui`, `_build_sidebar_ui`, `_setup_tab_navigation_events` 등)로 분리되어 가독성과 유지보수성이 향상되었습니다.
+    *   `compute_video_source` 함수는 이 파일 내의 전역 헬퍼 함수로 유지됩니다.
+*   **기능**:
+    *   사용자 입력 인터페이스: 음식 주문, 별점, 텍스트 리뷰, 비디오 업로드/선택 (예제 탭 또는 직접 업로드).
+    *   모델 선택: 팁 계산 및 분석에 사용할 LLM (Gemini, Ollama, Qwen, GPT) 선택.
+    *   이벤트 처리 및 결과 표시.
+    *   "예제" 탭, "AI 결과 분석" 탭, "프롬프트 편집" 탭 등의 주요 UI 기능 제공.
+*   불필요한 `GoogleReviewManager` 임포트가 제거되었습니다. `typing.Dict`도 미사용으로 제거되었습니다.
 
-#### `models/tip_calculator.py`
+#### `models/tip_calculator.py` (팁 계산 핵심 로직)
 팁 계산을 위한 핵심 로직과 다양한 AI 모델과의 연동을 담당합니다. `ui_handler.py`로부터 사용자 입력과 선택된 모델 타입을 받아, 해당 모델에 맞는 프롬프트를 생성하고, 모델을 호출하여 결과를 받아 파싱합니다.
+*   **주요 기능**: 모델별 팁 계산 처리, 최종 프롬프트 생성 (`_get_tip_prompt`), LLM 응답 파싱 (`parse_llm_output`), 비디오/이미지 캡션 생성 요청 등.
+*   `_get_tip_prompt` 메소드가 커스텀 프롬프트와 기본 프롬프트 처리 로직에 대해 명확하게 리팩토링되었습니다.
+*   불필요한 임포트 (`cv2`, `base64`)가 제거되었습니다.
 
-*   **주요 기능**:
-    *   `process_tip_gemini`, `process_tip_local` (Ollama), `process_tip_qwen`, `process_tip_gpt`: 선택된 모델별 팁 계산 처리 로직 분기.
-    *   `_get_tip_prompt`: 다양한 입력(소계, 별점, 사용자 리뷰, Google 리뷰, 비디오/이미지 캡션 등)을 조합하여 각 LLM에 최적화된 최종 분석 프롬프트 생성.
-    *   `_get_gemini_video_prompt`, `_generate_qwen_captions`: Gemini 및 Qwen 모델을 위한 비디오/이미지 캡셔닝 프롬프트 생성.
-    *   `parse_llm_output`: LLM으로부터 받은 텍스트 출력에서 팁 비율, 금액 등의 정형화된 정보 추출.
-    *   비디오/이미지 처리: `VideoProcessor`를 통해 프레임을 추출하고, 필요한 경우 `ModelClients` 또는 `llm_server.py`의 로컬 VLM API를 호출하여 분석.
+#### `models/model_clients.py` (외부 AI 모델 클라이언트)
+Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하는 클라이언트 래퍼 클래스들을 포함합니다. API 키 관리, 요청 생성, 응답 처리 등의 역할을 합니다. (내부 변경사항은 이번 리팩토링 범위에 크게 포함되지 않음)
 
-#### `models/model_clients.py`
-Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하는 클라이언트 래퍼 클래스들을 포함합니다. API 키 관리, 요청 생성, 응답 처리 등의 역할을 합니다.
+#### `utils/config.py` (설정 관리)
+프로젝트 전반에 사용되는 설정값(API 키, 기본 모델명, 프롬프트 템플릿, 고정된 메뉴 항목 등)을 관리합니다.
+*   `GOOGLE_REVIEWS` 변수는 이제 `GoogleReviewManager.reviews_text`로부터 직접 할당된 원시 텍스트를 저장합니다. (`GoogleReviewManager.format_google_reviews` 정적 메소드는 `Config` 클래스에서 더 이상 사용되지 않음).
+*   불필요한 `pathlib.Path` 임포트가 제거되었습니다.
 
-#### `utils/config.py`
-프로젝트 전반에 사용되는 설정값(API 키, 기본 모델명, 프롬프트 템플릿, 고정된 메뉴 항목 등)을 관리합니다. 외부 파일(예: `.env`)에서 설정을 로드할 수도 있습니다.
-
-#### `llm_server.py`
-로컬에서 실행되는 모델(SmolVLM, SIGLIP)을 위한 Flask 기반 API 서버입니다. `ui_handler.py` 또는 `TipCalculator`에서 이 API들을 호출하여 이미지 분석 기능을 사용합니다.
+#### `llm_server.py` (로컬 모델 API 서버)
+로컬에서 실행되는 모델(현재는 Google 리뷰 크롤링 기능 및 Ollama 연동 API 제공)을 위한 Flask 기반 API 서버입니다.
+*   **`GoogleReviewManager` (내부 정의)**: Selenium 기반 웹 크롤링 로직의 안정성이 향상되었습니다 (예: `WebDriverWait` 사용 검토, 오류 발생 시 로깅 강화, `driver.quit()` 호출 시 예외 처리 추가).
+*   불필요한 임포트 (`shutil`, `uuid`, `cv2`, `base64`)가 제거되었습니다.
 
 ##  프롬프트 구조 및 흐름
 
@@ -420,7 +461,7 @@ Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하
         *   `{calculated_subtotal}`: 주문 금액 소계.
         *   `{star_rating}`: 사용자가 입력한 별점.
         *   `{user_review}`: 사용자가 작성한 리뷰.
-        *   `{google_reviews}`: GoogleReviewManager를 통해 수집 및 요약된 구글 리뷰 텍스트.
+        *   `{google_reviews}`: `GoogleReviewManager`를 통해 수집된 Google 리뷰의 원시 텍스트. (`config.py`에서 별도의 포맷팅 없이 `Config.GOOGLE_REVIEWS`에 저장됨).
         *   `{caption_text}`: VLM/이미지-텍스트 모델이 생성한 이미지/비디오 분석 결과 (캡션, 주요 특징 등).
 
 *   **입력**: 위에서 구성된 최종 프롬프트 텍스트.
@@ -520,12 +561,12 @@ Gemini, Ollama, Qwen, GPT 등 외부 LLM/VLM 서비스와의 통신을 담당하
     Flask 개발 서버가 시작됩니다 (기본 포트 5000). 이 서버는 SmolVLM, SIGLIP API를 제공합니다.
 
 2.  **Gradio UI 실행:**
-    별도의 터미널에서 다음을 실행합니다 (실제 실행 파일은 프로젝트 구성에 따라 `kiosk.py`, `app.py` 등이 될 수 있음. 여기서는 `ui_handler.py`가 직접 실행 가능하다고 가정):
+    별도의 터미널에서 다음을 실행합니다. `kiosk.py`가 메인 애플리케이션 실행 스크립트입니다.
     ```bash
     cd server
-    python ui/ui_handler.py 
+    python kiosk.py
     ```
-    또는, 만약 메인 실행 스크립트가 있다면 해당 스크립트를 실행합니다. 실행 후 콘솔에 출력되는 URL (예: `http://127.0.0.1:7860`)을 웹 브라우저에서 열어 UI에 접속합니다.
+    실행 후 콘솔에 출력되는 URL (예: `http://127.0.0.1:7860`)을 웹 브라우저에서 열어 UI에 접속합니다.
 
 ## 📊 평가
 

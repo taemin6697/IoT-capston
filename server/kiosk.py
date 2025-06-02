@@ -7,14 +7,14 @@
 import logging
 import os
 import sys
-from pathlib import Path
+# from pathlib import Path # Path 객체는 현재 파일에서 사용되지 않음
 
 # 모듈 경로 추가
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # 내부 모듈 임포트
-from models.google_reviews import GoogleReviewManager
-from models.model_clients import ModelClients
+# from models.google_reviews import GoogleReviewManager # Config 모듈에서 직접 임포트하여 사용
+# from models.model_clients import ModelClients # TipCalculator 모듈에서 직접 임포트하여 사용
 from models.tip_calculator import TipCalculator
 from utils.video_processor import VideoProcessor
 from utils.config import Config
@@ -25,6 +25,11 @@ class App:
     """모든 컴포넌트를 연결하는 메인 애플리케이션 클래스"""
 
     def __init__(self):
+        """
+        App 클래스 초기화.
+        필수 디렉토리를 확인/생성하고, 모든 주요 컴포넌트(설정, 모델 클라이언트,
+        비디오 프로세서, 팁 계산기, UI 핸들러)를 초기화합니다.
+        """
         # 기본 디렉토리 설정 확인
         self._ensure_directories()
         
@@ -35,7 +40,17 @@ class App:
         self.model_clients = ModelClients(self.config)
         self.video_processor = VideoProcessor()
         self.tip_calculator = TipCalculator(self.config, self.model_clients, self.video_processor)
-        self.ui_handler = UIHandler(self.config, self.tip_calculator, self.video_processor)
+
+        # UI 핸들러에 전달할 녹화된 비디오 목록 가져오기
+        self.recorded_videos_list = get_recorded_videos() # kiosk.py에 정의된 함수 사용
+        logging.info(f"초기 녹화된 비디오 목록: {self.recorded_videos_list}")
+
+        self.ui_handler = UIHandler(
+            self.config,
+            self.tip_calculator,
+            self.video_processor,
+            self.recorded_videos_list
+        )
 
     def _ensure_directories(self):
         """필요한 디렉토리 구조 생성"""
@@ -57,17 +72,26 @@ class App:
     def run_gradio(self):
         """Gradio 인터페이스 실행"""
         interface = self.ui_handler.create_gradio_blocks()
-        # video 폴더 경로 추가
-        video_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video")
-        # 외부 비디오 경로 추가
-        external_video_path = r"C:\Users\tm011\PycharmProjects\video"
+
+        # 프로젝트 루트의 'video' 폴더 경로 (예제 비디오 등)
+        project_root_video_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video")
+
+        # 서버 디렉토리 내의 'record_videos' 폴더 경로 (녹화된 비디오 저장)
+        # _ensure_directories에서 server_dir = os.path.dirname(os.path.abspath(__file__)) 로 정의됨
+        server_dir = os.path.dirname(os.path.abspath(__file__))
+        recorded_videos_path = os.path.join(server_dir, "record_videos")
+
+        # 허용된 경로 목록: 프로젝트 루트의 video 폴더와 서버 내 record_videos 폴더
+        # 사용자의 로컬 Windows 경로는 제거되었습니다.
+        current_allowed_paths = [project_root_video_path, recorded_videos_path]
+        logging.info(f"Gradio allowed_paths: {current_allowed_paths}")
+
         interface.launch(
             share=True, 
-            allowed_paths=[video_path, external_video_path],
+            allowed_paths=current_allowed_paths,
             show_api=False,  # API 문서 비활성화
             width=1200,      # 고정 너비 설정
             height=800,      # 고정 높이 설정
-            #analytics_enabled=False,  # 분석 기능 비활성화
             inbrowser=True,   # 브라우저에서 자동 실행
             max_threads=10    # 최대 스레드 수 증가
         )

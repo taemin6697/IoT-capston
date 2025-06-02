@@ -2,10 +2,10 @@
 
 from flask import Flask, request, jsonify
 import os
-import shutil
-import uuid
-import cv2  # server.py의 VideoProcessor에서 사용하던 것으로, 여기서는 직접 사용 안함
-import base64  # server.py의 VideoProcessor에서 사용하던 것으로, 여기서는 직접 사용 안함
+# import shutil # 사용되지 않음
+# import uuid   # 사용되지 않음
+# import cv2    # 사용되지 않음
+# import base64 # 사용되지 않음
 from ollama import Client
 
 # --- GoogleReviewManager 및 Selenium 관련 import ---
@@ -42,12 +42,30 @@ class GoogleReviewManager:
     리뷰 문자열을 생성하는 클래스.
     """
 
-    def __init__(self, url, target_review_count=20):
+    def __init__(self, url: str, target_review_count: int = 20):
+        """
+        GoogleReviewManager 초기화.
+
+        호출 시 Selenium을 사용하여 지정된 URL에서 Google 리뷰를 크롤링하고,
+        결과를 `self.reviews_text`에 저장합니다.
+
+        Args:
+            url (str): 크롤링할 Google Maps 장소의 URL.
+            target_review_count (int, optional): 수집할 목표 리뷰 수. 기본값은 20.
+        """
         self.url = url
         self.target_review_count = target_review_count
         self.reviews_text = self._fetch_reviews_selenium()
 
-    def _fetch_reviews_selenium(self):
+    def _fetch_reviews_selenium(self) -> str:
+        """
+        `google_review_crawling`을 호출하여 리뷰 DataFrame을 가져온 후,
+        각 리뷰를 "[{평점} stars] {리뷰 내용}" 형식의 문자열로 변환하고,
+        모든 리뷰 문자열을 개행 문자로 연결하여 단일 문자열로 만듭니다.
+
+        Returns:
+            str: 포맷팅된 전체 리뷰 텍스트. 크롤링 실패 시 "(구글 리뷰를 불러오지 못했습니다.)" 반환.
+        """
         df_reviews = self.google_review_crawling(self.target_review_count, self.url)
         if df_reviews.empty:
             return "(구글 리뷰를 불러오지 못했습니다.)"
@@ -58,7 +76,31 @@ class GoogleReviewManager:
         # 각 리뷰를 개행 문자로 구분하여 하나의 문자열로 생성
         return "\n".join(reviews)
 
-    def google_review_crawling(self, TARGET_REVIEW_COUNT, url):
+    def google_review_crawling(self, TARGET_REVIEW_COUNT: int, url: str) -> pd.DataFrame:
+        """
+        Selenium을 사용하여 지정된 Google Maps URL에서 리뷰를 크롤링합니다.
+
+        헤드리스 Chrome 브라우저를 사용하여 다음 단계를 수행합니다:
+        1. URL에 접속합니다.
+        2. 쿠키 동의창을 처리합니다 (존재하는 경우).
+        3. '리뷰' 탭으로 이동합니다.
+        4. '최신순'으로 리뷰를 정렬합니다 (시도하며, 실패 시 기본 정렬 사용).
+        5. 스크롤 가능한 div를 찾아 TARGET_REVIEW_COUNT에 도달하거나 더 이상 새 리뷰가 없을 때까지 스크롤합니다.
+        6. 각 리뷰에서 작성자 이름, 평점, 날짜, 리뷰 텍스트를 추출합니다. "더보기" 버튼도 처리합니다.
+        7. 추출된 데이터를 Pandas DataFrame으로 반환합니다.
+
+        오류 발생 시 (예: 웹 드라이버 설정 실패, 필수 요소 미발견) 빈 DataFrame을 반환합니다.
+        로깅을 통해 각 주요 단계 및 오류를 기록합니다.
+
+        Args:
+            TARGET_REVIEW_COUNT (int): 수집할 목표 리뷰 수.
+            url (str): 크롤링할 Google Maps URL.
+
+        Returns:
+            pd.DataFrame: 크롤링된 리뷰 정보를 담은 DataFrame. 각 행은 리뷰 하나를 나타내며,
+                          컬럼은 'Name', 'Rating', 'Date / Time Ago', 'Review Text'를 포함합니다.
+                          오류 발생 시 빈 DataFrame이 반환될 수 있습니다.
+        """
         try:
             service = Service(ChromeDriverManager().install())
             options = webdriver.ChromeOptions()
@@ -125,14 +167,17 @@ class GoogleReviewManager:
                     app.logger.info(f"리뷰 탭 버튼 찾음 (방식: {selector_type}, 값: {selector_value})")
                     break
                 except TimeoutException:
-                    app.logger.warning(f"리뷰 탭 버튼 못찾음 (방식: {selector_type}, 값: {selector_value})")
+                    app.logger.warning(f"리뷰 탭 버튼을 찾는 중 시간 초과 (방식: {selector_type}, 값: {selector_value}). 페이지 소스 일부를 로깅합니다.")
+                    # 페이지 소스의 일부를 로깅하여 현재 상태 파악에 도움
+                    # page_source_snippet = driver.page_source[:2000] # 예: 앞 2000자
+                    # app.logger.debug(f"Page source snippet: {page_source_snippet}")
+                    # driver.save_screenshot(f"debug_timeout_review_tab_{selector_type}_{selector_value.replace('.', '_').replace('/', '_')}.png")
                     continue
 
             if not review_tab_button:
-                app.logger.error("리뷰 탭 버튼을 찾을 수 없습니다.")
-                # 현재 페이지 스크린샷 저장 (디버깅용)
-                # driver.save_screenshot("debug_no_review_tab.png")
-                raise NoSuchElementException("리뷰 탭 버튼 없음")
+                app.logger.error("모든 방식으로 리뷰 탭 버튼을 찾지 못했습니다. 현재 페이지 URL: " + driver.current_url)
+                # driver.save_screenshot("debug_no_review_tab_found.png")
+                raise NoSuchElementException("리뷰 탭 버튼을 최종적으로 찾지 못했습니다.")
 
             driver.execute_script("arguments[0].click();", review_tab_button)  # JavaScript 클릭 시도
             app.logger.info("리뷰 탭 클릭 시도 완료.")
@@ -165,11 +210,17 @@ class GoogleReviewManager:
                 scrollable_div = WebDriverWait(driver, 15).until(
                     EC.presence_of_element_located(scrollable_div_selector)
                 )
-                app.logger.info("리뷰 스크롤 영역 찾음.")
+                app.logger.info(f"리뷰 스크롤 영역 찾음 (선택자: {scrollable_div_selector}).")
             except TimeoutException:
-                app.logger.error("리뷰 스크롤 영역을 찾을 수 없습니다. 전체 페이지 스크롤로 대체합니다.")
-                # driver.save_screenshot("debug_no_scroll_div.png") # 디버깅용
-                scrollable_div = driver.find_element(By.TAG_NAME, "body")  # body로 대체하거나 다른 방법 강구
+                app.logger.error(f"리뷰 스크롤 영역을 지정된 시간 내에 찾지 못했습니다 (선택자: {scrollable_div_selector}). 현재 URL: {driver.current_url}. 전체 페이지 스크롤로 대체합니다.")
+                # driver.save_screenshot("debug_timeout_scroll_div.png")
+                try:
+                    # 대체 스크롤 영역으로 body를 사용
+                    scrollable_div = driver.find_element(By.TAG_NAME, "body")
+                    app.logger.info("대체 스크롤 영역으로 'body' 태그를 사용합니다.")
+                except NoSuchElementException:
+                    app.logger.fatal("스크롤 영역을 찾지 못했고, 'body' 태그조차 찾을 수 없습니다. 크롤링 중단.")
+                    raise # 더 이상 진행이 불가능하므로 예외를 다시 발생시켜 중단
 
             time.sleep(2)  # 스크롤 영역 로드 대기
 
@@ -285,9 +336,14 @@ class GoogleReviewManager:
             # driver.save_screenshot("debug_unexpected_error.png")
             df_reviews = pd.DataFrame()  # 오류 시 빈 DataFrame
         finally:
-            if 'driver' in locals() and driver:
-                driver.quit()
-                app.logger.info("웹 드라이버 종료됨.")
+            if 'driver' in locals() and driver is not None: # driver 객체 존재 및 None이 아닌지 확인
+                try:
+                    driver.quit()
+                    app.logger.info("웹 드라이버가 성공적으로 종료되었습니다.")
+                except Exception as e_quit:
+                    app.logger.error(f"웹 드라이버 종료 중 오류 발생: {e_quit}")
+                finally:
+                    driver = None # 참조 제거
 
         return df_reviews
 
@@ -300,30 +356,31 @@ def process_text_with_ollama(text_input):
     if not local_client:
         return "Ollama client is not available."
 
+    # 전체 프롬프트가 text_input으로 전달된다고 가정합니다.
     messages = [
         {
             'role': 'system',
-            'content': 'You are a helpful assistant.'
+            'content': 'You are a helpful assistant.' # 시스템 메시지는 필요에 따라 조절 가능
         },
         {
             'role': 'user',
-            'content': text_input,  # server.py에서 만들어진 전체 프롬프트가 여기로 전달됨
+            'content': text_input,
         }
     ]
     try:
         response = local_client.chat(
-            model='mistral-small3.1:latest',  # 사용할 모델명
+            model='mistral-small3.1:latest',  # 사용할 Ollama 모델 지정
             messages=messages,
             options={
-                "temperature": 0.0,
-                "num_gpu": 99,  # 사용 가능한 GPU 코어 수 (Ollama 설정에 따라 다름)
-                "top_p": 0.95,
+                "temperature": 0.0,  # 일관된 출력을 위해 temperature를 낮게 설정
+                "num_gpu": 99,       # 사용 가능한 모든 GPU 사용 (Ollama 설정에 따라 자동 조절될 수 있음)
+                "top_p": 0.95,       # 샘플링 시 상위 95% 확률 질량의 토큰만 고려
             }
         )
         output_text = response['message']['content']
     except Exception as e:
         app.logger.error(f"Ollama 추론 중 오류: {e}")
-        output_text = f"Error during Ollama inference: {e}"
+        output_text = f"Error during Ollama inference: {str(e)}" # 오류 메시지를 문자열로 변환
     return output_text
 
 

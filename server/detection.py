@@ -5,9 +5,36 @@ import uuid
 from transformers import pipeline
 from PIL import Image
 from collections import deque
+"""
+실시간 카메라 피드에서 SIGLIP 모델을 사용하여 특정 레이블을 감지하고,
+감지된 이벤트를 중심으로 전후 몇 초간의 비디오를 녹화하는 스크립트입니다.
+
+이 스크립트는 명령줄 인자를 통해 다양한 설정을 조정할 수 있도록 지원합니다.
+주요 기능:
+- SIGLIP 제로샷 이미지 분류 모델을 사용한 실시간 프레임 분석.
+- 지정된 레이블 및 신뢰도 임계값에 따른 이벤트 감지.
+- 이벤트 감지 시, 이벤트 발생 전후의 프레임을 버퍼링하여 비디오 파일로 저장.
+- 다양한 파라미터(GPU 사용, 레이블, 임계값, 처리 간격, 녹화 시간 등) 설정 가능.
+"""
 import argparse # argparse 라이브러리 추가
 
-def main(args): # main 함수가 인자를 받도록 수정
+def main(args: argparse.Namespace):
+    """
+    메인 실행 함수. 카메라를 초기화하고, 프레임을 지속적으로 읽어오며,
+    SIGLIP 모델로 분석하여 조건 충족 시 비디오 녹화를 수행합니다.
+
+    Args:
+        args (argparse.Namespace): 명령줄에서 파싱된 인자값들을 담고 있는 객체.
+                                   주요 인자값:
+                                   - output_dir (str): 녹화 파일 저장 디렉토리.
+                                   - gpu_device (int): 사용할 GPU 장치 ID (-1은 CPU).
+                                   - labels (str): SIGLIP 분류용 레이블 (쉼표로 구분).
+                                   - siglip_threshold (float): 분류 신뢰도 임계값.
+                                   - interval (float): 프레임 처리 간격(초).
+                                   - pre_record (float): 이벤트 전 녹화 시간(초).
+                                   - stop_threshold_count (int): 녹화 중지 조건 (미감지 횟수).
+                                   - camera_index (int): 사용할 카메라 인덱스.
+    """
     # 출력 디렉토리 생성 (인자값 사용)
     output_dir = args.output_dir
     os.makedirs(output_dir, exist_ok=True)

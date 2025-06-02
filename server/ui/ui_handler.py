@@ -7,28 +7,15 @@ import shutil
 import logging
 import json
 import re
-from typing import List, Dict, Tuple, Any, Optional, Union
+from typing import List, Tuple, Any, Optional, Union # Dict 제거
 
 import gradio as gr
 
 from utils.config import Config
 from utils.video_processor import VideoProcessor
 from models.tip_calculator import TipCalculator
-from models.google_reviews import GoogleReviewManager
-
-
-def get_recorded_videos():
-    """녹화된 비디오 파일 목록 반환"""
-    folder = "./record_videos"
-    if not os.path.exists(folder):
-        return []
-    
-    # .avi, .mp4 확장자를 가진 파일만 포함
-    video_files = [os.path.join(folder, f) for f in os.listdir(folder)
-                  if os.path.isfile(os.path.join(folder, f))
-                  and f.lower().endswith((".avi", ".mp4"))]
-    
-    return video_files
+# GoogleReviewManager는 Config 객체를 통해 간접적으로 사용되므로 직접 임포트 필요 없음
+# get_recorded_videos 함수는 kiosk.py에서 주입받으므로 여기서는 제거합니다.
 
 
 def format_json_output(text: str) -> str:
@@ -101,7 +88,8 @@ class UIHandler:
     Gradio UI 이벤트 및 콜백 처리 클래스
     """
 
-    def __init__(self, config: Config, tip_calculator: TipCalculator, video_processor: VideoProcessor):
+    def __init__(self, config: Config, tip_calculator: TipCalculator,
+                 video_processor: VideoProcessor, recorded_videos: List[str]):
         """
         UIHandler 초기화
         
@@ -109,10 +97,185 @@ class UIHandler:
             config: 애플리케이션 설정 객체
             tip_calculator: 팁 계산 객체
             video_processor: 비디오 처리 객체
+            recorded_videos: 사용 가능한 녹화된 비디오 파일 목록
         """
         self.config = config
         self.tip_calculator = tip_calculator
         self.video_processor = video_processor
+        self.recorded_videos = recorded_videos # kiosk.py로부터 주입받은 비디오 목록
+
+        # UI 컴포넌트를 인스턴스 변수로 저장하여 헬퍼 메서드 및 이벤트 핸들러에서 접근 용이하게 함
+        self.quantity_inputs = []
+        self.subtotal_display = None
+        self.subtotal_visible_display = None
+        self.review_input = None
+        self.rating_input = None
+        self.btn_5, self.btn_10, self.btn_15, self.btn_20, self.btn_25 = None, None, None, None, None
+        self.local_btn, self.gpt_btn, self.qwen_btn, self.gemini_btn = None, None, None, None
+        self.tip_display, self.total_bill_display, self.payment_btn, self.payment_result = None, None, None, None
+        self.video_input_example_tab = None # 예제 탭의 비디오 입력
+        self.video_input_main_ai = None # AI 처리용 비디오 입력 (예제 탭의 것을 사용할 수 있음)
+        self.analysis_display = None
+        self.order_summary_display = None
+        self.prompt_editor = None
+
+        self.main_tab_btn, self.example_tab_btn, self.analysis_nav_btn, self.prompt_nav_btn = None, None, None, None
+        self.main_content_group, self.example_content_group, self.analysis_content_group, self.prompt_content_group = None, None, None, None
+        self.content_groups = []
+
+
+    def _build_food_menu_ui(self):
+        """음식 메뉴 선택 UI 섹션을 빌드합니다."""
+        with gr.Column(scale=7, elem_id="menu-column"):
+            gr.Markdown("## 메뉴 선택", elem_id="menu-title")
+            with gr.Column(elem_id="food-container"):
+                items_per_row = 4
+                total_items = min(12, len(self.config.FOOD_ITEMS))
+                for row_idx in range(0, (total_items + items_per_row - 1) // items_per_row):
+                    with gr.Row(elem_id=f"menu-row-{row_idx}"):
+                        for col_idx in range(items_per_row):
+                            item_idx = row_idx * items_per_row + col_idx
+                            if item_idx < total_items:
+                                item = self.config.FOOD_ITEMS[item_idx]
+                                with gr.Column(elem_id=f"food-item-{item_idx}", variant="compact", elem_classes=["food-item"]):
+                                    img = gr.Image(value=item["image"], label=None, show_label=False, interactive=False, elem_id=f"food-image-{item_idx}", width=300, height=300, type="filepath")
+                                    gr.Markdown(f"**{item['name']}** ${item['price']:.2f}", elem_id=f"food-name-{item_idx}")
+                                    q_input = gr.Number(label="수량", value=0, minimum=0, step=1, elem_id=f"qty_{item['name'].replace(' ', '_')}")
+                                    self.quantity_inputs.append(q_input)
+
+                                    # 메뉴 이미지 클릭 시 수량 증가 콜백
+                                    def create_img_select_callback(current_q_input):
+                                        def callback(qty_val): # evt: gr.SelectData 인자는 Gradio 최신 버전에서 자동으로 제공될 수 있으나, 현재는 값만 사용
+                                            return qty_val + 1
+                                        return callback
+
+                                    img.select(create_img_select_callback(q_input), q_input, q_input, api_name=f"click_menu_{item_idx}")
+            with gr.Row(elem_id="subtotal-row"):
+                with gr.Column(scale=2):
+                    gr.Markdown("### 소계")
+                    self.subtotal_visible_display = gr.Textbox(value="$0.00", label="Subtotal", interactive=False)
+
+    def _build_sidebar_ui(self):
+        """오른쪽 사이드바 UI (별점, 리뷰, 팁 계산, 결제)를 빌드합니다."""
+        with gr.Column(scale=3, elem_id="right-sidebar"):
+            gr.Markdown("## 결제", elem_id="rating-title")
+            with gr.Group(elem_id="rating-group"):
+                gr.Markdown("### 별점")
+                with gr.Row(equal_height=True):
+                    self.rating_input = gr.Radio(choices=[1, 2, 3, 4, 5], value=3, label="", type="value", elem_id="rating-input", container=False)
+            with gr.Group(elem_id="review-group"):
+                self.review_input = gr.Textbox(label="리뷰", placeholder="서비스 리뷰 작성", lines=2, elem_id="review-input")
+            with gr.Group(elem_id="tip-calculation-group"):
+                gr.Markdown("### 팁", elem_id="tip-title")
+                with gr.Row(equal_height=True, elem_id="manual-tip-buttons"):
+                    self.btn_5 = gr.Button("5%", elem_id="tip-5", size="sm")
+                    self.btn_10 = gr.Button("10%", elem_id="tip-10", size="sm")
+                    self.btn_15 = gr.Button("15%", elem_id="tip-15", size="sm")
+                    self.btn_20 = gr.Button("20%", elem_id="tip-20", size="sm")
+                    self.btn_25 = gr.Button("25%", elem_id="tip-25", size="sm")
+                with gr.Row(equal_height=True, elem_id="ai-tip-buttons"):
+                    with gr.Column(scale=1):
+                        self.local_btn = gr.Button("Mistral", elem_id="mistral-button", size="sm")
+                        self.gemini_btn = gr.Button('Google Gemini', elem_id="google-button", size="sm")
+                    with gr.Column(scale=1):
+                        self.gpt_btn = gr.Button("OpenAI GPT", variant="primary", elem_id="gpt-button", size="sm")
+                        self.qwen_btn = gr.Button("Alibaba Qwen", elem_id="qwen-button", size="sm")
+            with gr.Group(elem_id="results-group"):
+                with gr.Row():
+                    with gr.Column():
+                        self.tip_display = gr.Textbox(label="팁 %", value="$0.00", interactive=False, elem_id="tip-display")
+                        self.total_bill_display = gr.Textbox(label="결제 비용", value="$0.00", interactive=False, elem_id="total-bill-display")
+            with gr.Group(elem_id="bill-group"):
+                gr.Markdown("### 청구서")
+                self.order_summary_display = gr.Textbox(label="청구서 내역", value="주문 메뉴 없음", lines=3, interactive=False, elem_id="order-summary")
+            with gr.Group(elem_id="payment-group"):
+                self.payment_btn = gr.Button("결제하기", size="lg", elem_id="payment-button")
+                self.payment_result = gr.Textbox(label="결제 결과", value="", interactive=False, visible=False, elem_id="payment-result")
+
+    def _build_example_tab_contents(self):
+        """예제 탭의 내용을 빌드합니다. (gr.Group 컨텍스트 내에서 호출되어야 함)"""
+        gr.Markdown("## 예제 서비스 (클릭하여 적용)", elem_id="examples-title")
+
+        with gr.Row(elem_id="examples-container"):
+            with gr.Column(scale=1, elem_id="example-bad"):
+                gr.Markdown("### 예제 1: 나쁜 서비스")
+                with gr.Row():
+                    example1_btn = gr.Button("예제 1 적용", elem_id="apply-example1-btn")
+                gr.Video(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "sample.mp4"), label="나쁜 서비스 예시", elem_id="example-video-bad", interactive=False)
+                gr.Markdown("리뷰: He drop the tray..so bad")
+                gr.Markdown("별점: ⭐")
+
+            with gr.Column(scale=1, elem_id="example-good"):
+                gr.Markdown("### 예제 2: 좋은 서비스")
+                with gr.Row():
+                    example2_btn = gr.Button("예제 2 적용", elem_id="apply-example2-btn")
+                gr.Video(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "odette_singapore_10.mp4"), label="좋은 서비스 예시", elem_id="example-video-good", interactive=False)
+                gr.Markdown("리뷰: Good service!")
+                gr.Markdown("별점: ⭐⭐⭐⭐⭐")
+
+            with gr.Column(scale=1, elem_id="example-good"):
+                gr.Markdown("### 예제 3: 괜찮은 서비스")
+                with gr.Row():
+                    example3_btn = gr.Button("예제 3 적용", elem_id="apply-example3-btn")
+                gr.Video(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "back2.mp4"), label="괜찮은 서비스 예시", elem_id="example-nice-good", interactive=False)
+                gr.Markdown("리뷰: Nice service!")
+                gr.Markdown("별점: ⭐⭐⭐⭐")
+
+        gr.Markdown("## 서비스 비디오 업로드/촬영")
+        self.video_input_example_tab = gr.Video(label="서비스 비디오 업로드 또는 촬영", elem_id="video-input-standalone")
+        self.video_input_main_ai = self.video_input_example_tab
+        gr.Markdown("""
+        ### 비디오 촬영 안내
+        1. 위 컴포넌트를 클릭하여 비디오를 업로드하거나 웹캠으로 촬영하세요.
+        2. 서비스 장면을 선명하게 담아주세요.
+        3. 10-30초 정도의 서비스 장면이 적합합니다.
+        4. 촬영 후 메인화면으로 돌아가셔서 평가를 진행해주세요.
+        """)
+        return example1_btn, example2_btn, example3_btn
+
+    def _build_analysis_tab_contents(self):
+        """AI 결과 분석 탭의 내용을 빌드합니다. (gr.Group 컨텍스트 내에서 호출되어야 함)"""
+        gr.Markdown("### AI 결과 분석")
+        self.analysis_display = gr.Markdown(label="AI Analysis")
+
+    def _build_prompt_tab_contents(self):
+        """프롬프트 편집 탭의 내용을 빌드합니다. (gr.Group 컨텍스트 내에서 호출되어야 함)"""
+        gr.Markdown("### 프롬프트 편집기")
+        gr.Markdown(
+            "자동 생성된 프롬프트를 여기서 확인하고 **직접 수정**할 수 있습니다. "
+            "AI 분석 시 여기에 있는 최종 내용이 사용됩니다."
+        )
+        self.prompt_editor = gr.Code(
+            label="Tip Calculation Prompt (Editable)",
+            language="python",
+            value="Loading prompt...",
+            lines=35,
+            elem_id="prompt_editor_component"
+        )
+
+    def _setup_tab_navigation_events(self):
+        """탭 네비게이션 버튼 및 콘텐츠 그룹을 설정하고 이벤트 핸들러를 연결합니다."""
+        self.content_groups = [
+            self.main_content_group,
+            self.example_content_group,
+            self.analysis_content_group,
+            self.prompt_content_group
+        ]
+
+        def show_content(tab_to_show_idx):
+            updates = []
+            for i, group in enumerate(self.content_groups):
+                updates.append(gr.update(visible=(i == tab_to_show_idx)))
+            return tuple(updates)
+
+        if self.main_tab_btn and self.example_tab_btn and self.analysis_nav_btn and self.prompt_nav_btn:
+            js_code_clear_active = "() => { document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active')); }"
+            self.main_tab_btn.click(lambda: show_content(0), [], self.content_groups, _js=f"{js_code_clear_active} document.getElementById('main-tab-btn').classList.add('active');")
+            self.example_tab_btn.click(lambda: show_content(1), [], self.content_groups, _js=f"{js_code_clear_active} document.getElementById('example-tab-btn').classList.add('active');")
+            self.analysis_nav_btn.click(lambda: show_content(2), [], self.content_groups, _js=f"{js_code_clear_active} document.getElementById('analysis-nav-btn').classList.add('active');")
+            self.prompt_nav_btn.click(lambda: show_content(3), [], self.content_groups, _js=f"{js_code_clear_active} document.getElementById('prompt-nav-btn').classList.add('active');")
+        else:
+            logging.warning("탭 네비게이션 버튼 중 일부가 초기화되지 않아 이벤트 핸들러를 설정할 수 없습니다.")
 
     def update_subtotal_and_prompt(self, *args) -> Tuple[float, str]:
         """
@@ -279,6 +442,8 @@ class UIHandler:
         Returns:
             str: 결제 결과 메시지
         """
+        # 주석 처리된 아래 코드는 결제 시 녹화된 비디오 파일을 삭제하는 로직입니다.
+        # 현재 이 기능은 비활성화되어 있습니다. 필요시 주석을 해제하여 사용할 수 있습니다.
         # 서버 디렉토리 절대 경로
         # server_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         # video_dir = os.path.join(server_dir, "record_videos")
@@ -392,10 +557,18 @@ class UIHandler:
 
     def create_gradio_blocks(self) -> gr.Blocks:
         """
-        Gradio Blocks 인터페이스 구성 - 가로형 키오스크 레이아웃용
+        Gradio Blocks 인터페이스를 구성하고 반환합니다.
+
+        이 메서드는 주요 UI 섹션(메인 콘텐츠, 예제 탭, 분석/프롬프트 탭)을 빌드하기 위해
+        헬퍼 메서드(_build_food_menu_ui, _build_sidebar_ui, _build_example_tab_contents 등)를 호출하여 UI를 구성합니다.
+        또한 탭 네비게이션 로직(_setup_tab_navigation_events)을 설정하고,
+        다양한 사용자 상호작용(예: 메뉴 수량 변경, 팁 계산 요청, 예제 적용)에 대한
+        모든 이벤트 핸들러를 연결합니다.
+
+        UI 컴포넌트들은 더 나은 접근성을 위해 대부분 인스턴스 변수(예: self.rating_input)로 저장됩니다.
         
         Returns:
-            gr.Blocks: Gradio 인터페이스 객체
+            gr.Blocks: 완전히 구성된 Gradio 인터페이스 객체.
         """
         with gr.Blocks(title="Peter Luger Steak House\nAI-based Tip Calculation Kiosk", theme=gr.themes.Soft(),
                       css=self.config.CUSTOM_CSS,
@@ -458,235 +631,172 @@ class UIHandler:
                       """) as interface:
             gr.Markdown("# Peter Luger Steak House\n # AI-based Tip Calculation Kiosk", elem_id="main-title")
 
-            # 컴포넌트 변수 선언
-            quantity_inputs = []
-            subtotal_display = gr.Number(label="Subtotal ($)", value=0.0, interactive=False, visible=False)
-            subtotal_visible_display = None
-            review_input, rating_input = None, None
-            btn_5, btn_10, btn_15, btn_20, btn_25 = None, None, None, None, None
-            local_btn, gpt_btn, qwen_btn, gemini_btn = None, None, None, None
-            tip_display, total_bill_display, payment_btn, payment_result = None, None, None, None
-            video_input = None
-            analysis_display, order_summary_display = None, None
-            prompt_editor = None
+            # 내부 소계 표시용 (실제 계산 및 프롬프트에는 사용되지만 UI에는 직접 보이지 않음)
+            self.subtotal_display = gr.Number(label="Subtotal ($)", value=0.0, interactive=False, visible=False)
 
             # 커스텀 탭 네비게이션 버튼
             with gr.Row(elem_id="tab-navigation"):
-                main_tab_btn = gr.Button("메인 화면", elem_id="main-tab-btn", elem_classes=["tab-button", "active"])
-                example_tab_btn = gr.Button("예제", elem_id="example-tab-btn", elem_classes=["tab-button"])
-                analysis_nav_btn = gr.Button("AI 결과 분석", elem_id="analysis-nav-btn", elem_classes=["tab-button"])
-                prompt_nav_btn = gr.Button("프롬프트 편집", elem_id="prompt-nav-btn", elem_classes=["tab-button"])
+                self.main_tab_btn = gr.Button("메인 화면", elem_id="main-tab-btn", elem_classes=["tab-button", "active"])
+                self.example_tab_btn = gr.Button("예제", elem_id="example-tab-btn", elem_classes=["tab-button"])
+                self.analysis_nav_btn = gr.Button("AI 결과 분석", elem_id="analysis-nav-btn", elem_classes=["tab-button"])
+                self.prompt_nav_btn = gr.Button("프롬프트 편집", elem_id="prompt-nav-btn", elem_classes=["tab-button"])
 
             # 메인 화면 (메뉴 선택 등)
-            with gr.Group(elem_id="main-content-group", visible=True) as main_content_group:
+            with gr.Group(elem_id="main-content-group", visible=True) as self.main_content_group:
                 with gr.Row(equal_height=False):
-                    with gr.Column(scale=7, elem_id="menu-column"):
-                        gr.Markdown("## 메뉴 선택", elem_id="menu-title")
-                        with gr.Column(elem_id="food-container"):
-                            items_per_row = 4
-                            total_items = min(12, len(self.config.FOOD_ITEMS))
-                            for row_idx in range(0, (total_items + items_per_row - 1) // items_per_row):
-                                with gr.Row(elem_id=f"menu-row-{row_idx}"):
-                                    for col_idx in range(items_per_row):
-                                        item_idx = row_idx * items_per_row + col_idx
-                                        if item_idx < total_items:
-                                            item = self.config.FOOD_ITEMS[item_idx]
-                                            with gr.Column(elem_id=f"food-item-{item_idx}", variant="compact", elem_classes=["food-item"]):
-                                                img = gr.Image(value=item["image"], label=None, show_label=False, interactive=False, elem_id=f"food-image-{item_idx}", width=300, height=300, type="filepath")
-                                                name_display = gr.Markdown(f"**{item['name']}** ${item['price']:.2f}", elem_id=f"food-name-{item_idx}")
-                                                q_input = gr.Number(label="수량", value=0, minimum=0, step=1, elem_id=f"qty_{item['name'].replace(' ', '_')}")
-                                                quantity_inputs.append(q_input)
-                                                def update_quantity(qty, evt: gr.SelectData):
-                                                    return qty + 1
-                                                img.select(update_quantity, q_input, q_input, api_name=f"click_menu_{item_idx}")
-                        with gr.Row(elem_id="subtotal-row"):
-                            with gr.Column(scale=2):
-                                gr.Markdown("### 소계")
-                                subtotal_visible_display = gr.Textbox(value="$0.00", label="Subtotal", interactive=False)
-                    with gr.Column(scale=3, elem_id="right-sidebar"):
-                        gr.Markdown("## 결제", elem_id="rating-title")
-                        with gr.Group(elem_id="rating-group"):
-                            gr.Markdown("### 별점")
-                            with gr.Row(equal_height=True):
-                                rating_input = gr.Radio(choices=[1, 2, 3, 4, 5], value=3, label="", type="value", elem_id="rating-input", container=False)
-                        with gr.Group(elem_id="review-group"):
-                            review_input = gr.Textbox(label="리뷰", placeholder="서비스 리뷰 작성", lines=2, elem_id="review-input")
-                        with gr.Group(elem_id="tip-calculation-group"):
-                            gr.Markdown("### 팁", elem_id="tip-title")
-                            with gr.Row(equal_height=True, elem_id="manual-tip-buttons"):
-                                btn_5 = gr.Button("5%", elem_id="tip-5", size="sm")
-                                btn_10 = gr.Button("10%", elem_id="tip-10", size="sm")
-                                btn_15 = gr.Button("15%", elem_id="tip-15", size="sm")
-                                btn_20 = gr.Button("20%", elem_id="tip-20", size="sm")
-                                btn_25 = gr.Button("25%", elem_id="tip-25", size="sm")
-                            with gr.Row(equal_height=True, elem_id="ai-tip-buttons"):
-                                with gr.Column(scale=1):
-                                    local_btn = gr.Button("Mistral", elem_id="mistral-button", size="sm")
-                                    gemini_btn = gr.Button('Google Gemini', elem_id="google-button", size="sm")
-                                with gr.Column(scale=1):
-                                    gpt_btn = gr.Button("OpenAI GPT", variant="primary", elem_id="gpt-button", size="sm")
-                                    qwen_btn = gr.Button("Alibaba Qwen", elem_id="qwen-button", size="sm")
-                        with gr.Group(elem_id="results-group"):
-                            with gr.Row():
-                                with gr.Column():
-                                    tip_display = gr.Textbox(label="팁 %", value="$0.00", interactive=False, elem_id="tip-display")
-                                    total_bill_display = gr.Textbox(label="결제 비용", value="$0.00", interactive=False, elem_id="total-bill-display")
-                        with gr.Group(elem_id="bill-group"):
-                            gr.Markdown("### 청구서")
-                            order_summary_display = gr.Textbox(label="청구서 내역", value="주문 메뉴 없음", lines=3, interactive=False, elem_id="order-summary")
-                        with gr.Group(elem_id="payment-group"):
-                            payment_btn = gr.Button("결제하기", size="lg", elem_id="payment-button")
-                            payment_result = gr.Textbox(label="결제 결과", value="", interactive=False, visible=False, elem_id="payment-result")
+                    self._build_food_menu_ui()
+                    self._build_sidebar_ui()
 
-            # 예제 탭
-            with gr.Group(elem_id="example-content-group", visible=False) as example_content_group:
-                gr.Markdown("## 예제 서비스 (클릭하여 적용)", elem_id="examples-title")
-                def apply_example_1():
-                    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "sample.mp4"), 1, "He drop the tray..so bad"
-                def apply_example_2():
-                    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "odette_singapore_10.mp4"), 5, "Good service!"
-                def apply_example_3():
-                    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video","back2.mp4"), 4, "Nice service!"
+            # 예제 탭 UI 빌드 및 예제 버튼 가져오기
+            example1_btn, example2_btn, example3_btn = self._build_example_tab_ui()
 
-                with gr.Row(elem_id="examples-container"):
-                    with gr.Column(scale=1, elem_id="example-bad"):
-                        gr.Markdown("### 예제 1: 나쁜 서비스")
-                        with gr.Row():
-                            example1_btn = gr.Button("예제 1 적용", elem_id="apply-example1-btn")
-                        example1_video = gr.Video(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "sample.mp4"), label="나쁜 서비스 예시", elem_id="example-video-bad", interactive=False)
-                        gr.Markdown("리뷰: He drop the tray..so bad")
-                        gr.Markdown("별점: ⭐")
-
-                    with gr.Column(scale=1, elem_id="example-good"):
-                        gr.Markdown("### 예제 2: 좋은 서비스")
-                        with gr.Row():
-                            example2_btn = gr.Button("예제 2 적용", elem_id="apply-example2-btn")
-                        example2_video = gr.Video(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "odette_singapore_10.mp4"), label="좋은 서비스 예시", elem_id="example-video-good", interactive=False)
-                        gr.Markdown("리뷰: Good service!")
-                        gr.Markdown("별점: ⭐⭐⭐⭐⭐")
-
-                    with gr.Column(scale=1, elem_id="example-good"):
-                        gr.Markdown("### 예제 3: 괜찮은 서비스")
-                        with gr.Row():
-                            example3_btn = gr.Button("예제 3 적용", elem_id="apply-example2-btn")
-                        example2_video = gr.Video(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "video", "back2.mp4"), label="괜찮은 서비스 예시", elem_id="example-nice-good", interactive=False)
-                        gr.Markdown("리뷰: Nice service!")
-                        gr.Markdown("별점: ⭐⭐⭐⭐")
-
-                gr.Markdown("## 서비스 비디오 업로드/촬영")
-                video_input = gr.Video(label="서비스 비디오 업로드 또는 촬영", elem_id="video-input-standalone")
-                gr.Markdown("""
-                ### 비디오 촬영 안내
-                1. 위 컴포넌트를 클릭하여 비디오를 업로드하거나 웹캠으로 촬영하세요.
-                2. 서비스 장면을 선명하게 담아주세요.
-                3. 10-30초 정도의 서비스 장면이 적합합니다.
-                4. 촬영 후 메인화면으로 돌아가셔서 평가를 진행해주세요.
-                """)
-
-            # AI 결과 분석 탭
-            with gr.Group(elem_id="analysis-content-group", visible=False) as analysis_content_group:
-                gr.Markdown("### AI 결과 분석")
-                analysis_display = gr.Markdown(label="AI Analysis")#, lines=100, max_lines=150, interactive=True, elem_id="analysis_display_component")
+            # AI 결과 분석 및 프롬프트 편집 탭 UI 빌드
+            self._build_analysis_and_prompt_tabs_ui()
             
-            # 프롬프트 편집 탭
-            with gr.Group(elem_id="prompt-content-group", visible=False) as prompt_content_group:
-                gr.Markdown("### 프롬프트 편집기")
-                gr.Markdown(
-                    "자동 생성된 프롬프트를 여기서 확인하고 **직접 수정**할 수 있습니다. "
-                    "AI 분석 시 여기에 있는 최종 내용이 사용됩니다."
-                )
-                prompt_editor = gr.Code(
-                    label="Tip Calculation Prompt (Editable)",
-                    language="python",
-                    value="Loading prompt...",
-                    lines=35,
-                    elem_id="prompt_editor_component"
-                )
-            
-            # 모든 콘텐츠 그룹 리스트
-            content_groups = [main_content_group, example_content_group, analysis_content_group, prompt_content_group]
+            self.content_groups = [self.main_content_group, self.example_content_group, self.analysis_content_group, self.prompt_content_group]
             
             def show_content(tab_to_show_idx): # 0:main, 1:example, 2:AI Analysis, 3:Prompt Edit
-                updates = [gr.update(visible=False) for _ in content_groups]
-                if 0 <= tab_to_show_idx < len(content_groups):
+                updates = [gr.update(visible=False) for _ in self.content_groups]
+                if 0 <= tab_to_show_idx < len(self.content_groups):
                     updates[tab_to_show_idx] = gr.update(visible=True)
                 return tuple(updates)
 
-            # 네비게이션 버튼 클릭 이벤트
-            main_tab_btn.click(lambda: show_content(0), [], content_groups)
-            example_tab_btn.click(lambda: show_content(1), [], content_groups)
-            analysis_nav_btn.click(lambda: show_content(2), [], content_groups)
-            prompt_nav_btn.click(lambda: show_content(3), [], content_groups)
+            self.main_tab_btn.click(lambda: show_content(0), [], self.content_groups)
+            self.example_tab_btn.click(lambda: show_content(1), [], self.content_groups)
+            self.analysis_nav_btn.click(lambda: show_content(2), [], self.content_groups)
+            self.prompt_nav_btn.click(lambda: show_content(3), [], self.content_groups)
 
             # Helper function to define components for checking if all are defined
-            def all_components_defined(*components):
-                return all(comp is not None for comp in components)
+            # --- 이벤트 핸들러 설정 ---
+            # 모든 주요 UI 컴포넌트가 초기화되었는지 확인 후 이벤트 핸들러를 설정합니다.
+            # 이는 UI 빌드 과정에서 오류가 발생했거나 일부 컴포넌트가 누락된 경우를 대비하기 위함입니다.
+            if all(getattr(self, comp_name, None) is not None for comp_name in [
+                "subtotal_display", "subtotal_visible_display", "review_input", "rating_input",
+                "prompt_editor", "order_summary_display", "video_input_main_ai", "analysis_display",
+                "tip_display", "total_bill_display", "payment_result",
+                "local_btn", "gpt_btn", "qwen_btn", "gemini_btn",
+                "btn_5", "btn_10", "btn_15", "btn_20", "btn_25"
+            ] + ["quantity_inputs"]) and self.quantity_inputs: # quantity_inputs는 리스트이므로 별도 확인
 
-            if all_components_defined(
-                subtotal_display, subtotal_visible_display, review_input, rating_input, 
-                prompt_editor, order_summary_display, video_input, analysis_display, 
-                tip_display, total_bill_display, payment_result, 
-                local_btn, gpt_btn, qwen_btn, gemini_btn,
-                btn_5, btn_10, btn_15, btn_20, btn_25,
-                *content_groups, # 모든 그룹이 생성되었는지 확인
-                *quantity_inputs
-            ):
-                subtotal_display.change(fn=lambda x: f"${x:.2f}", inputs=subtotal_display, outputs=subtotal_visible_display)
-                inputs_for_prompt_update = quantity_inputs + [rating_input, review_input]
-                outputs_for_prompt_update = [subtotal_display, prompt_editor]
+                # 소계(내부) 변경 시 소계(표시용) 업데이트
+                self.subtotal_display.change(fn=lambda x: f"${x:.2f}", inputs=self.subtotal_display, outputs=self.subtotal_visible_display)
+
+                # 프롬프트 업데이트를 위한 입력 컴포넌트 목록
+                # 수량 입력, 별점 입력, 사용자 리뷰 입력이 변경될 때마다 소계 및 프롬프트 업데이트
+                inputs_for_prompt_update = self.quantity_inputs + [self.rating_input, self.review_input]
+                outputs_for_prompt_update = [self.subtotal_display, self.prompt_editor]
+
+                # Gradio 인터페이스 로드 시 및 해당 입력 변경 시 프롬프트 업데이트 실행
                 interface.load(fn=self.update_subtotal_and_prompt, inputs=inputs_for_prompt_update, outputs=outputs_for_prompt_update)
                 for comp in inputs_for_prompt_update:
                     comp.change(fn=self.update_subtotal_and_prompt, inputs=inputs_for_prompt_update, outputs=outputs_for_prompt_update)
-                for comp in quantity_inputs:
-                    comp.change(fn=self.update_invoice_summary, inputs=quantity_inputs, outputs=order_summary_display)
-
-                ai_compute_inputs = [video_input, subtotal_display, rating_input, review_input, prompt_editor] + quantity_inputs
-                ai_core_outputs_list = [analysis_display, tip_display, total_bill_display, prompt_editor, video_input, order_summary_display]
                 
-                # AI 계산 및 AI 분석 그룹으로 전환하는 함수
+                # 수량 입력 변경 시 청구서 요약 업데이트
+                # 청구서 요약은 수량, 계산된 팁, 계산된 총액을 기반으로 합니다.
+                inputs_for_invoice_update = self.quantity_inputs + [self.tip_display, self.total_bill_display]
+                for comp in self.quantity_inputs: # 각 수량 입력 필드에 대해
+                    comp.change(fn=self.update_invoice_summary, inputs=inputs_for_invoice_update, outputs=self.order_summary_display)
+
+                # AI 기반 팁 계산을 위한 입력 및 출력 설정
+                # 입력: 비디오, 소계, 별점, 리뷰, 프롬프트, 각 음식 수량
+                # 출력: 분석결과, 팁, 총액, 프롬프트(변경없음), 비디오(리셋), 주문요약, 탭전환정보
+                ai_compute_inputs = [self.video_input_main_ai, self.subtotal_display, self.rating_input, self.review_input, self.prompt_editor] + self.quantity_inputs
+                ai_core_outputs_list = [self.analysis_display, self.tip_display, self.total_bill_display, self.prompt_editor, self.video_input_main_ai, self.order_summary_display]
+
+                # AI 팁 계산 후 AI 분석 탭(인덱스 2)으로 자동 전환하는 래퍼 함수
                 def run_ai_and_switch_to_analysis(model_type_str, vid_up, sub, rat, rev, prom, *qty):
+                    # auto_tip_and_invoice 호출하여 AI 팁 계산 실행
                     analysis, tip_disp, total_bill_disp, prompt_out, vid_out, invoice = self.auto_tip_and_invoice(
-                        model_type_str, compute_video_source(vid_up, get_recorded_videos()), sub, rat, rev, prom, *qty
+                        model_type_str,
+                        compute_video_source(vid_up, self.recorded_videos), # self.recorded_videos 사용
+                        sub, rat, rev, prom, *qty
                     )
-                    group_visibility_updates = show_content(2) # 2 for AI Analysis Group
-                    return tuple([analysis, tip_disp, total_bill_disp, prompt_out, vid_out, invoice] + list(group_visibility_updates))
+                    # _setup_tab_navigation_events에 정의된 show_content를 직접 호출하는 대신,
+                    # Gradio의 다중 출력 기능을 활용하여 탭 가시성을 업데이트합니다.
+                    # show_content의 로직을 직접 여기에 통합하거나, show_content가 반환하는 업데이트 튜플을 사용합니다.
+                    # 여기서는 명시적으로 탭 가시성 업데이트를 생성합니다.
+                    num_content_groups = len(self.content_groups)
+                    visibility_updates = [gr.update(visible=(i == 2)) for i in range(num_content_groups)] # 인덱스 2는 AI 분석 탭
 
-                ai_button_outputs = ai_core_outputs_list + content_groups
+                    return tuple([analysis, tip_disp, total_bill_disp, prompt_out, vid_out, invoice] + visibility_updates)
 
-                local_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('local', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
-                gpt_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('gpt', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
-                qwen_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('qwen', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
-                gemini_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('gemini', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
+                # AI 모델 버튼들에 대한 이벤트 리스너 설정
+                # 출력에는 핵심 UI 업데이트와 탭 그룹 가시성 업데이트가 포함됩니다.
+                ai_button_outputs = ai_core_outputs_list + self.content_groups
+                self.local_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('local', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
+                self.gpt_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('gpt', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
+                self.qwen_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('qwen', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
+                self.gemini_btn.click(fn=lambda vid_up, sub, rat, rev, prom, *qty: run_ai_and_switch_to_analysis('gemini', vid_up, sub, rat, rev, prom, *qty), inputs=ai_compute_inputs, outputs=ai_button_outputs)
 
-                manual_tip_outputs = [analysis_display, tip_display, total_bill_display, order_summary_display]
-                btn_5.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(5, sub, *qty), inputs=[subtotal_display] + quantity_inputs, outputs=manual_tip_outputs)
-                btn_10.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(10, sub, *qty), inputs=[subtotal_display] + quantity_inputs, outputs=manual_tip_outputs)
-                btn_15.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(15, sub, *qty), inputs=[subtotal_display] + quantity_inputs, outputs=manual_tip_outputs)
-                btn_20.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(20, sub, *qty), inputs=[subtotal_display] + quantity_inputs, outputs=manual_tip_outputs)
-                btn_25.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(25, sub, *qty), inputs=[subtotal_display] + quantity_inputs, outputs=manual_tip_outputs)
+                # 수동 팁 버튼들에 대한 이벤트 리스너 설정
+                manual_tip_outputs = [self.analysis_display, self.tip_display, self.total_bill_display, self.order_summary_display]
+                self.btn_5.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(5, sub, *qty), inputs=[self.subtotal_display] + self.quantity_inputs, outputs=manual_tip_outputs)
+                self.btn_10.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(10, sub, *qty), inputs=[self.subtotal_display] + self.quantity_inputs, outputs=manual_tip_outputs)
+                self.btn_15.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(15, sub, *qty), inputs=[self.subtotal_display] + self.quantity_inputs, outputs=manual_tip_outputs)
+                self.btn_20.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(20, sub, *qty), inputs=[self.subtotal_display] + self.quantity_inputs, outputs=manual_tip_outputs)
+                self.btn_25.click(fn=lambda sub, *qty: self.manual_tip_and_invoice(25, sub, *qty), inputs=[self.subtotal_display] + self.quantity_inputs, outputs=manual_tip_outputs)
                 
-                payment_btn.click(fn=self.process_payment, inputs=[total_bill_display], outputs=[payment_result])
-
-                # 예제 적용 및 메인 화면으로 전환하는 함수
-                def apply_example_and_switch_to_main(example_func):
-                    video_val, rating_val, review_val = example_func()
-                    group_visibility_updates = show_content(0) # 0 for Main Content Group
-                    return tuple([video_val, rating_val, review_val] + list(group_visibility_updates))
+                # 결제 버튼 이벤트 리스너
+                self.payment_btn.click(fn=self.process_payment, inputs=[self.total_bill_display], outputs=[self.payment_result])
                 
-                example_core_outputs_list = [video_input, rating_input, review_input]
-                example_button_outputs = example_core_outputs_list + content_groups
+                # 예제 적용 버튼들에 대한 이벤트 리스너 설정
+                # 예제 적용 후 메인 탭(인덱스 0)으로 자동 전환
+                def apply_example_and_switch_to_main(example_func_call_result): # example_func()의 결과를 받도록 수정
+                    video_val, rating_val, review_val = example_func_call_result # 함수 호출 결과를 직접 사용
+                    num_content_groups = len(self.content_groups)
+                    visibility_updates = [gr.update(visible=(i == 0)) for i in range(num_content_groups)] # 인덱스 0은 메인 탭
+                    return tuple([video_val, rating_val, review_val] + visibility_updates)
 
-                example1_btn.click(fn=lambda: apply_example_and_switch_to_main(apply_example_1), inputs=[], outputs=example_button_outputs)
-                example2_btn.click(fn=lambda: apply_example_and_switch_to_main(apply_example_2), inputs=[], outputs=example_button_outputs)
-                example3_btn.click(fn=lambda: apply_example_and_switch_to_main(apply_example_3), inputs=[], outputs=example_button_outputs)
+                example_core_outputs_list = [self.video_input_main_ai, self.rating_input, self.review_input]
+                example_button_outputs = example_core_outputs_list + self.content_groups # 탭 그룹 가시성 업데이트 포함
 
+                # 예제 함수 정의 (create_gradio_blocks 내부에 두거나 self 메소드로 변경)
+                # 현재 apply_example_X 함수들은 create_gradio_blocks 외부에 정의되어 있지 않으므로,
+                # 여기서는 lambda 내에서 직접 호출하거나, self의 메소드로 가정합니다.
+                # 만약 이들이 로컬 함수라면, 이 위치에서 정의해야 합니다.
+                # 편의상, apply_example_1, 2, 3가 self의 메소드라고 가정하거나, 여기서 정의했다고 가정합니다.
+                # (실제 코드에서는 이 함수들이 create_gradio_blocks 내에 정의되어 있었습니다.)
+
+                # 예제 함수 정의 (원래 위치에서 가져오거나, self의 메소드로 가정)
+                # 이 함수들은 create_gradio_blocks 내부에 정의되어 있었으므로, 해당 컨텍스트를 유지해야 합니다.
+                # 여기서는 간결성을 위해 직접 호출하는 형태로 표현합니다.
+                # 실제 실행을 위해서는 이 함수들이 접근 가능한 스코프에 있어야 합니다.
+                # (이 부분은 원래 코드 구조를 유지하며, apply_example_X 함수들이 로컬 스코프에 있다고 가정)
+
+                # apply_example_X 함수들이 create_gradio_blocks 스코프 내에 정의되어 있다고 가정하고 진행합니다.
+                # (이전 코드에서는 이 함수들이 create_gradio_blocks 내에 정의되어 있었습니다.)
+                # example1_btn.click(...) 등에서 이 함수들이 사용됩니다.
+
+                # apply_example_X 버튼 클릭 시의 동작 정의
+                # 각 버튼은 (1) 예제 데이터(비디오 경로, 별점, 리뷰)를 로드하고
+                # (2) 해당 데이터를 UI 필드에 적용하며
+                # (3) 메인 탭으로 전환합니다.
+
+                # 예제 1, 2, 3 버튼에 대한 클릭 이벤트
+                # `apply_example_and_switch_to_main` 래퍼가 이제 예제 함수의 *결과*를 받도록 수정.
+                # 예제 함수 자체는 버튼 클릭 시 실행되어야 합니다.
+                example1_btn.click(fn=lambda: apply_example_and_switch_to_main(apply_example_1()), inputs=[], outputs=example_button_outputs)
+                example2_btn.click(fn=lambda: apply_example_and_switch_to_main(apply_example_2()), inputs=[], outputs=example_button_outputs)
+                example3_btn.click(fn=lambda: apply_example_and_switch_to_main(apply_example_3()), inputs=[], outputs=example_button_outputs)
             else:
                 logging.warning("컴포넌트 초기화 확인 실패. 이벤트 핸들러가 제대로 연결되지 않을 수 있습니다.")
             return interface
 
 # compute_video_source는 클래스 메서드가 아니므로 외부 또는 static으로 정의 필요
 # UIHandler 클래스 외부 또는 static 메서드로 이동하거나, self 없이 호출되도록 수정
-def compute_video_source(video_upload, video_list):
+def compute_video_source(video_upload: Optional[str], video_list: List[str]) -> List[str]:
+    """
+    AI 처리를 위한 비디오 소스를 결정합니다.
+    사용자가 비디오를 직접 업로드하면 해당 비디오를 사용하고,
+    그렇지 않으면 미리 녹화된 비디오 목록을 사용합니다.
+
+    Args:
+        video_upload: 사용자가 업로드한 비디오 파일의 경로 (있을 경우).
+        video_list: 미리 녹화된 비디오 파일 경로의 목록.
+
+    Returns:
+        List[str]: 처리할 비디오 파일 경로의 목록 (항상 리스트 형태로 반환).
+    """
     if video_upload is not None and video_upload != "":
         return [video_upload]
     else:

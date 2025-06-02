@@ -4,7 +4,7 @@
 import os
 import logging
 from typing import Dict, List, Any
-from pathlib import Path
+# from pathlib import Path # Path 객체는 현재 파일에서 사용되지 않음
 
 from models.google_reviews import GoogleReviewManager
 
@@ -19,8 +19,8 @@ class Config:
 
     # 음식 메뉴 데이터 - 절대 경로 사용
     FOOD_ITEMS = [
-        {"name": "Single Steak", "image": os.path.join(SERVER_DIR, "images", "single_steak.JPG"), "price": 73.95}, #
-        {"name": "Rib Steak", "image": os.path.join(SERVER_DIR, "images", "rib_steak.jpg"), "price": 92.95}, #
+        {"name": "Single Steak", "image": os.path.join(SERVER_DIR, "images", "single_steak.JPG"), "price": 73.95},
+        {"name": "Rib Steak", "image": os.path.join(SERVER_DIR, "images", "rib_steak.jpg"), "price": 92.95},
         {"name": "Steak For 2", "image": os.path.join(SERVER_DIR, "images", "steak_for_2.JPG"), "price": 147.90},
         {"name": "Pecan Pie", "image": os.path.join(SERVER_DIR, "images", "pecan_pie.JPG"), "price": 14.95},
         {"name": "Chocolate Mousse Cake", "image": os.path.join(SERVER_DIR, "images", "chocolate_mousse_cake.JPG"), "price": 14.95},
@@ -31,18 +31,6 @@ class Config:
         {"name": "Sliced Tomatoes & Onions (For 2)", "image": os.path.join(SERVER_DIR, "images", "sliced_tomatoes_onions_for_2.jpg"), "price": 17.95},
         {"name": "Iceberg Wedge Salad", "image": os.path.join(SERVER_DIR, "images", "iceberg_wedge_salad.jpg"), "price": 18.95},
         {"name": "Caesar Salad", "image": os.path.join(SERVER_DIR, "images", "caesar_salad.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
-        # {"name": "사이다", "image": os.path.join(SERVER_DIR, "images", "food6.jpg"), "price": 12.00},
     ]
 
     # API 키 및 설정
@@ -706,9 +694,7 @@ You are a tip calculation assistant. Based on the country, waiter's behavior, Go
         self.google_review_manager = GoogleReviewManager(review_url, target_review_count=3)
         
         # 리뷰를 미리 포맷하여 저장
-        self.GOOGLE_REVIEWS = GoogleReviewManager.format_google_reviews(
-            self.google_review_manager.reviews_text
-        )
+        self.GOOGLE_REVIEWS = self.google_review_manager.reviews_text
         
         # 이미지 디렉토리 및 파일 확인
         self._validate_resources()
