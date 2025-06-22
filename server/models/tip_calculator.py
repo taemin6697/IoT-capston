@@ -196,64 +196,53 @@ class TipCalculator:
             str: 생성된 프롬프트
         """
         prompt = '''
-Task 1: Staff Action Analysis
-Describe in detail the actions of any waiters or staff visible in this restaurant video.
-* Note any specific interactions, mistakes, or positive actions.
+        1. Video Caption Analysis
+        1-1. After analyzing the video, present the analysis results. Then, provide an analysis for each evaluation criterion and assign a score.
+        1-2. However, if the video caption analysis has already been completed, please use the existing scores for the video scoring process.
+        1-3. You must either generate a score for all items or get something from an existing caption and display it again. This item must be present.
+        1-4. You are required to justify every single item without exception.
+        1-5. Video Evaluation Criteria
+            a) Reliability
+                1: Frequent order mistakes, multiple billing errors
+                2: No major mistakes but minor omissions occur
+                3: Mostly accurate orders, occasional lack of confirmation
+                4: Custom orders correctly handled, allergy/cooking preferences considered
+                5: Always 100% accurate, uses repeat confirmation procedures
 
-Task 2: Scene Summary
-Provide a concise overall summary of the scene depicted in the frames, in chronological order if possible.
+            b) Responsiveness
+                1: Ignores customer requests or extremely slow
+                2: Responds but with significant delays
+                3: Average response speed, acceptable performance
+                4: Quick and polite responses
+                5: Immediate response, friendly tone and facial expressions, proactive problem-solving
 
-Task 3: Service Quality Evaluation and Scoring
-Based on the observations from Task 1 and the overall scene from Task 2, analyze the staff's performance according to the following criteria. For each criterion, provide a brief justification for your score and then assign a score from 1 to 5. Finally, calculate the total Video Score.
+            c) Assurance
+                1: Unable to answer menu questions, rude or unfriendly
+                2: Insufficient explanations, basic courtesy only
+                3: Can explain the menu but lacks confidence
+                4: Professional explanations, confident handling
+                5: Earns customer trust, can offer premium suggestions like wine pairings
 
-3-1. Video Evaluation Criteria and Scoring:
-   *You are required to justify every single item without exception.* (Justification is required)
-   a) Reliability: (Score: __/5)
-      * 1: Frequent order mistakes, multiple billing errors
-      * 2: No major mistakes but minor omissions occur
-      * 3: Mostly accurate orders, occasional lack of confirmation
-      * 4: Custom orders correctly handled, allergy/cooking preferences considered
-      * 5: Always 100% accurate, uses repeat confirmation procedures
-      * Justification:
+            d) Empathy
+                1: Shows no interest in customers, mechanical responses
+                2: Provides only minimal consideration
+                3: Basic friendliness but lacks personalization
+                4: Remembers customer preferences, offers personalized services like birthday events
+                5: Proactively understands customer emotions, provides impressive experiences
 
-   b) Responsiveness: (Score: __/5)
-      * 1: Ignores customer requests or extremely slow
-      * 2: Responds but with significant delays
-      * 3: Average response speed, acceptable performance
-      * 4: Quick and polite responses
-      * 5: Immediate response, friendly tone and facial expressions, proactive problem-solving
-      * Justification:
+            e) Tangibles
+                1: Dirty table, utensils, and uniform
+                2: Only some aspects are clean (e.g., utensils only)
+                3: Acceptable but lacks attention to detail
+                4: Uniform and table settings are tidy, cleanliness maintained
+                5: Meets FDA Food Code standards, ServSafe certification level cleanliness
 
-   c) Assurance: (Score: __/5)
-      * 1: Unable to answer menu questions, rude or unfriendly
-      * 2: Insufficient explanations, basic courtesy only
-      * 3: Can explain the menu but lacks confidence
-      * 4: Professional explanations, confident handling
-      * 5: Earns customer trust, can offer premium suggestions like wine pairings
-      * Justification:
-
-   d) Empathy: (Score: __/5)
-      * 1: Shows no interest in customers, mechanical responses
-      * 2: Provides only minimal consideration
-      * 3: Basic friendliness but lacks personalization
-      * 4: Remembers customer preferences, offers personalized services like birthday events
-      * 5: Proactively understands customer emotions, provides impressive experiences
-      * Justification:
-
-   e) Tangibles: (Score: __/5)
-      * 1: Dirty table, utensils, and uniform
-      * 2: Only some aspects are clean (e.g., utensils only)
-      * 3: Acceptable but lacks attention to detail
-      * 4: Uniform and table settings are tidy, cleanliness maintained
-      * 5: Meets FDA Food Code standards, ServSafe certification level cleanliness
-      * Justification:
-
-3-2. Video Score Calculation:
-After assigning scores for each of the five criteria, calculate and present the final 'Video Score' using the following formula:
-* Video Score = (Reliability Score + Responsiveness Score + Assurance Score + Empathy Score + Tangibles Score) * 4
-* Final Video Score:
-* Final Video Caption:
-'''
+        1-6. Video Evaluation Criteria entries must generate results unconditionally.
+        1-7. For Video Score, you must print the evidence and score for Reliability, Responsiveness, Assurance, Empathy, and Tangibles before printing the final score.
+        1-8. Each item is out of 20, and the final Video score is out of 100.
+        1-9. Video Score Calculation
+                Video Score = (Reliability + Responsiveness + Assurance + Empathy + Tangibles)
+        '''
         # 추가 정보가 있으면 포함
         if merged_video_info:
             prompt += f"\n\nMerged Video info: {merged_video_info}"

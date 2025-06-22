@@ -586,7 +586,7 @@ class UIHandler:
             # AI 결과 분석 탭
             with gr.Group(elem_id="analysis-content-group", visible=False) as analysis_content_group:
                 gr.Markdown("### AI 결과 분석")
-                analysis_display = gr.Markdown(label="AI Analysis")#, lines=100, max_lines=150, interactive=True, elem_id="analysis_display_component")
+                analysis_display = gr.Code(label="AI Analysis")#, lines=100, max_lines=150, interactive=True, elem_id="analysis_display_component")
             
             # 프롬프트 편집 탭
             with gr.Group(elem_id="prompt-content-group", visible=False) as prompt_content_group:
